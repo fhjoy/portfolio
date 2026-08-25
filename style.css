@@ -1,8 +1,3 @@
-/* =============================================
-   FAISAL HOSSAIN — PORTFOLIO CSS
-   Design: Dark navy · Teal accent · Space Grotesk
-   ============================================= */
-
 /* ── TOKENS ── */
 :root {
   --bg-deep: #080d1a;
@@ -432,13 +427,10 @@ button {
   flex-shrink: 0;
   width: 280px;
   height: 280px;
-  /* Fade-in handled by JS class to avoid conflict with ring animations */
   opacity: 0;
   animation: fadeUp 0.9s ease 0.5s forwards;
 }
 
-/* Rings sit outside the photo using a pseudo-wrapper so spinning
-   doesn't interfere with the parent fadeUp transform */
 .hero__photo-ring {
   position: absolute;
   border-radius: 50%;
@@ -448,7 +440,6 @@ button {
   left: 50%;
   transform-origin: center center;
   animation: spinRing 12s linear infinite;
-  /* Size via width/height so transform-origin is exact center */
   width: calc(100% + 32px);
   height: calc(100% + 32px);
   margin-left: calc(-50% - 16px);

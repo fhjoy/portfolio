@@ -1,10 +1,3 @@
-/* =============================================
-   FAISAL HOSSAIN — PORTFOLIO JS
-   Features: Typing effect, Scroll reveals,
-             Nav scroll style, Language bars,
-             Hamburger menu, Back to top
-   ============================================= */
-
 document.addEventListener("DOMContentLoaded", () => {
   /* ─────────────────────────────────────────
      1. TYPING EFFECT
@@ -12,11 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const typedEl = document.getElementById("typed");
   const phrases = [
     "Webentwickler",
+    "Softwareentwickler",
+    "Full-Stack Entwickler",
+    "Frontend Entwickler",
     "Vue.js Entwickler",
     "React Entwickler",
-    "Frontend Spezialist",
-    "Node.js Entwickler",
-    "Full-Stack Developer",
   ];
   let phraseIndex = 0;
   let charIndex = 0;
@@ -37,18 +30,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (!isDeleting && charIndex === current.length) {
-      typingSpeed = 2000; // pause at end
+      typingSpeed = 2000;
       isDeleting = true;
     } else if (isDeleting && charIndex === 0) {
       isDeleting = false;
       phraseIndex = (phraseIndex + 1) % phrases.length;
-      typingSpeed = 400; // pause before next word
+      typingSpeed = 400;
     }
 
     setTimeout(typeLoop, typingSpeed);
   }
 
-  // Start typing after hero animation finishes
   setTimeout(typeLoop, 1000);
 
   /* ─────────────────────────────────────────
@@ -84,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   window.addEventListener("scroll", updateNav, { passive: true });
-  updateNav(); // run once on load
+  updateNav();
 
   /* ─────────────────────────────────────────
      3. HAMBURGER MENU
@@ -122,7 +114,6 @@ document.addEventListener("DOMContentLoaded", () => {
     (entries) => {
       entries.forEach((entry, i) => {
         if (entry.isIntersecting) {
-          // Stagger siblings in same parent
           const siblings = Array.from(
             entry.target.parentElement.querySelectorAll("[data-reveal]"),
           );
@@ -155,7 +146,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (entries[0].isIntersecting) {
         document.querySelectorAll(".lang-bar__fill").forEach((fill) => {
           const targetWidth = fill.getAttribute("data-width");
-          // Small timeout to allow CSS transition to fire
           setTimeout(() => {
             fill.style.width = targetWidth + "%";
           }, 200);
@@ -186,21 +176,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     chip.addEventListener("mouseleave", () => {
       chip.style.transform = "";
-    });
-  });
-
-  /* ─────────────────────────────────────────
-     8. CONTACT CARDS — open links
-  ───────────────────────────────────────── */
-  // Replace # hrefs with real links when available
-  const contactLinks = document.querySelectorAll('.contact-card[href="#"]');
-  contactLinks.forEach((card) => {
-    card.addEventListener("click", (e) => {
-      const label = card.querySelector(".contact-card__label").textContent;
-      if (label === "LinkedIn") {
-        // e.preventDefault();
-        // window.open('https://linkedin.com/in/YOUR_PROFILE', '_blank');
-      }
     });
   });
 
