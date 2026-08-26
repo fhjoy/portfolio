@@ -18,16 +18,16 @@ The portfolio is written in German and includes downloadable CVs in German and E
 
 ## Professional profile at a glance
 
-| Evidence | Result |
-| --- | ---: |
-| Professional web development | 4+ years |
-| Deutsche Telekom projects | 20+ |
-| Partner websites | 17+ |
-| Reusable UI components | 30+ |
-| Accessibility findings resolved | 300+ |
-| Natif.ai Reusable Froented components|
-| Natif.ai E2E test coverage | approximately 10% → 85% |
-| Natif.ai component test coverage | approximately 0% → 70% |
+| Evidence                              |                  Result |
+| ------------------------------------- | ----------------------: |
+| Professional web development          |                4+ years |
+| Deutsche Telekom projects             |                     20+ |
+| Partner websites                      |                     17+ |
+| Reusable UI components                |                     30+ |
+| Accessibility findings resolved       |                    300+ |
+| Natif.ai Reusable Froented components |
+| Natif.ai E2E test coverage            | approximately 10% → 85% |
+| Natif.ai component test coverage      |  approximately 0% → 70% |
 
 My main areas of work are component-based frontend architecture, accessibility according to WCAG, REST and GraphQL API development and integration, test automation, legacy modernization, and collaboration in Scrum and Kanban teams.
 
@@ -102,14 +102,14 @@ This portfolio deliberately uses a small, framework-free codebase. The goal is t
 
 ## Technology
 
-| Area | Implementation |
-| --- | --- |
-| Structure | Semantic HTML5 |
-| Styling | Modern CSS, custom properties, responsive grids |
+| Area        | Implementation                                               |
+| ----------- | ------------------------------------------------------------ |
+| Structure   | Semantic HTML5                                               |
+| Styling     | Modern CSS, custom properties, responsive grids              |
 | Interaction | Vanilla JavaScript, Intersection Observer, Media Queries API |
-| Typography | Space Grotesk, Inter, JetBrains Mono |
-| Hosting | GitHub Pages |
-| Documents | German and English CVs in PDF format |
+| Typography  | Space Grotesk, Inter, JetBrains Mono                         |
+| Hosting     | GitHub Pages                                                 |
+| Documents   | German and English CVs in PDF format                         |
 
 There is no framework, package manager, bundler, or runtime dependency required to view the site.
 
@@ -117,11 +117,11 @@ There is no framework, package manager, bundler, or runtime dependency required 
 
 ```text
 portfolio/
-├── documents/
-│   ├── Faisal_Hossain_CV_EN.pdf
-│   └── Lebenslauf_Faisal_Hossain_DE.pdf
+docs── documents/
+│             ├── Faisal_Hossain_CV_EN.pdf
+│             └── Lebenslauf_Faisal_Hossain_DE.pdf
 ├── images/
-│   └── faisal_hossain.png
+│   └── faisal_hossain.avif
 ├── index.html
 ├── script.js
 └── style.css
