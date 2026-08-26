@@ -942,7 +942,7 @@ button {
   box-shadow: 0 4px 32px #00d4c810;
 }
 .timeline__card--dim {
-  opacity: 0.6;
+  opacity: 0.8;
 }
 .timeline__card--dim:hover {
   opacity: 1;
