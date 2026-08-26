@@ -25,10 +25,11 @@ The portfolio is written in German and includes downloadable CVs in German and E
 | Partner websites | 17+ |
 | Reusable UI components | 30+ |
 | Accessibility findings resolved | 300+ |
+| Natif.ai Reusable Froented components|
 | Natif.ai E2E test coverage | approximately 10% → 85% |
 | Natif.ai component test coverage | approximately 0% → 70% |
 
-My main areas of work are component-based frontend architecture, accessibility according to WCAG, REST and GraphQL integration, test automation, legacy modernization, and collaboration in Scrum and Kanban teams.
+My main areas of work are component-based frontend architecture, accessibility according to WCAG, REST and GraphQL API development and integration, test automation, legacy modernization, and collaboration in Scrum and Kanban teams.
 
 ## What visitors can explore
 
@@ -134,14 +135,6 @@ Clone the repository:
 git clone https://github.com/fhjoy/portfolio.git
 cd portfolio
 ```
-
-Start any static file server, for example:
-
-```bash
-python -m http.server 8000
-```
-
-Open `http://localhost:8000`.
 
 Opening `index.html` directly also works for most of the site, but a local server is recommended for testing document links and browser behavior consistently.
 
