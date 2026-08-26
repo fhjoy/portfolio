@@ -8,8 +8,8 @@
   --accent-dim: #00d4c820;
   --accent-2: #7c6eff;
   --text: #e8ebf4;
-  --text-muted: #7a8ba8;
-  --text-dim: #4a5878;
+  --text-muted: #8b9ab5;
+  --text-dim: #7a8dab;
   --white: #ffffff;
 
   --font-display: "Space Grotesk", sans-serif;
@@ -809,7 +809,7 @@ button {
   color: var(--accent);
 }
 .project-card__number {
-  color: var(--text-dim);
+  color: var(--text-muted);
 }
 .project-card__title {
   margin-bottom: 0.75rem;
@@ -836,9 +836,10 @@ button {
   border-top: 1px solid var(--border);
 }
 .project-card__facts dt {
-  color: var(--text-dim);
+  color: var(--text-muted);
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.75rem;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -855,9 +856,10 @@ button {
 }
 .project-card__note {
   margin-top: 1rem;
-  color: var(--text-dim);
-  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-size: 0.82rem;
   font-style: italic;
+  line-height: 1.55;
 }
 .project-card__links {
   display: flex;
@@ -1050,6 +1052,9 @@ button {
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   background: var(--bg-card);
+}
+.reference-card--featured {
+  grid-column: 1 / -1;
 }
 .reference-card__mark {
   position: absolute;
@@ -1401,6 +1406,9 @@ button {
     grid-template-columns: 1fr;
   }
   .project-card--featured {
+    grid-column: auto;
+  }
+  .reference-card--featured {
     grid-column: auto;
   }
   .edu__grid {
