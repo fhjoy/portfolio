@@ -3,7 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Faisal Hossain — Webentwickler</title>
+    <title>Faisal Hossain — Frontend- &amp; Full-Stack-Entwickler</title>
+    <meta
+      name="description"
+      content="Portfolio von Faisal Hossain, Frontend- und Full-Stack-Entwickler mit Schwerpunkt auf TypeScript, Vue.js, React, Node.js, Testing und Barrierefreiheit nach WCAG."
+    />
+    <meta name="author" content="Faisal Hossain" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#080d1a" />
+    <link rel="canonical" href="https://fhjoy.github.io/portfolio/" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Faisal Hossain — Frontend- &amp; Full-Stack-Entwickler"
+    />
+    <meta
+      property="og:description"
+      content="Skalierbare, barrierefreie Webanwendungen mit TypeScript, Vue.js, React und Node.js."
+    />
+    <meta property="og:url" content="https://fhjoy.github.io/portfolio/" />
+    <meta
+      property="og:image"
+      content="https://fhjoy.github.io/portfolio/images/faisal_hossain.png"
+    />
+    <meta property="og:image:alt" content="Porträt von Faisal Hossain" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23080d1a'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='monospace' font-size='25' font-weight='700' fill='%2300d4c8'%3EFH%3C/text%3E%3C/svg%3E"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="images/faisal_hossain.png"
+      fetchpriority="high"
+    />
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,571 +46,903 @@
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Faisal Hossain",
+        "url": "https://fhjoy.github.io/portfolio/",
+        "image": "https://fhjoy.github.io/portfolio/images/faisal_hossain.png",
+        "jobTitle": "Frontend- und Full-Stack-Entwickler",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Offenburg",
+          "addressCountry": "DE"
+        },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Hochschule Offenburg"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/md-faisal-hossain-germany/",
+          "https://github.com/fhjoy"
+        ],
+        "knowsAbout": [
+          "TypeScript",
+          "JavaScript",
+          "Vue.js",
+          "React",
+          "Node.js",
+          "Web Accessibility",
+          "WCAG",
+          "Test Automation"
+        ]
+      }
+    </script>
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Zum Inhalt springen</a>
+
     <!-- NAV -->
-    <nav class="nav" id="nav">
-      <div class="nav__logo">
-        <span class="nav__logo-bracket">&lt;</span>FH<span
-          class="nav__logo-bracket"
-          >/&gt;</span
+    <header class="site-header">
+      <nav class="nav" id="nav" aria-label="Hauptnavigation">
+        <a class="nav__logo" href="#home" aria-label="Startseite">
+          <span class="nav__logo-bracket">&lt;</span>FH<span
+            class="nav__logo-bracket"
+            >/&gt;</span
+          >
+        </a>
+        <button
+          class="nav__hamburger"
+          id="hamburger"
+          type="button"
+          aria-label="Menü öffnen"
+          aria-controls="navLinks"
+          aria-expanded="false"
         >
-      </div>
-      <button class="nav__hamburger" id="hamburger" aria-label="Menü öffnen">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav__links" id="navLinks">
-        <li><a href="#about" class="nav__link">Über mich</a></li>
-        <li><a href="#skills" class="nav__link">Skills</a></li>
-        <li><a href="#experience" class="nav__link">Erfahrung</a></li>
-        <li><a href="#education" class="nav__link">Bildung</a></li>
-        <li><a href="#contact" class="nav__link nav__link--cta">Kontakt</a></li>
-      </ul>
-    </nav>
+          <span aria-hidden="true"></span><span aria-hidden="true"></span
+          ><span aria-hidden="true"></span>
+        </button>
+        <ul class="nav__links" id="navLinks">
+          <li><a href="#about" class="nav__link">Über mich</a></li>
+          <li><a href="#skills" class="nav__link">Skills</a></li>
+          <li><a href="#projects" class="nav__link">Projekte</a></li>
+          <li><a href="#experience" class="nav__link">Erfahrung</a></li>
+          <li>
+            <a href="#contact" class="nav__link nav__link--cta">Kontakt</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-    <!-- HERO -->
-    <section class="hero" id="home">
-      <div class="hero__bg-grid"></div>
-      <div class="hero__glow hero__glow--1"></div>
-      <div class="hero__glow hero__glow--2"></div>
+    <main id="main-content">
+      <!-- HERO -->
+      <section class="hero" id="home">
+        <div class="hero__bg-grid"></div>
+        <div class="hero__glow hero__glow--1"></div>
+        <div class="hero__glow hero__glow--2"></div>
 
-      <div class="hero__content">
-        <p class="hero__eyebrow">
-          <span class="hero__dot"></span> Verfügbar für neue Projekte
-        </p>
-        <h1 class="hero__name">
-          Faisal<br /><span class="hero__name--accent">Hossain</span>
-        </h1>
-        <div class="hero__title-wrap">
-          <span class="hero__title-label">~/</span>
-          <span class="hero__typed" id="typed"></span>
-          <span class="hero__cursor">|</span>
+        <div class="hero__content">
+          <p class="hero__eyebrow">
+            <span class="hero__dot" aria-hidden="true"></span> Verfügbar für
+            Festanstellungen
+          </p>
+          <h1 class="hero__name">
+            Faisal<br /><span class="hero__name--accent">Hossain</span>
+          </h1>
+          <div class="hero__title-wrap">
+            <span class="hero__title-label" aria-hidden="true">~/</span>
+            <span class="hero__typed"
+              >Frontend- &amp; Full-Stack-Entwickler</span
+            >
+          </div>
+          <p class="hero__desc">
+            Webentwickler mit über 4 Jahren Erfahrung in skalierbaren,
+            barrierefreien Webanwendungen mit <strong>TypeScript</strong>,
+            <strong>Vue.js</strong>, <strong>React</strong>,
+            <strong>Node.js</strong> und <strong>Testautomatisierung</strong>.
+          </p>
+          <div class="hero__actions">
+            <a href="#contact" class="btn btn--primary">Kontakt aufnehmen</a>
+            <a href="#projects" class="btn btn--ghost">Projekte ansehen</a>
+          </div>
+          <!-- Add the two PDF files below to a documents folder in the website. -->
+          <div
+            class="hero__downloads"
+            role="group"
+            aria-label="Lebenslauf herunterladen"
+          >
+            <span>Lebenslauf:</span>
+            <a
+              href="documents/Lebenslauf_Faisal_Hossain_DE.pdf"
+              target="_blank"
+              download
+              aria-label="Deutschen Lebenslauf als PDF herunterladen"
+              >Deutsch ↓</a
+            >
+            <a
+              href="documents/Faisal_Hossain_CV_EN.pdf"
+              target="_blank"
+              download
+              aria-label="Englischen Lebenslauf als PDF herunterladen"
+              >English ↓</a
+            >
+          </div>
+          <div class="hero__badges">
+            <span class="badge">Offenburg · deutschlandweit umzugsbereit</span>
+            <span class="badge">Uneingeschränkte Arbeitserlaubnis in DE</span>
+          </div>
         </div>
-        <p class="hero__desc">
-          Webentwickler mit über 4 Jahren Erfahrung. Schwerpunkt auf
-          <strong>Vue.js</strong>, <strong>React</strong> &amp;
-          <strong>Node.js</strong> — barrierefreie, performante und moderne
-          Webanwendungen.
-        </p>
-        <div class="hero__actions">
-          <a href="#contact" class="btn btn--primary">Kontakt aufnehmen</a>
-          <a href="#experience" class="btn btn--ghost">Erfahrung ansehen</a>
-        </div>
-        <div class="hero__badges">
-          <span class="badge">🇩🇪 Offenburg</span>
-          <span class="badge">🔐 Niederlassungserlaubnis</span>
-        </div>
-      </div>
 
-      <div class="hero__photo-wrap">
-        <div class="hero__photo-ring"></div>
-        <div class="hero__photo-ring hero__photo-ring--2"></div>
-        <img
-          src="images/faisal_hossain.png"
-          alt="Faisal Hossain"
-          class="hero__photo"
-        />
-        <div class="hero__photo-tag">
-          <span class="hero__photo-tag-dot"></span> Full-Stack Dev
+        <div class="hero__photo-wrap">
+          <div class="hero__photo-ring"></div>
+          <div class="hero__photo-ring hero__photo-ring--2"></div>
+          <img
+            src="images/faisal_hossain.png"
+            alt="Porträt von Faisal Hossain"
+            class="hero__photo"
+            width="1386"
+            height="1135"
+            decoding="async"
+            fetchpriority="high"
+          />
+          <div class="hero__photo-tag">
+            <span class="hero__photo-tag-dot" aria-hidden="true"></span>
+            Frontend · Full Stack
+          </div>
         </div>
-      </div>
 
-      <a href="#about" class="hero__scroll" aria-label="Nach unten scrollen">
-        <div class="hero__scroll-icon"></div>
-      </a>
-    </section>
+        <a href="#about" class="hero__scroll" aria-label="Nach unten scrollen">
+          <div class="hero__scroll-icon"></div>
+        </a>
+      </section>
 
-    <!-- ABOUT -->
-    <section class="section about" id="about">
-      <div class="container">
-        <div class="section__header">
-          <span class="section__tag">// 01</span>
-          <h2 class="section__title">Über mich</h2>
+      <!-- ABOUT -->
+      <section class="section about" id="about" aria-labelledby="about-title">
+        <div class="container">
+          <div class="section__header">
+            <span class="section__tag">// 01</span>
+            <h2 class="section__title" id="about-title">Über mich</h2>
+          </div>
+          <div class="about__grid">
+            <div class="about__text">
+              <p>
+                Ich entwickle moderne, zugängliche und performante
+                Webanwendungen. Dabei habe ich unter anderem an Projekten für
+                die
+                <strong>Deutsche Telekom</strong> und an einem KI-basierten
+                Softwareprodukt gearbeitet.
+              </p>
+              <p>
+                Mein Fokus liegt auf komponentenbasierter Frontend-Architektur
+                mit
+                <strong>TypeScript</strong>, <strong>JavaScript(ES6+)</strong>,
+                <strong>Vue.js</strong> und <strong>React</strong>, ergänzt
+                durch Backend-Know-how mit <strong>Node.js</strong>,
+                <strong>GraphQL</strong> und <strong>MongoDB</strong>. Ich
+                arbeite agil, schreibe sauberen und wartbaren Code und
+                berücksichtige Barrierefreiheit konsequent nach WCAG.
+              </p>
+              <p>
+                Aktuell suche ich eine Vollzeitstelle als Frontend- oder
+                Full-Stack-Entwickler. Für eine passende Stelle bin ich auch
+                bereit, innerhalb Deutschlands umzuziehen.
+              </p>
+            </div>
+            <div class="about__stats">
+              <div class="stat-card">
+                <span class="stat-card__num">4+</span>
+                <span class="stat-card__label">Jahre Erfahrung</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-card__num">30+</span>
+                <span class="stat-card__label">UI-Komponenten</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-card__num">300+</span>
+                <span class="stat-card__label">WCAG-Funde behoben</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-card__num">Master</span>
+                <span class="stat-card__label">Medientechnik</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="about__grid">
-          <div class="about__text">
-            <p>
-              Ich bin Webentwickler mit Leidenschaft für moderne, zugängliche
-              und performante Webanwendungen. Mit über 4 Jahren Erfahrung in der
-              Entwicklung moderner Webanwendungen habe ich u. a. für die
-              <strong>Deutsche Telekom</strong> und ein KI-Startup entwickelt.
+      </section>
+
+      <!-- SKILLS -->
+
+      <section class="section skills" id="skills">
+        <div class="container">
+          <div class="section__header">
+            <span class="section__tag">// 02</span>
+            <h2 class="section__title">Technologien</h2>
+          </div>
+          <div class="skills__grid">
+            <div class="skill-group" data-reveal>
+              <div class="skill-group__header">
+                <span class="skill-group__icon" aria-hidden="true">⬡</span>
+                <h3 class="skill-group__title">Frontend</h3>
+              </div>
+              <div class="skill-group__chips">
+                <span class="chip chip--primary">Vue.js</span>
+                <span class="chip chip--primary">React</span>
+                <span class="chip chip--primary">Next.js</span>
+                <span class="chip chip--primary">TypeScript</span>
+                <span class="chip chip--primary">JavaScript(ES6+)</span>
+                <span class="chip chip--primary">Barrierefreiheit (WCAG)</span>
+                <span class="chip">Nuxt</span>
+                <span class="chip">HTML5</span>
+                <span class="chip">CSS3 / Sass</span>
+                <span class="chip">Tailwind CSS</span>
+                <span class="chip">Bootstrap</span>
+                <span class="chip">Vuex / Pinia</span>
+                <span class="chip">Redux</span>
+              </div>
+            </div>
+
+            <div class="skill-group" data-reveal>
+              <div class="skill-group__header">
+                <span class="skill-group__icon" aria-hidden="true">⬡</span>
+                <h3 class="skill-group__title">Backend</h3>
+              </div>
+              <div class="skill-group__chips">
+                <span class="chip chip--secondary">Node.js</span>
+                <span class="chip chip--secondary">Express</span>
+                <span class="chip chip--secondary">REST API</span>
+                <span class="chip chip--secondary">GraphQL</span>
+                <span class="chip chip--secondary">JWT</span>
+                <span class="chip">MongoDB</span>
+              </div>
+            </div>
+
+            <div class="skill-group" data-reveal>
+              <div class="skill-group__header">
+                <span class="skill-group__icon" aria-hidden="true">⬡</span>
+                <h3 class="skill-group__title">Testing &amp; DevOps</h3>
+              </div>
+              <div class="skill-group__chips">
+                <span class="chip chip--tertiary">Cypress</span>
+                <span class="chip chip--tertiary">Jest</span>
+                <span class="chip">CI/CD</span>
+                <span class="chip">GitLab</span>
+                <span class="chip">GitHub Actions</span>
+                <span class="chip">Jenkins</span>
+                <span class="chip">Docker</span>
+              </div>
+            </div>
+
+            <div class="skill-group" data-reveal>
+              <div class="skill-group__header">
+                <span class="skill-group__icon" aria-hidden="true">⬡</span>
+                <h3 class="skill-group__title">Tools &amp; Sonstiges</h3>
+              </div>
+              <div class="skill-group__chips">
+                <span class="chip">WordPress</span>
+                <span class="chip">Webflow</span>
+                <span class="chip">WooCommerce</span>
+                <span class="chip">Jira</span>
+                <span class="chip">Confluence</span>
+                <span class="chip">Scrum / Kanban</span>
+                <span class="chip">Git</span>
+                <span class="chip">GitHub</span>
+                <span class="chip">Vite / Webpack</span>
+                <span class="chip">npm / Yarn</span>
+                <span class="chip">SEO</span>
+                <span class="chip">Linux</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- PROJECTS -->
+      <section
+        class="section projects"
+        id="projects"
+        aria-labelledby="projects-title"
+      >
+        <div class="container">
+          <div class="section__header section__header--with-intro">
+            <div>
+              <span class="section__tag">// 03</span>
+              <h2 class="section__title" id="projects-title">
+                Ausgewählte Projekte
+              </h2>
+            </div>
+            <p class="section__intro">
+              Drei Beispiele zeigen meinen Beitrag, die technische Umsetzung und
+              die erzielten Ergebnisse. Kundendetails sind teilweise aus
+              Vertraulichkeitsgründen anonymisiert.
             </p>
-            <p>
-              Mein Fokus liegt auf komponentenbasierter Frontend Architektur mit
-              <strong>Vue.js</strong> und <strong>React</strong>, ergänzt durch
-              solides Backend Know how mit <strong>Node.js</strong>. Ich arbeite
-              nach agilen Methoden, schreibe sauberen und wartbaren Code und
-              achte konsequent auf Barrierefreiheit nach WCAG-Standard.
-            </p>
-            <p>
-              Aktuell absolviere ich einen B2-Berufssprachkurs und vertiefe mein
-              Deutsch. Ich freue mich auf spannende neue Projekte und Teams.
-            </p>
-          </div>
-          <div class="about__stats">
-            <div class="stat-card">
-              <span class="stat-card__num">4+</span>
-              <span class="stat-card__label">Jahre Erfahrung</span>
-            </div>
-            <div class="stat-card">
-              <span class="stat-card__num">3</span>
-              <span class="stat-card__label">Festanstellungen</span>
-            </div>
-            <div class="stat-card">
-              <span class="stat-card__num"> Master </span>
-              <span class="stat-card__label"> Media (Web) </span>
-            </div>
-            <div class="stat-card">
-              <span class="stat-card__num">5</span>
-              <span class="stat-card__label">Sprachen</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section class="section skills" id="skills">
-      <div class="container">
-        <div class="section__header">
-          <span class="section__tag">// 02</span>
-          <h2 class="section__title">Technologien</h2>
-        </div>
-        <div class="skills__grid">
-          <div class="skill-group" data-reveal>
-            <div class="skill-group__header">
-              <span class="skill-group__icon">⬡</span>
-              <h3 class="skill-group__title">Frontend</h3>
-            </div>
-            <div class="skill-group__chips">
-              <span class="chip chip--primary">Vue.js</span>
-              <span class="chip chip--primary">React</span>
-              <span class="chip chip--primary">Next.js</span>
-              <span class="chip chip--primary">TypeScript</span>
-              <span class="chip chip--primary">JavaScript(ES6+)</span>
-              <span class="chip">Nuxt</span>
-              <span class="chip">HTML5</span>
-              <span class="chip">CSS3 / Sass</span>
-              <span class="chip">Tailwind CSS</span>
-              <span class="chip">Bootstrap</span>
-              <span class="chip">Vuex / Pinia</span>
-              <span class="chip">Redux</span>
-            </div>
           </div>
 
-          <div class="skill-group" data-reveal>
-            <div class="skill-group__header">
-              <span class="skill-group__icon">⬡</span>
-              <h3 class="skill-group__title">Backend</h3>
-            </div>
-            <div class="skill-group__chips">
-              <span class="chip chip--secondary">Node.js</span>
-              <span class="chip chip--secondary">Express</span>
-              <span class="chip chip--secondary">REST API</span>
-              <span class="chip chip--secondary">GraphQL</span>
-              <span class="chip chip--secondary">JWT</span>
-              <span class="chip">MongoDB</span>
-            </div>
-          </div>
-
-          <div class="skill-group" data-reveal>
-            <div class="skill-group__header">
-              <span class="skill-group__icon">⬡</span>
-              <h3 class="skill-group__title">Testing &amp; DevOps</h3>
-            </div>
-            <div class="skill-group__chips">
-              <span class="chip chip--tertiary">Cypress</span>
-              <span class="chip chip--tertiary">Jest</span>
-              <span class="chip">CI/CD</span>
-              <span class="chip">GitLab</span>
-              <span class="chip">GitHub Actions</span>
-              <span class="chip">Jenkins</span>
-              <span class="chip">Docker</span>
-            </div>
-          </div>
-
-          <div class="skill-group" data-reveal>
-            <div class="skill-group__header">
-              <span class="skill-group__icon">⬡</span>
-              <h3 class="skill-group__title">Tools &amp; Sonstiges</h3>
-            </div>
-            <div class="skill-group__chips">
-              <span class="chip">WordPress</span>
-              <span class="chip">Webflow</span>
-              <span class="chip">WooCommerce</span>
-              <span class="chip">Jira</span>
-              <span class="chip">Confluence</span>
-              <span class="chip">Scrum / Kanban</span>
-              <span class="chip">Git</span>
-              <span class="chip">GitHub</span>
-              <span class="chip">Vite / Webpack</span>
-              <span class="chip">npm / Yarn</span>
-              <span class="chip">SEO</span>
-              <span class="chip">Linux</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section class="section experience" id="experience">
-      <div class="container">
-        <div class="section__header">
-          <span class="section__tag">// 03</span>
-          <h2 class="section__title">Berufserfahrung</h2>
-        </div>
-        <div class="timeline">
-          <div class="timeline__item" data-reveal>
-            <div class="timeline__marker">
-              <div class="timeline__dot"></div>
-              <div class="timeline__line"></div>
-            </div>
-            <div class="timeline__card">
-              <div class="timeline__card-header">
-                <div>
-                  <h3 class="timeline__role">Webentwickler</h3>
-                  <span class="timeline__company"
-                    >exagon consulting & solutions GmbH</span
-                  >
-                </div>
-                <div class="timeline__meta">
-                  <span class="timeline__period">05.2023 – 12.2025</span>
-                  <span class="timeline__type">Vollzeit · DE</span>
-                </div>
+          <div class="projects__grid">
+            <article class="project-card project-card--featured" data-reveal>
+              <div class="project-card__topline">
+                <span class="project-card__type"
+                  >Berufspraxis · Enterprise</span
+                >
+                <span class="project-card__number" aria-hidden="true">01</span>
               </div>
-              <ul class="timeline__list">
-                <li>
-                  <strong>20+ Projekte</strong> für die Deutsche Telekom sowie
-                  <strong>17+ Partner-Websites</strong> — u. a. Kundenportale,
-                  Landingpages, interaktive Kacheln und Trade-in-Plattformen
-                </li>
-                <li>
-                  <strong>30+ wiederverwendbare UI-Komponenten</strong> mit
-                  <strong>Vue 3</strong> und <strong>React</strong> nach Telekom
-                  Design System entwickelt
-                </li>
-                <li>
-                  Barrierefreiheit mehrerer Plattformen gemäß
-                  <strong>WCAG</strong> verbessert —
-                  <strong>300+ Accessibility-Probleme</strong> behoben
-                </li>
-                <li>
-                  Legacy-Code refaktoriert und zwischen Frameworks migriert für
-                  bessere Wartbarkeit und Performance
-                </li>
-                <li>
-                  <strong>REST-</strong> und
-                  <strong>GraphQL</strong>-Schnittstellen in moderne
-                  Frontend-Apps integriert
-                </li>
-                <li>
-                  Enge Zusammenarbeit mit Design und Projektmanagement in agilen
-                  <strong>Scrum-</strong> und <strong>Kanban</strong>-Teams,
-                  Code Reviews
-                </li>
-              </ul>
-              <div class="timeline__tags">
-                <span class="tag">HTML</span><span class="tag">CSS</span>
-                <span class="tag">JavaScript</span
-                ><span class="tag">TypeScript</span><span class="tag">Vue</span
-                ><span class="tag">React</span> <span class="tag">Node.js</span>
-                <span class="tag">Express</span>
-                <span class="tag">GraphQL</span><span class="tag">Docker</span>
-                <span class="tag">Git</span>
-                <span class="tag">Jira</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline__item" data-reveal>
-            <div class="timeline__marker">
-              <div class="timeline__dot"></div>
-              <div class="timeline__line"></div>
-            </div>
-            <div class="timeline__card">
-              <div class="timeline__card-header">
-                <div>
-                  <h3 class="timeline__role">Webentwickler</h3>
-                  <span class="timeline__company"
-                    >Natif.ai (jetzt DocuWare)</span
-                  >
-                </div>
-                <div class="timeline__meta">
-                  <span class="timeline__period">05.2022 – 04.2023</span>
-                  <span class="timeline__type">Teilzeit · DE</span>
-                </div>
-              </div>
-              <ul class="timeline__list">
-                <li>
-                  Mitentwicklung der Frontend-Architektur für ein
-                  <strong>KI-basiertes IDP-Produkt</strong>,
-                  <strong>20+ neue Funktionen</strong> umgesetzt
-                </li>
-                <li>
-                  Testabdeckung deutlich ausgebaut: E2E ca.
-                  <strong>10 % → 85 %</strong>, Komponententests ca.
-                  <strong>0 % → 70 %</strong> (Jest, Cypress)
-                </li>
-                <li>
-                  Fachliche Koordination der Testing-Aktivitäten für rund sechs
-                  Monate
-                </li>
-                <li>Legacy-Code und Abhängigkeiten aktualisiert</li>
-                <li>
-                  <strong>CI/CD-Pipeline</strong> mit GitLab verwaltet und Doku
-                  erstellt
-                </li>
-              </ul>
-              <div class="timeline__tags">
-                <span class="tag">HTML</span><span class="tag">CSS</span>
-                <span class="tag">JavaScript</span><span class="tag">Vue</span>
-                <span class="tag">Jest</span><span class="tag">Cypress</span>
-                <span class="tag">CI/CD</span><span class="tag">GitLab</span>
-                <span class="tag">KI</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline__item" data-reveal>
-            <div class="timeline__marker">
-              <div class="timeline__dot"></div>
-              <div class="timeline__line"></div>
-            </div>
-            <div class="timeline__card">
-              <div class="timeline__card-header">
-                <div>
-                  <h3 class="timeline__role">Webentwickler</h3>
-                  <span class="timeline__company">Venus IT Institute</span>
-                </div>
-                <div class="timeline__meta">
-                  <span class="timeline__period">01.2019 – 09.2019</span>
-                  <span class="timeline__type">Vollzeit · BD</span>
-                </div>
-              </div>
-              <ul class="timeline__list">
-                <li>
-                  Entwicklung, Deployment und Pflege von Unternehmenswebsites
-                </li>
-                <li>
-                  Websites mit <strong>WordPress</strong>, HTML und CSS erstellt
-                </li>
-              </ul>
-              <div class="timeline__tags">
-                <span class="tag">WordPress</span><span class="tag">HTML</span
-                ><span class="tag">CSS</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline__item" data-reveal>
-            <div class="timeline__marker">
-              <div class="timeline__dot timeline__dot--dim"></div>
-            </div>
-            <div class="timeline__card timeline__card--dim">
-              <div class="timeline__card-header">
-                <div>
-                  <h3 class="timeline__role">Freiberufler</h3>
-                  <span class="timeline__company">Upwork · Remote</span>
-                </div>
-                <div class="timeline__meta">
-                  <span class="timeline__period">05.2013 – 03.2016</span>
-                  <span class="timeline__type">Teilzeit · Remote</span>
-                </div>
-              </div>
-              <ul class="timeline__list">
-                <li>Webdesign und WordPress-Entwicklung</li>
-                <li>Technische Artikel, SEO-bezogene Aufgaben</li>
-              </ul>
-              <div class="timeline__tags">
-                <span class="tag">WordPress</span><span class="tag">SEO</span
-                ><span class="tag">Webdesign</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- EDUCATION -->
-    <section class="section education" id="education">
-      <div class="container">
-        <div class="section__header">
-          <span class="section__tag">// 04</span>
-          <h2 class="section__title">Bildung</h2>
-        </div>
-        <div class="edu__grid">
-          <div class="edu-card" data-reveal>
-            <span class="edu-card__icon">💬</span>
-            <div class="edu-card__body">
-              <span class="edu-card__period">03.2026 – 08.2026</span>
-              <h3 class="edu-card__degree">Berufssprachkurs B2</h3>
-              <span class="edu-card__school"
-                >Institut für deutsche Sprache (IDS), Offenburg</span
-              >
-            </div>
-          </div>
-          <div class="edu-card" data-reveal>
-            <span class="edu-card__icon">🎓</span>
-            <div class="edu-card__body">
-              <span class="edu-card__period">10.2019 – 02.2023</span>
-              <h3 class="edu-card__degree">
-                Master — Kommunikations- und Medientechnik (CME)
+              <h3 class="project-card__title">
+                Telekom-Entwicklung im großen Maßstab
               </h3>
-              <span class="edu-card__school">Hochschule Offenburg, DE</span>
-              <span class="edu-card__gpa">GPA 1,8</span>
-              <p class="edu-card__thesis">
-                <strong>Masterarbeit:</strong> Vergleich von SSR, SPA und SSG in
-                der modernen Webentwicklung (React, Next.js, Node.js, Express,
-                MongoDB, Material-UI)
+              <p class="project-card__summary">
+                Entwicklung und Modernisierung barrierefreier Kundenportale,
+                Landingpages, Komponentenbibliotheken und Partner-Websites.
               </p>
-              <p class="edu-card__thesis">
-                <strong>Projekt:</strong> Social-Media-Anwendung mit React,
-                SCSS, PWA
+              <dl class="project-card__facts">
+                <div>
+                  <dt>Aufgabe</dt>
+                  <dd>
+                    Entwicklung und Betreuung digitaler Lösungen im
+                    Telekommunikationsumfeld.
+                  </dd>
+                </div>
+                <div>
+                  <dt>Beitrag</dt>
+                  <dd>
+                    Komponenten, Barrierefreiheit, API-Entwicklung,
+                    API-Integration und Migrationen
+                  </dd>
+                </div>
+                <div>
+                  <dt>Ergebnis</dt>
+                  <dd>
+                    20+ Projekte · 17+ Partner-Websites · 30+ Komponenten · 300+
+                    WCAG-Funde behoben
+                  </dd>
+                </div>
+              </dl>
+              <div
+                class="project-card__tags"
+                role="group"
+                aria-label="Technologien"
+              >
+                <span class="tag">Vue 3</span><span class="tag">React</span>
+                <span class="tag">TypeScript</span
+                ><span class="tag">Barrierefreiheit</span
+                ><span class="tag">WCAG</span> <span class="tag">REST API</span
+                ><span class="tag">Node.js</span
+                ><span class="tag">GraphQL</span>
+              </div>
+              <p class="project-card__note">
+                Projektdetails und Quellcode sind kundenseitig vertraulich.
               </p>
-            </div>
-          </div>
+            </article>
 
-          <div class="edu-card" data-reveal>
-            <span class="edu-card__icon">🎓</span>
-            <div class="edu-card__body">
-              <span class="edu-card__period">04.2009 – 02.2016</span>
-              <h3 class="edu-card__degree">Bachelor — Informatik (CSE)</h3>
-              <span class="edu-card__school">Islamic University, BD</span>
-              <span class="edu-card__gpa">GPA 3,46 (ca. 1,8 DE)</span>
-            </div>
-          </div>
+            <article class="project-card" data-reveal>
+              <div class="project-card__topline">
+                <span class="project-card__type">Berufspraxis · KI</span>
+                <span class="project-card__number" aria-hidden="true">02</span>
+              </div>
+              <h3 class="project-card__title">
+                Testautomatisierung und Frontend für IDP
+              </h3>
+              <p class="project-card__summary">
+                Komponenten für ein KI-basiertes Produkt zur intelligenten
+                Dokumentenverarbeitung bei natif.ai entwickelt und refaktoriert
+                sowie die Teststrategie ausgebaut.
+              </p>
+              <dl class="project-card__facts">
+                <div>
+                  <dt>Aufgabe</dt>
+                  <dd>Frontend stabilisieren und Releases besser absichern</dd>
+                </div>
+                <div>
+                  <dt>Beitrag</dt>
+                  <dd>
+                    Komponenten, Jest-/Cypress-Tests, Testbarkeitsanalyse und
+                    Koordination
+                  </dd>
+                </div>
+                <div>
+                  <dt>Ergebnis</dt>
+                  <dd>
+                    Neue & refaktorierte Komponenten · E2E ca. 10→85 % ·
+                    Komponententests ca. 0→70 %
+                  </dd>
+                </div>
+              </dl>
+              <div
+                class="project-card__tags"
+                role="group"
+                aria-label="Technologien"
+              >
+                <span class="tag">Vue.js</span><span class="tag">Jest</span>
+                <span class="tag">Cypress</span
+                ><span class="tag">GitLab CI/CD</span>
+              </div>
+              <p class="project-card__note">
+                Projektdetails und Quellcode sind kundenseitig vertraulich.
+              </p>
+            </article>
 
-          <div class="edu-card" data-reveal>
-            <span class="edu-card__icon">📜</span>
-            <div class="edu-card__body">
-              <span class="edu-card__period">Zertifikate</span>
-              <h3 class="edu-card__degree">Weiterbildungen</h3>
-              <ul class="edu-card__certs">
-                <li>Interkulturelle Kompetenz (Hochschule Offenburg)</li>
-                <li>ChatGPT &amp; Generative AI (Udemy)</li>
-                <li>Node.js, Express, MongoDB &amp; More (Udemy)</li>
-                <li>Advanced React and Redux (Udemy)</li>
-                <li>Vue - The Complete Guide (Udemy)</li>
-              </ul>
-            </div>
+            <article class="project-card" data-reveal>
+              <div class="project-card__topline">
+                <span class="project-card__type"
+                  >Masterarbeit · Webarchitektur</span
+                >
+                <span class="project-card__number" aria-hidden="true">03</span>
+              </div>
+              <h3 class="project-card__title">SPA, SSR und SSG im Vergleich</h3>
+              <p class="project-card__summary">
+                Konzeption und Umsetzung vergleichbarer Webanwendungen zur
+                Bewertung moderner Rendering-Strategien.
+              </p>
+              <dl class="project-card__facts">
+                <div>
+                  <dt>Recherche</dt>
+                  <dd>
+                    Welche Architektur passt zu welchem Anwendungsszenario?
+                  </dd>
+                </div>
+                <div>
+                  <dt>Umsetzung</dt>
+                  <dd>Vergleichbare Apps mit Frontend, API und Datenbank</dd>
+                </div>
+                <div>
+                  <dt>Ergebnis</dt>
+                  <dd>Praxisvergleich von Performance, SEO und Wartbarkeit</dd>
+                </div>
+              </dl>
+              <div
+                class="project-card__tags"
+                role="group"
+                aria-label="Technologien"
+              >
+                <span class="tag">React</span><span class="tag">Next.js</span>
+                <span class="tag">Node.js</span><span class="tag">MongoDB</span>
+              </div>
+              <div class="project-card__links">
+                <a
+                  href="https://github.com/fhjoy/spa"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >SPA-Code ↗</a
+                >
+                <a
+                  href="https://github.com/fhjoy/ssr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >SSR-Code ↗</a
+                >
+              </div>
+            </article>
           </div>
+        </div>
+      </section>
 
-          <div class="edu-card" data-reveal>
-            <span class="edu-card__icon">🏆</span>
-            <div class="edu-card__body">
-              <span class="edu-card__period">Auszeichnungen</span>
-              <h3 class="edu-card__degree">Awards</h3>
-              <ul class="edu-card__certs">
-                <li>STIBET-Stipendium – Hochschule Offenburg (2021)</li>
-                <li>
-                  Auszeichnung für hervorragende Studienleistungen – Islamic
-                  University, Bangladesch (April 2012, Februar 2016)
-                </li>
-              </ul>
+      <!-- EXPERIENCE -->
+      <section
+        class="section experience"
+        id="experience"
+        aria-labelledby="experience-title"
+      >
+        <div class="container">
+          <div class="section__header">
+            <span class="section__tag">// 04</span>
+            <h2 class="section__title" id="experience-title">
+              Berufserfahrung
+            </h2>
+          </div>
+          <div class="timeline">
+            <div class="timeline__item" data-reveal>
+              <div class="timeline__marker">
+                <div class="timeline__dot"></div>
+                <div class="timeline__line"></div>
+              </div>
+              <div class="timeline__card">
+                <div class="timeline__card-header">
+                  <div>
+                    <h3 class="timeline__role">
+                      Webentwickler im Bereich E-Commerce
+                    </h3>
+                    <!-- <span class="timeline__focus"
+                      >Schwerpunkt Frontend/Web</span
+                    > -->
+                    <span class="timeline__company"
+                      >exagon consulting & solutions GmbH</span
+                    >
+                  </div>
+                  <div class="timeline__meta">
+                    <span class="timeline__period">05.2023 – 12.2025</span>
+                    <span class="timeline__type">Vollzeit · DE</span>
+                  </div>
+                </div>
+                <ul class="timeline__list">
+                  <li>
+                    <strong>20+ Projekte</strong> für die Deutsche Telekom sowie
+                    <strong>17+ Partner-Websites</strong> — u. a. Kundenportale,
+                    Landingpages, interaktive Kacheln und Trade-in-Plattformen
+                  </li>
+                  <li>
+                    <strong>30+ wiederverwendbare UI-Komponenten</strong> mit
+                    <strong>Vue 3</strong> und <strong>React</strong> nach
+                    Telekom Design System entwickelt
+                  </li>
+                  <li>
+                    Barrierefreiheit mehrerer Plattformen gemäß
+                    <strong>WCAG</strong> verbessert —
+                    <strong>300+ Accessibility-Probleme</strong> behoben
+                  </li>
+                  <li>
+                    Legacy-Code refaktoriert und zwischen Frameworks migriert
+                    für bessere Wartbarkeit und Performance
+                  </li>
+                  <li>
+                    <strong>REST-</strong> und
+                    <strong>GraphQL</strong>-Schnittstellen in moderne
+                    Frontend-Apps integriert
+                  </li>
+                  <li>
+                    Enge Zusammenarbeit mit Design und Projektmanagement in
+                    agilen
+                    <strong>Scrum-</strong> und <strong>Kanban</strong>-Teams,
+                    Code Reviews
+                  </li>
+                </ul>
+                <div class="timeline__tags">
+                  <span class="tag">HTML</span><span class="tag">CSS</span>
+                  <span class="tag">JavaScript</span
+                  ><span class="tag">TypeScript</span
+                  ><span class="tag">Vue</span><span class="tag">React</span>
+                  <span class="tag">Node.js</span>
+                  <span class="tag">Express</span>
+                  <span class="tag">GraphQL</span
+                  ><span class="tag">Docker</span>
+                  <span class="tag">Git</span>
+                  <span class="tag">Jira</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline__item" data-reveal>
+              <div class="timeline__marker">
+                <div class="timeline__dot"></div>
+                <div class="timeline__line"></div>
+              </div>
+              <div class="timeline__card">
+                <div class="timeline__card-header">
+                  <div>
+                    <h3 class="timeline__role">
+                      Werkstudent Frontend-Entwicklung
+                    </h3>
+                    <span class="timeline__company"
+                      >Natif.ai (jetzt DocuWare)</span
+                    >
+                  </div>
+                  <div class="timeline__meta">
+                    <span class="timeline__period">05.2022 – 04.2023</span>
+                    <span class="timeline__type">Werkstudent · DE</span>
+                  </div>
+                </div>
+                <ul class="timeline__list">
+                  <li>
+                    Mitentwicklung der Frontend-Architektur für ein
+                    <strong>KI-basiertes IDP-Produkt</strong>,
+                    <strong>20+ neue Funktionen</strong> umgesetzt
+                  </li>
+                  <li>
+                    Testabdeckung deutlich ausgebaut: E2E ca.
+                    <strong>10 % → 85 %</strong>, Komponententests ca.
+                    <strong>0 % → 70 %</strong> (Jest, Cypress)
+                  </li>
+                  <li>
+                    Fachliche Koordination der Testing-Aktivitäten für rund
+                    sechs Monate
+                  </li>
+                  <li>Legacy-Code und Abhängigkeiten aktualisiert</li>
+                  <li>
+                    <strong>CI/CD-Pipeline</strong> mit GitLab verwaltet und
+                    Doku erstellt
+                  </li>
+                </ul>
+                <div class="timeline__tags">
+                  <span class="tag">HTML</span><span class="tag">CSS</span>
+                  <span class="tag">JavaScript</span
+                  ><span class="tag">Vue</span> <span class="tag">Jest</span
+                  ><span class="tag">Cypress</span>
+                  <span class="tag">CI/CD</span><span class="tag">GitLab</span>
+                  <span class="tag">KI</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline__item" data-reveal>
+              <div class="timeline__marker">
+                <div class="timeline__dot"></div>
+                <div class="timeline__line"></div>
+              </div>
+              <div class="timeline__card">
+                <div class="timeline__card-header">
+                  <div>
+                    <h3 class="timeline__role">Webentwickler</h3>
+                    <span class="timeline__company">Venus IT Institute</span>
+                  </div>
+                  <div class="timeline__meta">
+                    <span class="timeline__period">01.2019 – 09.2019</span>
+                    <span class="timeline__type">Vollzeit · BD</span>
+                  </div>
+                </div>
+                <ul class="timeline__list">
+                  <li>
+                    Entwicklung, Deployment und Pflege von Unternehmenswebsites
+                  </li>
+                  <li>
+                    Websites mit <strong>WordPress</strong>, HTML und CSS
+                    erstellt
+                  </li>
+                </ul>
+                <div class="timeline__tags">
+                  <span class="tag">WordPress</span><span class="tag">HTML</span
+                  ><span class="tag">CSS</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline__item" data-reveal>
+              <div class="timeline__marker">
+                <div class="timeline__dot timeline__dot--dim"></div>
+              </div>
+              <div class="timeline__card timeline__card--dim">
+                <div class="timeline__card-header">
+                  <div>
+                    <h3 class="timeline__role">Freiberufler</h3>
+                    <span class="timeline__company">Upwork · Remote</span>
+                  </div>
+                  <div class="timeline__meta">
+                    <span class="timeline__period">05.2013 – 03.2016</span>
+                    <span class="timeline__type">Teilzeit · Remote</span>
+                  </div>
+                </div>
+                <ul class="timeline__list">
+                  <li>Webdesign und WordPress-Entwicklung</li>
+                  <li>Technische Artikel, SEO-bezogene Aufgaben</li>
+                </ul>
+                <div class="timeline__tags">
+                  <span class="tag">WordPress</span><span class="tag">SEO</span
+                  ><span class="tag">Webdesign</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+      </section>
 
-        <!-- Languages -->
-        <div class="languages" data-reveal>
-          <h3 class="languages__title">Sprachen</h3>
-          <div class="languages__grid">
-            <div class="lang-bar">
-              <div class="lang-bar__label">
-                <span>Bengalisch</span
-                ><span class="lang-bar__level">Muttersprache</span>
-              </div>
-              <div class="lang-bar__track">
-                <div class="lang-bar__fill" data-width="100"></div>
-              </div>
+      <!-- WORK REFERENCES -->
+      <section
+        class="section references"
+        id="references"
+        aria-labelledby="references-title"
+      >
+        <div class="container">
+          <div class="section__header section__header--with-intro">
+            <div>
+              <span class="section__tag">// 05</span>
+              <h2 class="section__title" id="references-title">
+                Arbeitszeugnisse
+              </h2>
             </div>
-            <div class="lang-bar">
-              <div class="lang-bar__label">
-                <span>Englisch</span
-                ><span class="lang-bar__level">Fließend</span>
-              </div>
-              <div class="lang-bar__track">
-                <div class="lang-bar__fill" data-width="90"></div>
-              </div>
-            </div>
-            <div class="lang-bar">
-              <div class="lang-bar__label">
-                <span>Deutsch</span><span class="lang-bar__level">B2</span>
-              </div>
-              <div class="lang-bar__track">
-                <div class="lang-bar__fill" data-width="75"></div>
-              </div>
-            </div>
-            <div class="lang-bar">
-              <div class="lang-bar__label">
-                <span>Hindi / Urdu</span
-                ><span class="lang-bar__level">Sehr gut</span>
-              </div>
-              <div class="lang-bar__track">
-                <div class="lang-bar__fill" data-width="80"></div>
-              </div>
-            </div>
+            <p class="section__intro">
+              Zusammenfassung meiner beruflichen Nachweise. Vollständige
+              Unterlagen stelle ich im Bewerbungsprozess gerne zur Verfügung.
+            </p>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- CONTACT -->
-    <section class="section contact" id="contact">
-      <div class="container">
-        <div class="section__header">
-          <span class="section__tag">// 05</span>
-          <h2 class="section__title">Kontakt</h2>
-        </div>
-        <p class="contact__intro">
-          Ich bin offen für neue Herausforderungen — ob Festanstellung oder
-          Freelance. Meld dich gerne!
-        </p>
-        <div class="contact__grid">
-          <a href="tel:+491743700638" class="contact-card">
-            <span class="contact-card__icon">📞</span>
-            <span class="contact-card__label">Telefon</span>
-            <span class="contact-card__value">(+49) 174 3700638</span>
-          </a>
-          <a href="mailto:faisalh.iu@gmail.com" class="contact-card">
-            <span class="contact-card__icon">✉️</span>
-            <span class="contact-card__label">E-Mail</span>
-            <span class="contact-card__value">faisalh.iu@gmail.com</span>
-          </a>
+          <div class="references__grid">
+            <article class="reference-card" data-reveal>
+              <div class="reference-card__mark" aria-hidden="true">✓</div>
+              <p class="reference-card__text">
+                Sehr gute Gesamtbewertung – besonders hervorgehoben wurden
+                Fachkenntnisse, analytische Fähigkeiten, Arbeitsqualität und
+                Leistung.
+              </p>
+              <div class="reference-card__source">
+                <strong>exagon consulting &amp; solutions GmbH</strong>
+                <span>Arbeitszeugnis · 2025</span>
+              </div>
+            </article>
+
+            <article class="reference-card" data-reveal>
+              <div class="reference-card__mark" aria-hidden="true">✓</div>
+              <p class="reference-card__text">
+                Meine Arbeit im Frontend-Bereich mit Vue, Cypress und Jest, die
+                Analyse der Testbarkeit von Vue.js sowie die Koordination der
+                Entwicklungsaktivitäten wurden bestätigt.
+              </p>
+              <div class="reference-card__source">
+                <strong>Natif.ai</strong>
+                <span>Referenz · Frontend-Entwicklung</span>
+              </div>
+            </article>
+          </div>
+
           <a
-            href="https://www.google.com/maps/place/Offenburg"
-            class="contact-card"
-            target="_blank"
-            rel="noopener"
+            class="references__cta"
+            href="mailto:faisalh.iu@gmail.com?subject=Anfrage%20Arbeitszeugnisse"
+            >Arbeitszeugnisse anfragen →</a
           >
-            <span class="contact-card__icon">📍</span>
-            <span class="contact-card__label">Standort</span>
-            <span class="contact-card__value">Offenburg, Deutschland</span>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/md-faisal-hossain-germany/"
-            class="contact-card"
-            target="_blank"
-            rel="noopener"
-          >
-            <span class="contact-card__icon">💼</span>
-            <span class="contact-card__label">LinkedIn</span>
-            <span class="contact-card__value">Profil ansehen →</span>
-          </a>
-          <a
-            href="https://github.com/fhjoy"
-            class="contact-card"
-            target="_blank"
-            rel="noopener"
-          >
-            <span class="contact-card__icon">🐙</span>
-            <span class="contact-card__label">GitHub</span>
-            <span class="contact-card__value">Projekte ansehen →</span>
-          </a>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <!-- EDUCATION -->
+      <section
+        class="section education"
+        id="education"
+        aria-labelledby="education-title"
+      >
+        <div class="container">
+          <div class="section__header">
+            <span class="section__tag">// 06</span>
+            <h2 class="section__title" id="education-title">Bildung</h2>
+          </div>
+          <div class="edu__grid">
+            <div class="edu-card" data-reveal>
+              <span class="edu-card__icon" aria-hidden="true">💬</span>
+              <div class="edu-card__body">
+                <span class="edu-card__period">03.2026 – 08.2026</span>
+                <h3 class="edu-card__degree">Berufssprachkurs B2</h3>
+                <span class="edu-card__school"
+                  >Institut für deutsche Sprache (IDS), Offenburg</span
+                >
+                <!-- <span class="edu-card__status">Prüfung in Vorbereitung</span> -->
+              </div>
+            </div>
+            <div class="edu-card" data-reveal>
+              <span class="edu-card__icon" aria-hidden="true">🎓</span>
+              <div class="edu-card__body">
+                <span class="edu-card__period">10.2019 – 02.2023</span>
+                <h3 class="edu-card__degree">
+                  Master — Kommunikations- und Medientechnik (CME)
+                </h3>
+                <span class="edu-card__school">Hochschule Offenburg, DE</span>
+                <span class="edu-card__gpa">Note: 1,8</span>
+                <p class="edu-card__thesis">
+                  <strong>Masterarbeit:</strong> Vergleich von SSR, SPA und SSG
+                  in der modernen Webentwicklung (React, Next.js, Node.js,
+                  Express, MongoDB, Material-UI)
+                </p>
+                <p class="edu-card__thesis">
+                  <strong>Praktikum:</strong> Entwicklung einer
+                  E-Commerce-Website mit Figma, WordPress, CSS.
+                </p>
+                <p class="edu-card__thesis">
+                  <strong>Projekt:</strong> Social-Media-Anwendung mit React,
+                  SCSS, PWA
+                </p>
+              </div>
+            </div>
+
+            <div class="edu-card" data-reveal>
+              <span class="edu-card__icon" aria-hidden="true">🎓</span>
+              <div class="edu-card__body">
+                <span class="edu-card__period">04.2009 – 02.2016</span>
+                <h3 class="edu-card__degree">Bachelor — Informatik (CSE)</h3>
+                <span class="edu-card__school">Islamic University, BD</span>
+                <span class="edu-card__gpa">GPA: 3,46/4,00 (ca. 1,8 DE)</span>
+              </div>
+            </div>
+
+            <div class="edu-card" data-reveal>
+              <span class="edu-card__icon" aria-hidden="true">📜</span>
+              <div class="edu-card__body">
+                <span class="edu-card__period">Zertifikate</span>
+                <h3 class="edu-card__degree">Weiterbildungen</h3>
+                <ul class="edu-card__certs">
+                  <li>Interkulturelle Kompetenz (Hochschule Offenburg)</li>
+                  <li>ChatGPT &amp; Generative AI (Udemy)</li>
+                  <li>Node.js, Express, MongoDB &amp; More (Udemy)</li>
+                  <li>Advanced React and Redux (Udemy)</li>
+                  <li>Vue - The Complete Guide (Udemy)</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="edu-card" data-reveal>
+              <span class="edu-card__icon" aria-hidden="true">🏆</span>
+              <div class="edu-card__body">
+                <span class="edu-card__period">Auszeichnungen</span>
+                <h3 class="edu-card__degree">Auszeichnungen</h3>
+                <ul class="edu-card__certs">
+                  <li>STIBET-Stipendium – Hochschule Offenburg (2021)</li>
+                  <li>
+                    Auszeichnung für hervorragende Studienleistungen – Islamic
+                    University, Bangladesch (April 2012, Februar 2016)
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Languages: text levels are clearer than arbitrary progress bars. -->
+          <div class="languages" data-reveal>
+            <h3 class="languages__title">Sprachen</h3>
+            <div class="languages__grid">
+              <div class="language-item">
+                <span class="language-item__name">Bengalisch</span>
+                <span class="language-item__level">Muttersprache</span>
+              </div>
+              <div class="language-item">
+                <span class="language-item__name">Englisch</span>
+                <span class="language-item__level">Fließend</span>
+              </div>
+              <div class="language-item">
+                <span class="language-item__name">Deutsch</span>
+                <span class="language-item__level">B2</span>
+              </div>
+              <div class="language-item">
+                <span class="language-item__name">Hindi / Urdu</span>
+                <span class="language-item__level">Sehr gute Kenntnisse</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section
+        class="section contact"
+        id="contact"
+        aria-labelledby="contact-title"
+      >
+        <div class="container">
+          <div class="section__header">
+            <span class="section__tag">// 07</span>
+            <h2 class="section__title" id="contact-title">Kontakt</h2>
+          </div>
+          <p class="contact__intro">
+            Ich bin offen für Festanstellungen in der Frontend- oder
+            Full-Stack-Entwicklung. Ich freue mich auf Ihre Nachricht.
+          </p>
+          <div class="contact__grid">
+            <a href="tel:+491743700638" class="contact-card">
+              <span class="contact-card__icon" aria-hidden="true">📞</span>
+              <span class="contact-card__label">Telefon</span>
+              <span class="contact-card__value">(+49) 174 3700638</span>
+            </a>
+            <a href="mailto:faisalh.iu@gmail.com" class="contact-card">
+              <span class="contact-card__icon" aria-hidden="true">✉️</span>
+              <span class="contact-card__label">E-Mail</span>
+              <span class="contact-card__value">faisalh.iu@gmail.com</span>
+            </a>
+            <a
+              href="https://www.google.com/maps/place/Offenburg"
+              class="contact-card"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="contact-card__icon" aria-hidden="true">📍</span>
+              <span class="contact-card__label">Standort</span>
+              <span class="contact-card__value"
+                >Offenburg · deutschlandweit umzugsbereit</span
+              >
+            </a>
+            <a
+              href="https://www.linkedin.com/in/md-faisal-hossain-germany/"
+              class="contact-card"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="contact-card__icon" aria-hidden="true">💼</span>
+              <span class="contact-card__label">LinkedIn</span>
+              <span class="contact-card__value">Profil ansehen →</span>
+            </a>
+            <a
+              href="https://github.com/fhjoy"
+              class="contact-card"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="contact-card__icon" aria-hidden="true">🐙</span>
+              <span class="contact-card__label">GitHub</span>
+              <span class="contact-card__value">Projekte ansehen →</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -588,11 +955,12 @@
             >
           </span>
           <p class="footer__copy">
-            © 2025 Faisal Hossain — Gebaut mit HTML, CSS &amp; JavaScript
+            © <span id="currentYear">2026</span> Faisal Hossain — Portfolio
           </p>
           <button
             class="footer__top"
             id="backToTop"
+            type="button"
             aria-label="Zurück nach oben"
           >
             ↑
