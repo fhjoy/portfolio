@@ -673,6 +673,10 @@ button {
 /* ============================================================
    SKILLS
    ============================================================ */
+.skills {
+  background: var(--bg-deep);
+}
+
 .skills__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -762,7 +766,7 @@ button {
    PROJECTS
    ============================================================ */
 .projects {
-  background: var(--bg-deep);
+  background: var(--bg-card);
 }
 .projects__grid {
   display: grid;
@@ -776,7 +780,7 @@ button {
   padding: 1.8rem;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  background: var(--bg-card);
+  background: var(--bg-card-2);
   transition:
     border-color var(--transition),
     box-shadow var(--transition),
@@ -906,7 +910,7 @@ button {
    EXPERIENCE
    ============================================================ */
 .experience {
-  background: var(--bg-card);
+  background: var(--bg-deep);
 }
 .timeline {
   display: flex;
@@ -1047,23 +1051,8 @@ button {
   color: var(--text);
 }
 
-.experience__proof {
-  margin-top: 4.5rem;
-  padding-top: 3rem;
-  border-top: 1px solid var(--border);
-}
-.subsection-heading {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.65fr);
-  align-items: end;
-  gap: 3rem;
-  margin-bottom: 2rem;
-}
-.subsection-heading__title {
-  color: var(--white);
-  font-family: var(--font-display);
-  font-size: clamp(1.55rem, 3vw, 2.2rem);
-  line-height: 1.2;
+.references {
+  background: var(--bg-card);
 }
 .references__grid {
   display: grid;
@@ -1127,6 +1116,10 @@ button {
 /* ============================================================
    EDUCATION
    ============================================================ */
+.education {
+  background: var(--bg-deep);
+}
+
 .edu__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1222,19 +1215,11 @@ button {
   font-size: 0.7rem;
 }
 
-/* Languages */
-.languages {
+/* ============================================================
+   LANGUAGES
+   ============================================================ */
+.languages-section {
   background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 2rem;
-}
-.languages__title {
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--white);
-  margin-bottom: 1.5rem;
 }
 .languages__grid {
   display: grid;
@@ -1267,7 +1252,7 @@ button {
    CONTACT
    ============================================================ */
 .contact {
-  background: var(--bg-card);
+  background: var(--bg-deep);
 }
 .contact__intro {
   color: var(--text-muted);
