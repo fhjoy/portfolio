@@ -25,7 +25,7 @@ The portfolio is written in German and includes downloadable CVs in German and E
 | Partner websites                      |                     17+ |
 | Reusable UI components                |                     30+ |
 | Accessibility findings resolved       |                    300+ |
-| Natif.ai Reusable Froented components |
+| Natif.ai Reusable Froented components |                     20+ |
 | Natif.ai E2E test coverage            | approximately 10% → 85% |
 | Natif.ai component test coverage      |  approximately 0% → 70% |
 

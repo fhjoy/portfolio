@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ───────────────────────────────────────── */
   const nav = document.getElementById("nav");
   const navLinks = document.querySelectorAll('.nav__link[href^="#"]');
-  const sections = document.querySelectorAll("section[id]");
+  const sections = document.querySelectorAll("main section[id]:not(#home)");
 
   function updateNav() {
     // Scrolled style
@@ -27,15 +27,11 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    const navSection = ["references", "education"].includes(current)
-      ? "experience"
-      : current;
-
     navLinks.forEach((link) => {
-      const isActive = link.getAttribute("href") === `#${navSection}`;
+      const isActive = link.getAttribute("href") === `#${current}`;
       link.classList.toggle("active", isActive);
       if (isActive) {
-        link.setAttribute("aria-current", "page");
+        link.setAttribute("aria-current", "location");
       } else {
         link.removeAttribute("aria-current");
       }
@@ -67,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Close menu on link click
-  navLinksContainer.querySelectorAll("a").forEach((link) => {
+  navLinksContainer?.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
       setMenu(false);
     });
@@ -75,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Close on outside click
   document.addEventListener("click", (e) => {
-    if (!nav.contains(e.target)) {
+    if (nav && !nav.contains(e.target)) {
       setMenu(false);
     }
   });

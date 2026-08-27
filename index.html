@@ -25,7 +25,7 @@
     <meta property="og:url" content="https://fhjoy.github.io/portfolio/" />
     <meta
       property="og:image"
-      content="https://fhjoy.github.io/portfolio/images/faisal_hossain.png"
+      content="https://fhjoy.github.io/portfolio/docs/images/faisal_hossain.avif"
     />
     <meta property="og:image:alt" content="Porträt von Faisal Hossain" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -36,7 +36,7 @@
     <link
       rel="preload"
       as="image"
-      href="images/faisal_hossain.avif"
+      href="docs/images/faisal_hossain.avif"
       fetchpriority="high"
     />
     <link rel="stylesheet" href="style.css" />
@@ -52,7 +52,7 @@
         "@type": "Person",
         "name": "Faisal Hossain",
         "url": "https://fhjoy.github.io/portfolio/",
-        "image": "https://fhjoy.github.io/portfolio/images/faisal_hossain.png",
+        "image": "https://fhjoy.github.io/portfolio/docs/images/faisal_hossain.avif",
         "jobTitle": "Frontend- und Full-Stack-Entwickler",
         "address": {
           "@type": "PostalAddress",
@@ -105,9 +105,9 @@
         </button>
         <ul class="nav__links" id="navLinks">
           <li><a href="#about" class="nav__link">Über mich</a></li>
-          <li><a href="#skills" class="nav__link">Skills</a></li>
-          <li><a href="#projects" class="nav__link">Projekte</a></li>
           <li><a href="#experience" class="nav__link">Erfahrung</a></li>
+          <li><a href="#technologies" class="nav__link">Technologien</a></li>
+          <li><a href="#projects" class="nav__link">Projekte</a></li>
           <li>
             <a href="#contact" class="nav__link nav__link--cta">Kontakt</a>
           </li>
@@ -137,7 +137,7 @@
             >
           </div>
           <p class="hero__desc">
-            Webentwickler mit über 4 Jahren Erfahrung in skalierbaren,
+            Webentwickler mit 4+ Jahren Erfahrung in skalierbaren,
             barrierefreien Webanwendungen mit <strong>TypeScript</strong>,
             <strong>Vue.js</strong>, <strong>React</strong>,
             <strong>Node.js</strong> und <strong>Testautomatisierung</strong>.
@@ -249,13 +249,355 @@
         </div>
       </section>
 
-      <!-- SKILLS -->
-
-      <section class="section skills" id="skills">
+      <!-- EXPERIENCE -->
+      <section
+        class="section experience"
+        id="experience"
+        aria-labelledby="experience-title"
+      >
         <div class="container">
           <div class="section__header">
             <span class="section__tag">// 02</span>
-            <h2 class="section__title">Technologien</h2>
+            <h2 class="section__title" id="experience-title">
+              Berufserfahrung
+            </h2>
+          </div>
+          <div class="timeline">
+            <div class="timeline__item" data-reveal>
+              <div class="timeline__marker">
+                <div class="timeline__dot"></div>
+                <div class="timeline__line"></div>
+              </div>
+              <div class="timeline__card">
+                <div class="timeline__card-header">
+                  <div>
+                    <h3 class="timeline__role">
+                      Webentwickler im Bereich E-Commerce
+                    </h3>
+                    <span class="timeline__company"
+                      >exagon consulting & solutions GmbH</span
+                    >
+                  </div>
+                  <div class="timeline__meta">
+                    <span class="timeline__period">05.2023 – 12.2025</span>
+                    <span class="timeline__type">Vollzeit · DE</span>
+                  </div>
+                </div>
+                <ul class="timeline__list">
+                  <li>
+                    <strong>20+ Projekte</strong> für die Deutsche Telekom sowie
+                    <strong>17+ Partner-Websites</strong>, darunter
+                    Kundenportale, Landingpages, interaktive Kacheln und
+                    Trade-in-Plattformen
+                  </li>
+                  <li>
+                    <strong>30+ wiederverwendbare UI-Komponenten</strong> mit
+                    <strong>Vue 3</strong> und <strong>React</strong> nach
+                    Telekom Design System entwickelt
+                  </li>
+                  <li>
+                    Barrierefreiheit mehrerer Plattformen gemäß
+                    <strong>WCAG</strong> verbessert und
+                    <strong>300+ Accessibility-Probleme</strong> behoben
+                  </li>
+                  <li>
+                    Legacy-Code refaktoriert und zwischen Frameworks migriert
+                    für bessere Wartbarkeit und Performance
+                  </li>
+                  <li>
+                    <strong>REST-</strong> und
+                    <strong>GraphQL</strong>-Schnittstellen in moderne
+                    Frontend-Apps entwickelt und integriert
+                  </li>
+                  <li>
+                    Enge Zusammenarbeit mit Design und Projektmanagement in
+                    agilen
+                    <strong>Scrum-</strong> und <strong>Kanban</strong>-Teams,
+                    Code Reviews
+                  </li>
+                </ul>
+                <div class="timeline__tags">
+                  <span class="tag">HTML</span><span class="tag">CSS</span>
+                  <span class="tag">JavaScript</span
+                  ><span class="tag">TypeScript</span
+                  ><span class="tag">Vue</span><span class="tag">React</span>
+                  <span class="tag">Node.js</span>
+                  <span class="tag">Express</span>
+                  <span class="tag">GraphQL</span
+                  ><span class="tag">Docker</span>
+                  <span class="tag">Git</span>
+                  <span class="tag">Jira</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline__item" data-reveal>
+              <div class="timeline__marker">
+                <div class="timeline__dot"></div>
+                <div class="timeline__line"></div>
+              </div>
+              <div class="timeline__card">
+                <div class="timeline__card-header">
+                  <div>
+                    <h3 class="timeline__role">Webentwickler im Bereich KI</h3>
+                    <span class="timeline__company"
+                      >Natif.ai (jetzt DocuWare)</span
+                    >
+                  </div>
+                  <div class="timeline__meta">
+                    <span class="timeline__period">05.2022 – 04.2023</span>
+                    <span class="timeline__type">Werkstudent · DE</span>
+                  </div>
+                </div>
+                <ul class="timeline__list">
+                  <li>
+                    Mitentwicklung der Frontend-Architektur für ein
+                    <strong>KI-basiertes IDP-Produkt</strong>,
+                    <strong>20+ neue Funktionen und Komponenten</strong>
+                    umgesetzt
+                  </li>
+                  <li>
+                    Testabdeckung deutlich ausgebaut: E2E ca.
+                    <strong>10 % → 85 %</strong>, Komponententests ca.
+                    <strong>0 % → 70 %</strong> (Jest, Cypress)
+                  </li>
+                  <li>
+                    Fachliche Koordination der Testing-Aktivitäten für rund
+                    sechs Monate
+                  </li>
+                  <li>Legacy-Code und Abhängigkeiten aktualisiert</li>
+                  <li>
+                    <strong>CI/CD-Pipeline</strong> mit GitLab verwaltet und
+                    Doku erstellt
+                  </li>
+                </ul>
+                <div class="timeline__tags">
+                  <span class="tag">HTML</span><span class="tag">CSS</span>
+                  <span class="tag">JavaScript</span
+                  ><span class="tag">Vue</span> <span class="tag">Jest</span
+                  ><span class="tag">Cypress</span>
+                  <span class="tag">CI/CD</span><span class="tag">GitLab</span>
+                  <span class="tag">KI</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline__item" data-reveal>
+              <div class="timeline__marker">
+                <div class="timeline__dot"></div>
+                <div class="timeline__line"></div>
+              </div>
+              <div class="timeline__card">
+                <div class="timeline__card-header">
+                  <div>
+                    <h3 class="timeline__role">Webentwickler im CMS-Bereich</h3>
+                    <span class="timeline__company">Venus IT Institute</span>
+                  </div>
+                  <div class="timeline__meta">
+                    <span class="timeline__period">01.2019 – 09.2019</span>
+                    <span class="timeline__type">Vollzeit · BD</span>
+                  </div>
+                </div>
+                <ul class="timeline__list">
+                  <li>
+                    Inhalte, Layouts und Funktionen entsprechend den
+                    Kundenanforderungen angepasst.
+                  </li>
+                  <li>
+                    Kunden betreut und bei technischen Fragen unterstützt.
+                  </li>
+                  <li>
+                    Technische Probleme analysiert und Anwender bei Wartung und
+                    Support unterstützt.
+                  </li>
+                </ul>
+                <div class="timeline__tags">
+                  <span class="tag">WordPress</span><span class="tag">HTML</span
+                  ><span class="tag">CSS</span
+                  ><span class="tag">Serververwaltung</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline__item" data-reveal>
+              <div class="timeline__marker">
+                <div class="timeline__dot"></div>
+                <div class="timeline__line"></div>
+              </div>
+              <div class="timeline__card">
+                <div class="timeline__card-header">
+                  <div>
+                    <h3 class="timeline__role">IT-Support</h3>
+                    <span class="timeline__company">Anik Telecom Ltd.</span>
+                  </div>
+                  <div class="timeline__meta">
+                    <span class="timeline__period">04.2016 – 12.2018</span>
+                    <span class="timeline__type">Vollzeit · BD</span>
+                  </div>
+                </div>
+                <ul class="timeline__list">
+                  <li>
+                    Computersysteme und Netzwerke überwacht, konfiguriert und
+                    gewartet
+                  </li>
+                  <li>Hardware- und Softwarefehler analysiert und behoben</li>
+                  <li>Bei technischen Problemen unterstützt.</li>
+                </ul>
+                <div class="timeline__tags">
+                  <span class="tag">Windows</span>
+                  <span class="tag">Linux</span>
+                  <span class="tag">Systemadministration</span>
+                  <span class="tag">Hardware- und Software-Support</span>
+                  <span class="tag">Fehleranalyse</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline__item" data-reveal>
+              <div class="timeline__marker">
+                <div class="timeline__dot timeline__dot--dim"></div>
+              </div>
+              <div class="timeline__card">
+                <div class="timeline__card-header">
+                  <div>
+                    <h3 class="timeline__role">Freiberufler</h3>
+                    <span class="timeline__company">Upwork · Remote</span>
+                  </div>
+                  <div class="timeline__meta">
+                    <span class="timeline__period">05.2013 – 03.2016</span>
+                    <span class="timeline__type">Teilzeit · Remote</span>
+                  </div>
+                </div>
+                <ul class="timeline__list">
+                  <li>
+                    WordPress-Websites für internationale Kunden umgesetzt und
+                    an individuelle Kundenanforderungen angepasst.
+                  </li>
+                  <li>
+                    Kundenprojekte eigenständig betreut sowie SEO-Maßnahmen und
+                    Content-Pflege unterstützt.
+                  </li>
+                  <li>
+                    Kundenanforderungen analysiert und technische Artikel
+                    erstellt.
+                  </li>
+                </ul>
+                <div class="timeline__tags">
+                  <span class="tag">WordPress</span><span class="tag">SEO</span
+                  ><span class="tag">Webdesign</span>
+                  <span class="tag">technisches Artikelschreiben</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="experience__proof">
+            <div class="subsection-heading section__header--with-intro">
+              <div>
+                <span class="section__tag">// 03</span>
+                <h3 class="subsection-heading__title">
+                  Arbeitszeugnisse und Referenzen
+                </h3>
+              </div>
+              <p class="section__intro">
+                Zusammenfassung meiner beruflichen und akademischen Nachweise.
+                Vollständige Unterlagen stelle ich im Bewerbungsprozess gerne
+                zur Verfügung.
+              </p>
+            </div>
+
+            <div class="references__grid">
+              <article class="reference-card" data-reveal>
+                <div class="reference-card__mark" aria-hidden="true">✓</div>
+                <p class="reference-card__text">
+                  Sehr gute Gesamtbewertung. Besonders hervorgehoben wurden
+                  Fachkenntnisse, analytische Fähigkeiten, Arbeitsqualität und
+                  Leistung.
+                </p>
+                <div class="reference-card__source">
+                  <strong>exagon consulting &amp; solutions GmbH</strong>
+                  <span>Arbeitszeugnis · 2025</span>
+                </div>
+              </article>
+
+              <article class="reference-card" data-reveal>
+                <div class="reference-card__mark" aria-hidden="true">✓</div>
+                <p class="reference-card__text">
+                  Meine Arbeit im Frontend-Bereich mit Vue, Cypress und Jest,
+                  die Analyse der Testbarkeit von Vue.js sowie die Koordination
+                  der Entwicklungsaktivitäten wurden bestätigt.
+                </p>
+                <div class="reference-card__source">
+                  <strong>Natif.ai</strong>
+                  <span>Arbeitszeugnis · 2022</span>
+                </div>
+              </article>
+
+              <article class="reference-card" data-reveal>
+                <div class="reference-card__mark" aria-hidden="true">✓</div>
+                <p class="reference-card__text">
+                  Das Schreiben bestätigt meine Tätigkeit im IT-Support und hebt
+                  mein Engagement, meine technische Kompetenz und meine
+                  Teamfähigkeit hervor.
+                </p>
+                <div class="reference-card__source">
+                  <strong>Anik Telecom Ltd.</strong>
+                  <span>Referenzschreiben · 2019</span>
+                </div>
+              </article>
+
+              <article class="reference-card" data-reveal>
+                <div class="reference-card__mark" aria-hidden="true">✓</div>
+                <p class="reference-card__text">
+                  Das Schreiben bestätigt meine Tätigkeit als Webentwickler
+                  sowie meine Aufgaben in Entwicklung, Deployment, Wartung,
+                  Kundensupport und technischer Dokumentation.
+                </p>
+                <div class="reference-card__source">
+                  <strong>Venus IT Institute</strong>
+                  <span>Referenzschreiben · 2019</span>
+                </div>
+              </article>
+
+              <article
+                class="reference-card reference-card--featured"
+                data-reveal
+              >
+                <div class="reference-card__mark" aria-hidden="true">✓</div>
+                <p class="reference-card__text">
+                  Prof. Dr. Tom Rüdebusch hebt meine mit 1,0 bewertete
+                  Masterarbeit, meine Kursnote 1,7 sowie meine Zielstrebigkeit
+                  und kooperative Art hervor und empfiehlt mich nachdrücklich
+                  und ohne Vorbehalt.
+                </p>
+                <div class="reference-card__source">
+                  <strong>Prof. Dr. Tom Rüdebusch</strong>
+                  <span
+                    >Empfehlungsschreiben · Hochschule Offenburg · 2022</span
+                  >
+                </div>
+              </article>
+            </div>
+
+            <a
+              class="references__cta"
+              href="mailto:faisalh.iu@gmail.com?subject=Anfrage%20zu%20Referenzen%20und%20Arbeitszeugnissen"
+              >Nachweise anfragen →</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- TECHNOLOGIES -->
+      <section
+        class="section skills"
+        id="technologies"
+        aria-labelledby="technologies-title"
+      >
+        <div class="container">
+          <div class="section__header">
+            <span class="section__tag">// 04</span>
+            <h2 class="section__title" id="technologies-title">Technologien</h2>
           </div>
           <div class="skills__grid">
             <div class="skill-group" data-reveal>
@@ -343,15 +685,15 @@
         <div class="container">
           <div class="section__header section__header--with-intro">
             <div>
-              <span class="section__tag">// 03</span>
+              <span class="section__tag">// 05</span>
               <h2 class="section__title" id="projects-title">
                 Ausgewählte Projekte
               </h2>
             </div>
             <p class="section__intro">
-              Fünf Beispiele zeigen meinen Beitrag, die technische Umsetzung und
-              die erzielten Ergebnisse. Kundendetails sind teilweise aus
-              Vertraulichkeitsgründen anonymisiert.
+              Meine Berufserfahrung ist oben zusammengefasst. Hier finden Sie
+              drei nachvollziehbare Codebeispiele mit ausführlich dokumentierten
+              GitHub-Repositories.
             </p>
           </div>
 
@@ -359,130 +701,37 @@
             <article class="project-card project-card--featured" data-reveal>
               <div class="project-card__topline">
                 <span class="project-card__type"
-                  >Berufspraxis · Enterprise</span
+                  >Masterarbeit · Architekturvergleich</span
                 >
                 <span class="project-card__number" aria-hidden="true">01</span>
               </div>
               <h3 class="project-card__title">
-                Telekom-Entwicklung im großen Maßstab
+                Drei Rendering-Strategien, ein gemeinsames Testszenario
               </h3>
               <p class="project-card__summary">
-                Entwicklung und Modernisierung barrierefreier Kundenportale,
-                Landingpages, Komponentenbibliotheken und Partner-Websites.
+                Drei vergleichbare E-Commerce-Anwendungen machen die
+                Unterschiede zwischen SPA, SSR und SSG praktisch sichtbar.
               </p>
               <dl class="project-card__facts">
                 <div>
-                  <dt>Aufgabe</dt>
+                  <dt>Ziel</dt>
                   <dd>
-                    Entwicklung und Betreuung digitaler Lösungen im
-                    Telekommunikationsumfeld.
-                  </dd>
-                </div>
-                <div>
-                  <dt>Beitrag</dt>
-                  <dd>
-                    Komponenten, Barrierefreiheit, API-Entwicklung,
-                    API-Integration und Migrationen
-                  </dd>
-                </div>
-                <div>
-                  <dt>Ergebnis</dt>
-                  <dd>
-                    20+ Projekte · 17+ Partner-Websites · 30+ Komponenten · 300+
-                    WCAG-Funde behoben
-                  </dd>
-                </div>
-              </dl>
-              <div
-                class="project-card__tags"
-                role="group"
-                aria-label="Technologien"
-              >
-                <span class="tag">Vue 3</span><span class="tag">React</span>
-                <span class="tag">TypeScript</span
-                ><span class="tag">Barrierefreiheit</span
-                ><span class="tag">WCAG</span> <span class="tag">REST-API</span
-                ><span class="tag">Node.js</span
-                ><span class="tag">GraphQL</span>
-              </div>
-              <p class="project-card__note">
-                Projektdetails und Quellcode sind kundenseitig vertraulich.
-              </p>
-            </article>
-
-            <article class="project-card" data-reveal>
-              <div class="project-card__topline">
-                <span class="project-card__type">Berufspraxis · KI</span>
-                <span class="project-card__number" aria-hidden="true">02</span>
-              </div>
-              <h3 class="project-card__title">
-                Testautomatisierung und Frontend für IDP
-              </h3>
-              <p class="project-card__summary">
-                Komponenten für ein KI-basiertes Produkt zur intelligenten
-                Dokumentenverarbeitung bei natif.ai entwickelt und refaktoriert
-                sowie die Teststrategie ausgebaut.
-              </p>
-              <dl class="project-card__facts">
-                <div>
-                  <dt>Aufgabe</dt>
-                  <dd>Frontend stabilisieren und Releases besser absichern</dd>
-                </div>
-                <div>
-                  <dt>Beitrag</dt>
-                  <dd>
-                    Komponenten, Jest-/Cypress-Tests, Testbarkeitsanalyse und
-                    Koordination
-                  </dd>
-                </div>
-                <div>
-                  <dt>Ergebnis</dt>
-                  <dd>
-                    Neue und refaktorierte Komponenten · E2E ca. 10→85 % ·
-                    Komponententests ca. 0→70 %
-                  </dd>
-                </div>
-              </dl>
-              <div
-                class="project-card__tags"
-                role="group"
-                aria-label="Technologien"
-              >
-                <span class="tag">Vue.js</span><span class="tag">Jest</span>
-                <span class="tag">Cypress</span
-                ><span class="tag">GitLab CI/CD</span>
-              </div>
-              <p class="project-card__note">
-                Projektdetails und Quellcode sind kundenseitig vertraulich.
-              </p>
-            </article>
-
-            <article class="project-card" data-reveal>
-              <div class="project-card__topline">
-                <span class="project-card__type"
-                  >Masterarbeit · Webarchitektur</span
-                >
-                <span class="project-card__number" aria-hidden="true">03</span>
-              </div>
-              <h3 class="project-card__title">SPA, SSR und SSG im Vergleich</h3>
-              <p class="project-card__summary">
-                Konzeption und Umsetzung vergleichbarer Webanwendungen zur
-                Bewertung moderner Rendering-Strategien.
-              </p>
-              <dl class="project-card__facts">
-                <div>
-                  <dt>Recherche</dt>
-                  <dd>
-                    Welche Architektur passt zu welchem Anwendungsszenario?
+                    Rendering-Strategien unter möglichst gleichen Bedingungen
+                    bewerten
                   </dd>
                 </div>
                 <div>
                   <dt>Umsetzung</dt>
-                  <dd>Vergleichbare Apps mit Frontend, API und Datenbank</dd>
+                  <dd>
+                    Gemeinsame Fachlogik mit React, Next.js, Node.js und MongoDB
+                  </dd>
                 </div>
                 <div>
                   <dt>Ergebnis</dt>
-                  <dd>Praxisvergleich von Performance, SEO und Wartbarkeit</dd>
+                  <dd>
+                    Praxisvergleich von Performance, SEO, Skalierbarkeit und
+                    Wartbarkeit
+                  </dd>
                 </div>
               </dl>
               <div
@@ -491,63 +740,65 @@
                 aria-label="Technologien"
               >
                 <span class="tag">React</span><span class="tag">Next.js</span>
-                <span class="tag">Node.js</span><span class="tag">MongoDB</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">Express.js</span>
+                <span class="tag">MongoDB</span>
+                <span class="tag">Material UI</span>
               </div>
-              <div class="project-card__links">
+              <div class="project-repositories" aria-label="Repositories">
                 <a
+                  class="repo-link"
                   href="https://github.com/fhjoy/spa"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >SPA-Code ↗</a
                 >
+                  <span class="repo-link__name">Tiny Shop · SPA</span>
+                  <span class="repo-link__desc"
+                    >Clientseitiges Rendering ↗</span
+                  >
+                </a>
                 <a
+                  class="repo-link"
                   href="https://github.com/fhjoy/ssr"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >SSR-Code ↗</a
                 >
+                  <span class="repo-link__name">Small Shop · SSR</span>
+                  <span class="repo-link__desc">Rendering pro Anfrage ↗</span>
+                </a>
                 <a
+                  class="repo-link"
                   href="https://github.com/fhjoy/ssg"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >SSG-Code ↗</a
                 >
+                  <span class="repo-link__name">Little Shop · SSG</span>
+                  <span class="repo-link__desc">Statisch vorgerendert ↗</span>
+                </a>
               </div>
             </article>
+
             <article class="project-card" data-reveal>
               <div class="project-card__topline">
-                <span class="project-card__type"
-                  >Persönliches Projekt · Tour World</span
-                >
-                <span class="project-card__number" aria-hidden="true">04</span>
+                <span class="project-card__type">Full Stack · Tour World</span>
+                <span class="project-card__number" aria-hidden="true">02</span>
               </div>
               <h3 class="project-card__title">
-                Tourismusplattform mit serverseitigem Rendering
+                Tourismusplattform mit Buchungsablauf
               </h3>
               <p class="project-card__summary">
-                Full-Stack-Webanwendung zur Suche, Anzeige und Buchung von
-                Touren mit serverseitig gerenderten Pug-Templates.
+                Serverseitig gerenderte Webanwendung für Touren, Konten,
+                Bewertungen und Buchungen – vom Datenmodell bis zum Checkout.
               </p>
               <dl class="project-card__facts">
                 <div>
-                  <dt>Aufgabe</dt>
-                  <dd>
-                    Eine vollständige Tourismusplattform mit Benutzerkonten und
-                    Buchungsablauf entwickeln
-                  </dd>
+                  <dt>Schwerpunkt</dt>
+                  <dd>REST-API, Authentifizierung und Rollenmodell</dd>
                 </div>
                 <div>
-                  <dt>Beitrag</dt>
+                  <dt>Features</dt>
                   <dd>
-                    Frontend, REST-API, Authentifizierung, Datenmodelle,
-                    Kartenansicht und Zahlungsintegration umgesetzt
-                  </dd>
-                </div>
-                <div>
-                  <dt>Ergebnis</dt>
-                  <dd>
-                    Tourübersicht und Detailseiten, Bewertungen,
-                    Profilverwaltung, Buchungen und Stripe-Checkout realisiert
+                    Profile, Kartenansicht, Bewertungen und Stripe-Checkout
                   </dd>
                 </div>
               </dl>
@@ -556,57 +807,43 @@
                 role="group"
                 aria-label="Technologien"
               >
-                <span class="tag">Node.js</span
-                ><span class="tag">Express.js</span>
-                <span class="tag">MongoDB</span
-                ><span class="tag">Mongoose</span> <span class="tag">Pug</span
-                ><span class="tag">JWT</span> <span class="tag">Stripe</span
-                ><span class="tag">Mapbox</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">Express.js</span>
+                <span class="tag">MongoDB</span>
+                <span class="tag">Pug</span>
+                <span class="tag">JWT</span>
+                <span class="tag">Stripe</span>
               </div>
               <div class="project-card__links">
                 <a
                   href="https://github.com/fhjoy/tour-world"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >Repository ansehen ↗</a
+                  >Code und Dokumentation ansehen ↗</a
                 >
               </div>
             </article>
+
             <article class="project-card" data-reveal>
               <div class="project-card__topline">
-                <span class="project-card__type"
-                  >Persönliches Projekt · Recipe App</span
-                >
-                <span class="project-card__number" aria-hidden="true">05</span>
+                <span class="project-card__type">Frontend · Recipe App</span>
+                <span class="project-card__number" aria-hidden="true">03</span>
               </div>
               <h3 class="project-card__title">
-                Rezeptsuche als modulare Single-Page-Anwendung
+                Modulare Rezeptsuche als Single-Page-Anwendung
               </h3>
               <p class="project-card__summary">
-                Interaktive Rezeptanwendung mit API-Anbindung, Suchfunktion,
-                Detailansicht und lokal gespeicherten Favoriten.
+                Responsive Anwendung zum Suchen, Anpassen und Speichern von
+                Rezepten mit klar getrennter Daten-, Ansichts- und Steuerlogik.
               </p>
               <dl class="project-card__facts">
                 <div>
-                  <dt>Aufgabe</dt>
-                  <dd>
-                    Eine responsive Single-Page-Anwendung zur Suche und
-                    Verwaltung von Rezepten entwickeln
-                  </dd>
+                  <dt>Schwerpunkt</dt>
+                  <dd>Modulare MVC-Struktur und externe API-Anbindung</dd>
                 </div>
                 <div>
-                  <dt>Beitrag</dt>
-                  <dd>
-                    Modulare MVC-Struktur, API-Integration, Pagination,
-                    Portionsanpassung und Formularlogik umgesetzt
-                  </dd>
-                </div>
-                <div>
-                  <dt>Ergebnis</dt>
-                  <dd>
-                    Rezepte suchen, Zutatenmengen anpassen, Favoriten speichern
-                    und eigene Rezepte hinzufügen
-                  </dd>
+                  <dt>Features</dt>
+                  <dd>Pagination, Portionen, Lesezeichen und eigene Rezepte</dd>
                 </div>
               </dl>
               <div
@@ -614,290 +851,22 @@
                 role="group"
                 aria-label="Technologien"
               >
-                <span class="tag">JavaScript (ES6+)</span
-                ><span class="tag">HTML5</span>
-                <span class="tag">Sass/SCSS</span><span class="tag">API</span>
-                <span class="tag">Parcel</span><span class="tag">MVC</span>
+                <span class="tag">JavaScript (ES6+)</span>
+                <span class="tag">HTML5</span>
+                <span class="tag">Sass/SCSS</span>
+                <span class="tag">REST-API</span>
+                <span class="tag">Parcel</span>
               </div>
               <div class="project-card__links">
                 <a
                   href="https://github.com/fhjoy/Recipe--App"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >Repository ansehen ↗</a
+                  >Code und Dokumentation ansehen ↗</a
                 >
               </div>
             </article>
           </div>
-        </div>
-      </section>
-
-      <!-- EXPERIENCE -->
-      <section
-        class="section experience"
-        id="experience"
-        aria-labelledby="experience-title"
-      >
-        <div class="container">
-          <div class="section__header">
-            <span class="section__tag">// 04</span>
-            <h2 class="section__title" id="experience-title">
-              Berufserfahrung
-            </h2>
-          </div>
-          <div class="timeline">
-            <div class="timeline__item" data-reveal>
-              <div class="timeline__marker">
-                <div class="timeline__dot"></div>
-                <div class="timeline__line"></div>
-              </div>
-              <div class="timeline__card">
-                <div class="timeline__card-header">
-                  <div>
-                    <h3 class="timeline__role">
-                      Webentwickler im Bereich E-Commerce
-                    </h3>
-                    <span class="timeline__company"
-                      >exagon consulting & solutions GmbH</span
-                    >
-                  </div>
-                  <div class="timeline__meta">
-                    <span class="timeline__period">05.2023 – 12.2025</span>
-                    <span class="timeline__type">Vollzeit · DE</span>
-                  </div>
-                </div>
-                <ul class="timeline__list">
-                  <li>
-                    <strong>20+ Projekte</strong> für die Deutsche Telekom sowie
-                    <strong>17+ Partner-Websites</strong>, darunter
-                    Kundenportale, Landingpages, interaktive Kacheln und
-                    Trade-in-Plattformen
-                  </li>
-                  <li>
-                    <strong>30+ wiederverwendbare UI-Komponenten</strong> mit
-                    <strong>Vue 3</strong> und <strong>React</strong> nach
-                    Telekom Design System entwickelt
-                  </li>
-                  <li>
-                    Barrierefreiheit mehrerer Plattformen gemäß
-                    <strong>WCAG</strong> verbessert und
-                    <strong>300+ Accessibility-Probleme</strong> behoben
-                  </li>
-                  <li>
-                    Legacy-Code refaktoriert und zwischen Frameworks migriert
-                    für bessere Wartbarkeit und Performance
-                  </li>
-                  <li>
-                    <strong>REST-</strong> und
-                    <strong>GraphQL</strong>-Schnittstellen in moderne
-                    Frontend-Apps entwickelt und integriert
-                  </li>
-                  <li>
-                    Enge Zusammenarbeit mit Design und Projektmanagement in
-                    agilen
-                    <strong>Scrum-</strong> und <strong>Kanban</strong>-Teams,
-                    Code Reviews
-                  </li>
-                </ul>
-                <div class="timeline__tags">
-                  <span class="tag">HTML</span><span class="tag">CSS</span>
-                  <span class="tag">JavaScript</span
-                  ><span class="tag">TypeScript</span
-                  ><span class="tag">Vue</span><span class="tag">React</span>
-                  <span class="tag">Node.js</span>
-                  <span class="tag">Express</span>
-                  <span class="tag">GraphQL</span
-                  ><span class="tag">Docker</span>
-                  <span class="tag">Git</span>
-                  <span class="tag">Jira</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="timeline__item" data-reveal>
-              <div class="timeline__marker">
-                <div class="timeline__dot"></div>
-                <div class="timeline__line"></div>
-              </div>
-              <div class="timeline__card">
-                <div class="timeline__card-header">
-                  <div>
-                    <h3 class="timeline__role">
-                      Werkstudent Frontend-Entwicklung
-                    </h3>
-                    <span class="timeline__company"
-                      >Natif.ai (jetzt DocuWare)</span
-                    >
-                  </div>
-                  <div class="timeline__meta">
-                    <span class="timeline__period">05.2022 – 04.2023</span>
-                    <span class="timeline__type">Werkstudent · DE</span>
-                  </div>
-                </div>
-                <ul class="timeline__list">
-                  <li>
-                    Mitentwicklung der Frontend-Architektur für ein
-                    <strong>KI-basiertes IDP-Produkt</strong>,
-                    <strong>20+ neue Funktionen</strong> umgesetzt
-                  </li>
-                  <li>
-                    Testabdeckung deutlich ausgebaut: E2E ca.
-                    <strong>10 % → 85 %</strong>, Komponententests ca.
-                    <strong>0 % → 70 %</strong> (Jest, Cypress)
-                  </li>
-                  <li>
-                    Fachliche Koordination der Testing-Aktivitäten für rund
-                    sechs Monate
-                  </li>
-                  <li>Legacy-Code und Abhängigkeiten aktualisiert</li>
-                  <li>
-                    <strong>CI/CD-Pipeline</strong> mit GitLab verwaltet und
-                    Doku erstellt
-                  </li>
-                </ul>
-                <div class="timeline__tags">
-                  <span class="tag">HTML</span><span class="tag">CSS</span>
-                  <span class="tag">JavaScript</span
-                  ><span class="tag">Vue</span> <span class="tag">Jest</span
-                  ><span class="tag">Cypress</span>
-                  <span class="tag">CI/CD</span><span class="tag">GitLab</span>
-                  <span class="tag">KI</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="timeline__item" data-reveal>
-              <div class="timeline__marker">
-                <div class="timeline__dot"></div>
-                <div class="timeline__line"></div>
-              </div>
-              <div class="timeline__card">
-                <div class="timeline__card-header">
-                  <div>
-                    <h3 class="timeline__role">Webentwickler</h3>
-                    <span class="timeline__company">Venus IT Institute</span>
-                  </div>
-                  <div class="timeline__meta">
-                    <span class="timeline__period">01.2019 – 09.2019</span>
-                    <span class="timeline__type">Vollzeit · BD</span>
-                  </div>
-                </div>
-                <ul class="timeline__list">
-                  <li>
-                    Entwicklung, Deployment und Pflege von Unternehmenswebsites
-                  </li>
-                  <li>
-                    Websites mit <strong>WordPress</strong>, HTML und CSS
-                    erstellt
-                  </li>
-                </ul>
-                <div class="timeline__tags">
-                  <span class="tag">WordPress</span><span class="tag">HTML</span
-                  ><span class="tag">CSS</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="timeline__item" data-reveal>
-              <div class="timeline__marker">
-                <div class="timeline__dot timeline__dot--dim"></div>
-              </div>
-              <div class="timeline__card timeline__card--dim">
-                <div class="timeline__card-header">
-                  <div>
-                    <h3 class="timeline__role">Freiberufler</h3>
-                    <span class="timeline__company">Upwork · Remote</span>
-                  </div>
-                  <div class="timeline__meta">
-                    <span class="timeline__period">05.2013 – 03.2016</span>
-                    <span class="timeline__type">Teilzeit · Remote</span>
-                  </div>
-                </div>
-                <ul class="timeline__list">
-                  <li>Webdesign und WordPress-Entwicklung</li>
-                  <li>Technische Artikel, SEO-bezogene Aufgaben</li>
-                </ul>
-                <div class="timeline__tags">
-                  <span class="tag">WordPress</span><span class="tag">SEO</span
-                  ><span class="tag">Webdesign</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- WORK REFERENCES -->
-      <section
-        class="section references"
-        id="references"
-        aria-labelledby="references-title"
-      >
-        <div class="container">
-          <div class="section__header section__header--with-intro">
-            <div>
-              <span class="section__tag">// 05</span>
-              <h2 class="section__title" id="references-title">
-                Referenzen und Arbeitszeugnisse
-              </h2>
-            </div>
-            <p class="section__intro">
-              Zusammenfassung meiner beruflichen und akademischen Nachweise.
-              Vollständige Unterlagen stelle ich im Bewerbungsprozess gerne zur
-              Verfügung.
-            </p>
-          </div>
-
-          <div class="references__grid">
-            <article class="reference-card" data-reveal>
-              <div class="reference-card__mark" aria-hidden="true">✓</div>
-              <p class="reference-card__text">
-                Sehr gute Gesamtbewertung. Besonders hervorgehoben wurden
-                Fachkenntnisse, analytische Fähigkeiten, Arbeitsqualität und
-                Leistung.
-              </p>
-              <div class="reference-card__source">
-                <strong>exagon consulting &amp; solutions GmbH</strong>
-                <span>Arbeitszeugnis · 2025</span>
-              </div>
-            </article>
-
-            <article class="reference-card" data-reveal>
-              <div class="reference-card__mark" aria-hidden="true">✓</div>
-              <p class="reference-card__text">
-                Meine Arbeit im Frontend-Bereich mit Vue, Cypress und Jest, die
-                Analyse der Testbarkeit von Vue.js sowie die Koordination der
-                Entwicklungsaktivitäten wurden bestätigt.
-              </p>
-              <div class="reference-card__source">
-                <strong>Natif.ai</strong>
-                <span>Arbeitszeugnis · 2022</span>
-              </div>
-            </article>
-
-            <article
-              class="reference-card reference-card--featured"
-              data-reveal
-            >
-              <div class="reference-card__mark" aria-hidden="true">✓</div>
-              <p class="reference-card__text">
-                Prof. Dr. Tom Rüdebusch hebt meine mit 1,0 bewertete
-                Masterarbeit, meine Kursnote 1,7 sowie meine Zielstrebigkeit und
-                kooperative Art hervor und empfiehlt mich nachdrücklich und ohne
-                Vorbehalt.
-              </p>
-              <div class="reference-card__source">
-                <strong>Prof. Dr. Tom Rüdebusch</strong>
-                <span>Empfehlungsschreiben · Hochschule Offenburg · 2022</span>
-              </div>
-            </article>
-          </div>
-
-          <a
-            class="references__cta"
-            href="mailto:faisalh.iu@gmail.com?subject=Anfrage%20zu%20Referenzen%20und%20Arbeitszeugnissen"
-            >Nachweise anfragen →</a
-          >
         </div>
       </section>
 
@@ -990,7 +959,10 @@
           </div>
 
           <div class="languages" data-reveal>
-            <h3 class="languages__title">Sprachen</h3>
+            <div class="section__header">
+              <span class="section__tag">// 07</span>
+              <h2 class="section__title" id="language-title">Sprachen</h2>
+            </div>
             <div class="languages__grid">
               <div class="language-item">
                 <span class="language-item__name">Bengalisch</span>
@@ -1021,7 +993,7 @@
       >
         <div class="container">
           <div class="section__header">
-            <span class="section__tag">// 07</span>
+            <span class="section__tag">// 08</span>
             <h2 class="section__title" id="contact-title">Kontakt</h2>
           </div>
           <p class="contact__intro">
