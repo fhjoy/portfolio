@@ -37,10 +37,10 @@ The website follows a clear professional journey:
 
 1. **Introduction** — role, availability, location, work authorization, and CV downloads
 2. **About** — development focus and professional positioning
-3. **Technologies** — frontend, backend, testing, DevOps, and supporting tools
-4. **Selected work** — professional, academic, and personal projects
-5. **Experience** — roles, responsibilities, technologies, and measurable outcomes
-6. **References** — concise summaries of employment and academic recommendations
+3. **Experience** — roles, responsibilities, technologies, and measurable outcomes
+4.  **References** — concise summaries of employment and academic recommendations
+5. **Technologies** — frontend, backend, testing, DevOps, and supporting tools
+6. **Selected work** — professional, academic, and personal projects
 7. **Education** — master's degree, bachelor's degree, certificates, awards, and languages
 8. **Contact** — direct links for recruiters and engineering teams
 
@@ -148,7 +148,7 @@ Because this is a static website, deployment requires no server configuration or
 
 ## References and confidentiality
 
-The portfolio summarizes verified employment and academic references from exagon consulting & solutions GmbH, Natif.ai, and Hochschule Offenburg. Complete documents are shared during the application process rather than published publicly.
+The portfolio summarizes verified employment and academic references from exagon consulting & solutions GmbH, Natif.ai, Anik Telecom Ltd., Venus IT Institute, and Hochschule Offenburg. Complete documents are shared during the application process rather than published publicly.
 
 Some commercial project details and source code are intentionally omitted because they are customer-confidential.
 
