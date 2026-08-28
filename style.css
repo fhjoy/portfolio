@@ -483,36 +483,11 @@ button {
 
 .hero__photo-ring {
   position: absolute;
+  inset: -32px;
+  border: 2px solid #7c6eff2e;
   border-radius: 50%;
-  border: 1.5px solid var(--accent);
-  opacity: 0.35;
-  top: 50%;
-  left: 50%;
-  transform-origin: center center;
-  animation: spinRing 12s linear infinite;
-  width: calc(100% + 32px);
-  height: calc(100% + 32px);
-  margin-left: calc(-50% - 16px);
-  margin-top: calc(-50% - 16px);
-  box-sizing: border-box;
-}
-.hero__photo-ring--2 {
-  width: calc(100% + 64px);
-  height: calc(100% + 64px);
-  margin-left: calc(-50% - 32px);
-  margin-top: calc(-50% - 32px);
-  border-color: var(--accent-2);
-  opacity: 0.18;
-  animation-duration: 20s;
-  animation-direction: reverse;
-}
-@keyframes spinRing {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  pointer-events: none;
+  z-index: 0;
 }
 
 .hero__photo {
@@ -525,9 +500,20 @@ button {
   position: relative;
   z-index: 1;
   display: block;
-  box-shadow:
-    0 0 0 6px #00d4c815,
-    0 0 40px #00d4c825;
+  box-shadow: 0 0 40px #00d4c825;
+  animation: photoBorderPulse 2s ease-in-out infinite;
+}
+
+@keyframes photoBorderPulse {
+  0%,
+  100% {
+    border-color: var(--accent);
+    box-shadow: 0 0 40px #00d4c825;
+  }
+  50% {
+    border-color: #00d4c880;
+    box-shadow: 0 0 40px #00d4c813;
+  }
 }
 
 .hero__photo-tag {
@@ -1375,19 +1361,6 @@ button {
     width: 200px;
     height: 200px;
   }
-  .hero__photo-ring {
-    width: calc(100% + 32px);
-    height: calc(100% + 32px);
-    margin-left: calc(-50% - 16px);
-    margin-top: calc(-50% - 16px);
-  }
-  .hero__photo-ring--2 {
-    width: calc(100% + 64px);
-    height: calc(100% + 64px);
-    margin-left: calc(-50% - 32px);
-    margin-top: calc(-50% - 32px);
-  }
-
   .about__grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
@@ -1523,5 +1496,9 @@ button {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .hero__photo {
+    animation: none;
   }
 }
