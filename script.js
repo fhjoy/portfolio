@@ -178,4 +178,46 @@ document.addEventListener("DOMContentLoaded", () => {
   ───────────────────────────────────────── */
   const currentYear = document.getElementById("currentYear");
   if (currentYear) currentYear.textContent = String(new Date().getFullYear());
+
+  /* ─────────────────────────────────────────
+     8. PRIVACY-FRIENDLY VISITOR STATISTICS
+  ───────────────────────────────────────── */
+  const doNotTrackSignal = navigator.doNotTrack || window.doNotTrack;
+  const privacySignalEnabled =
+    navigator.globalPrivacyControl === true ||
+    doNotTrackSignal === "1" ||
+    doNotTrackSignal === "yes";
+  const isLivePortfolio = window.location.hostname === "fhjoy.github.io";
+
+  if (!privacySignalEnabled && isLivePortfolio) {
+    const analyticsScript = document.createElement("script");
+    analyticsScript.async = true;
+    analyticsScript.src = "https://gc.zgo.at/count.js";
+    analyticsScript.dataset.goatcounter = "https://fhjoy.goatcounter.com/count";
+    document.body.append(analyticsScript);
+
+    const visitorCounter = document.getElementById("visitorCounter");
+    const visitorCount = document.getElementById("visitorCount");
+
+    if (!visitorCounter || !visitorCount) return;
+
+    fetch("https://fhjoy.goatcounter.com/counter/TOTAL.json", {
+      credentials: "omit",
+      referrerPolicy: "no-referrer",
+    })
+      .then((response) => {
+        if (!response.ok) throw new Error("Visitor counter unavailable");
+        return response.json();
+      })
+      .then((data) => {
+        const count = Number(String(data.count).replace(/[^0-9]/g, ""));
+        if (!Number.isFinite(count)) return;
+
+        visitorCount.textContent = new Intl.NumberFormat("de-DE").format(count);
+        visitorCounter.hidden = false;
+      })
+      .catch(() => {
+        // Keep the optional counter hidden if the service is unavailable.
+      });
+  }
 });
