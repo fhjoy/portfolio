@@ -195,12 +195,14 @@ document.addEventListener("DOMContentLoaded", () => {
     analyticsScript.src = "https://gc.zgo.at/count.js";
     analyticsScript.dataset.goatcounter = "https://fhjoy.goatcounter.com/count";
     document.body.append(analyticsScript);
+  }
 
-    const visitorCounter = document.getElementById("visitorCounter");
-    const visitorCount = document.getElementById("visitorCount");
+  // Reading the public aggregate does not track the current visitor, so the
+  // visible total remains available when Do Not Track is enabled.
+  const visitorCounter = document.getElementById("visitorCounter");
+  const visitorCount = document.getElementById("visitorCount");
 
-    if (!visitorCounter || !visitorCount) return;
-
+  if (visitorCounter && visitorCount) {
     fetch("https://fhjoy.goatcounter.com/counter/TOTAL.json", {
       credentials: "omit",
       referrerPolicy: "no-referrer",
