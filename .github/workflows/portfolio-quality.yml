@@ -1,0 +1,61 @@
+name: Portfolio quality
+
+on:
+  push:
+    branches: [master]
+    paths-ignore:
+      - "quality/latest.json"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: portfolio-quality-master
+  cancel-in-progress: true
+
+jobs:
+  lighthouse:
+    name: Lighthouse · DE and EN
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          package-manager-cache: false
+
+      - name: Run Lighthouse three times per language
+        run: npx --yes @lhci/cli@0.15.1 collect --config=./lighthouserc.json
+
+      - name: Generate public quality summary
+        run: node scripts/create-quality-summary.mjs
+        env:
+          GITHUB_SHA: ${{ github.sha }}
+
+      - name: Preserve full Lighthouse reports
+        uses: actions/upload-artifact@v6
+        with:
+          name: lighthouse-reports-${{ github.sha }}
+          path: .lighthouseci/
+          retention-days: 30
+
+      - name: Publish dashboard data
+        run: |
+          if git diff --quiet -- quality/latest.json; then
+            echo "Quality summary is unchanged."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add quality/latest.json
+            git commit -m "chore: update portfolio quality report [skip ci]"
+            git push
+          fi
+
+      - name: Enforce quality thresholds
+        run: node scripts/check-quality-thresholds.mjs
