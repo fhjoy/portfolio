@@ -38,7 +38,7 @@ The website follows a clear professional journey:
 1. **Introduction** — role, availability, location, work authorization, and CV downloads
 2. **About** — development focus and professional positioning
 3. **Experience** — roles, responsibilities, technologies, and measurable outcomes
-4.  **References** — concise summaries of employment and academic recommendations
+4. **References** — concise summaries of employment and academic recommendations
 5. **Technologies** — frontend, backend, testing, DevOps, and supporting tools
 6. **Selected work** — professional, academic, and personal projects
 7. **Education** — master's degree, bachelor's degree, certificates, awards, and languages
@@ -85,6 +85,7 @@ This portfolio deliberately uses a small, framework-free codebase. The goal is t
 ### Responsive interaction
 
 - Mobile navigation with synchronized accessibility state
+- Light and dark themes with system preference detection and a remembered manual selection
 - Active navigation state based on the current section
 - Intersection Observer reveal effects
 - Subtle pointer-based hero movement on compatible devices
@@ -102,14 +103,14 @@ This portfolio deliberately uses a small, framework-free codebase. The goal is t
 
 ## Technology
 
-| Area        | Implementation                                               |
-| ----------- | ------------------------------------------------------------ |
-| Structure   | Semantic HTML5                                               |
-| Styling     | Modern CSS, custom properties, responsive grids              |
-| Interaction | Vanilla JavaScript, Intersection Observer, Media Queries API |
-| Typography  | Space Grotesk, Inter, JetBrains Mono                         |
-| Hosting     | GitHub Pages                                                 |
-| Documents   | German and English CVs in PDF format                         |
+| Area        | Implementation                                                                |
+| ----------- | ----------------------------------------------------------------------------- |
+| Structure   | Semantic HTML5                                                                |
+| Styling     | Modern CSS, custom properties, responsive grids                               |
+| Interaction | Vanilla JavaScript, Intersection Observer, Media Queries API, Web Storage API |
+| Typography  | Space Grotesk, Inter, JetBrains Mono                                          |
+| Hosting     | GitHub Pages                                                                  |
+| Documents   | German and English CVs in PDF format                                          |
 
 There is no framework, package manager, bundler, or runtime dependency required to view the site.
 

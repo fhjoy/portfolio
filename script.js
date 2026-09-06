@@ -4,7 +4,77 @@ document.addEventListener("DOMContentLoaded", () => {
   ).matches;
 
   /* ─────────────────────────────────────────
-     1. NAV: Scroll style + Active link
+     1. LIGHT / DARK THEME
+  ───────────────────────────────────────── */
+  const themeStorageKey = "portfolio-theme";
+  const root = document.documentElement;
+  const themeToggle = document.getElementById("themeToggle");
+  const themeColor = document.getElementById("themeColor");
+  const systemTheme = window.matchMedia("(prefers-color-scheme: light)");
+
+  function getStoredTheme() {
+    try {
+      const storedTheme = localStorage.getItem(themeStorageKey);
+      return storedTheme === "light" || storedTheme === "dark"
+        ? storedTheme
+        : null;
+    } catch {
+      return null;
+    }
+  }
+
+  function setTheme(theme, persist = false) {
+    const isLight = theme === "light";
+    const nextThemeLabel = isLight
+      ? "Dunkles Farbschema aktivieren"
+      : "Helles Farbschema aktivieren";
+
+    root.dataset.theme = theme;
+    root.style.colorScheme = theme;
+    themeColor?.setAttribute("content", isLight ? "#f4f7fb" : "#080d1a");
+
+    if (themeToggle) {
+      themeToggle.setAttribute("aria-label", nextThemeLabel);
+      themeToggle.setAttribute("title", nextThemeLabel);
+    }
+
+    if (persist) {
+      try {
+        localStorage.setItem(themeStorageKey, theme);
+      } catch {
+        // The selected theme still applies for the current page.
+      }
+    }
+  }
+
+  setTheme(root.dataset.theme === "light" ? "light" : "dark");
+
+  themeToggle?.addEventListener("click", () => {
+    const nextTheme = root.dataset.theme === "light" ? "dark" : "light";
+    setTheme(nextTheme, true);
+  });
+
+  function followSystemTheme(event) {
+    if (!getStoredTheme()) {
+      setTheme(event.matches ? "light" : "dark");
+    }
+  }
+
+  if (typeof systemTheme.addEventListener === "function") {
+    systemTheme.addEventListener("change", followSystemTheme);
+  } else {
+    systemTheme.addListener(followSystemTheme);
+  }
+
+  window.addEventListener("storage", (event) => {
+    if (event.key !== themeStorageKey) return;
+
+    const storedTheme = getStoredTheme();
+    setTheme(storedTheme || (systemTheme.matches ? "light" : "dark"));
+  });
+
+  /* ─────────────────────────────────────────
+     2. NAV: Scroll style + Active link
   ───────────────────────────────────────── */
   const nav = document.getElementById("nav");
   const navLinks = document.querySelectorAll('.nav__link[href^="#"]');
@@ -42,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
   updateNav();
 
   /* ─────────────────────────────────────────
-     2. ACCESSIBLE HAMBURGER MENU
+     3. ACCESSIBLE HAMBURGER MENU
   ───────────────────────────────────────── */
   const hamburger = document.getElementById("hamburger");
   const navLinksContainer = document.getElementById("navLinks");
@@ -88,7 +158,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ─────────────────────────────────────────
-     3. SCROLL REVEAL — IntersectionObserver
+     4. SCROLL REVEAL — IntersectionObserver
   ───────────────────────────────────────── */
   const revealElements = document.querySelectorAll("[data-reveal]");
 
@@ -123,7 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ─────────────────────────────────────────
-     4. BACK TO TOP
+     5. BACK TO TOP
   ───────────────────────────────────────── */
   const backToTop = document.getElementById("backToTop");
 
@@ -135,7 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ─────────────────────────────────────────
-     5. HERO BACKGROUND PARALLAX (subtle)
+     6. HERO BACKGROUND PARALLAX (subtle)
   ───────────────────────────────────────── */
   const heroGlow1 = document.querySelector(".hero__glow--1");
   const heroGlow2 = document.querySelector(".hero__glow--2");
@@ -153,7 +223,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ─────────────────────────────────────────
-     6. SMOOTH SCROLL for anchor links
+     7. SMOOTH SCROLL for anchor links
   ───────────────────────────────────────── */
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", (e) => {
@@ -174,13 +244,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ─────────────────────────────────────────
-     7. FOOTER YEAR
+     8. FOOTER YEAR
   ───────────────────────────────────────── */
   const currentYear = document.getElementById("currentYear");
   if (currentYear) currentYear.textContent = String(new Date().getFullYear());
 
   /* ─────────────────────────────────────────
-     8. PRIVACY-FRIENDLY VISITOR STATISTICS
+     9. PRIVACY-FRIENDLY VISITOR STATISTICS
   ───────────────────────────────────────── */
   const doNotTrackSignal = navigator.doNotTrack || window.doNotTrack;
   const privacySignalEnabled =

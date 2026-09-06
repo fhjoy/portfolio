@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de">
+<html lang="de" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,7 +10,8 @@
     />
     <meta name="author" content="Faisal Hossain" />
     <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#080d1a" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" id="themeColor" content="#080d1a" />
     <link rel="canonical" href="https://fhjoy.github.io/portfolio/" />
     <meta property="og:locale" content="de_DE" />
     <meta property="og:type" content="website" />
@@ -39,7 +40,31 @@
       href="docs/images/faisal_hossain.avif"
       fetchpriority="high"
     />
-    <link rel="stylesheet" href="style.css" />
+    <script>
+      (() => {
+        const storageKey = "portfolio-theme";
+        let theme = "dark";
+
+        try {
+          const savedTheme = localStorage.getItem(storageKey);
+          if (savedTheme === "light" || savedTheme === "dark") {
+            theme = savedTheme;
+          } else if (
+            window.matchMedia("(prefers-color-scheme: light)").matches
+          ) {
+            theme = "light";
+          }
+        } catch {
+          theme = window.matchMedia("(prefers-color-scheme: light)").matches
+            ? "light"
+            : "dark";
+        }
+
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+      })();
+    </script>
+    <link rel="stylesheet" href="style.css?v=3" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -92,17 +117,6 @@
             >/&gt;</span
           >
         </a>
-        <button
-          class="nav__hamburger"
-          id="hamburger"
-          type="button"
-          aria-label="Menü öffnen"
-          aria-controls="navLinks"
-          aria-expanded="false"
-        >
-          <span aria-hidden="true"></span><span aria-hidden="true"></span
-          ><span aria-hidden="true"></span>
-        </button>
         <ul class="nav__links" id="navLinks">
           <li><a href="#about" class="nav__link">Über mich</a></li>
           <li><a href="#experience" class="nav__link">Erfahrung</a></li>
@@ -112,6 +126,59 @@
             <a href="#contact" class="nav__link nav__link--cta">Kontakt</a>
           </li>
         </ul>
+        <div class="nav__actions">
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            type="button"
+            aria-label="Helles Farbschema aktivieren"
+            title="Helles Farbschema aktivieren"
+          >
+            <svg
+              class="theme-toggle__icon theme-toggle__icon--sun"
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              width="19"
+              height="19"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+            >
+              <circle cx="12" cy="12" r="4"></circle>
+              <path
+                d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"
+              ></path>
+            </svg>
+            <svg
+              class="theme-toggle__icon theme-toggle__icon--moon"
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              width="19"
+              height="19"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5 8.5 8.5 0 1 0 20.5 14.3Z"
+              ></path>
+            </svg>
+          </button>
+          <button
+            class="nav__hamburger"
+            id="hamburger"
+            type="button"
+            aria-label="Menü öffnen"
+            aria-controls="navLinks"
+            aria-expanded="false"
+          >
+            <span aria-hidden="true"></span><span aria-hidden="true"></span
+            ><span aria-hidden="true"></span>
+          </button>
+        </div>
       </nav>
     </header>
 
@@ -1201,6 +1268,6 @@
       </div>
     </footer>
 
-    <script src="script.js?v=2"></script>
+    <script src="script.js?v=3"></script>
   </body>
 </html>
