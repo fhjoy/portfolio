@@ -64,7 +64,7 @@
         document.documentElement.style.colorScheme = theme;
       })();
     </script>
-    <link rel="stylesheet" href="style.css?v=3" />
+    <link rel="stylesheet" href="style.css?v=4" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -763,18 +763,82 @@
             </div>
             <p class="section__intro">
               Meine Berufserfahrung ist oben zusammengefasst. Hier finden Sie
-              drei nachvollziehbare Codebeispiele mit ausführlich dokumentierten
-              GitHub-Repositories.
+              ein aktuelles Full-Stack-Projekt und drei nachvollziehbare
+              Codebeispiele. Die Engineering-Einblicke zeigen ergänzend
+              Entscheidungen, Abwägungen und nächste Schritte.
             </p>
           </div>
 
           <div class="projects__grid">
+            <article
+              class="project-card project-card--featured project-card--in-progress"
+              data-reveal
+            >
+              <div class="project-card__topline">
+                <span class="project-card__type"
+                  >Full Stack · In Entwicklung</span
+                >
+                <span class="project-card__number" aria-hidden="true">01</span>
+              </div>
+              <h3 class="project-card__title">
+                roleNaviq – Bewerbungen strukturiert steuern
+              </h3>
+              <p class="project-card__summary">
+                Eine moderne Full-Stack-Anwendung, mit der Bewerbungen zentral
+                erfasst, durchsucht, gefiltert und über ihren gesamten Verlauf
+                organisiert werden können.
+              </p>
+              <dl class="project-card__facts">
+                <div>
+                  <dt>Architektur</dt>
+                  <dd>React-Client und TypeScript-API mit klarer Trennung</dd>
+                </div>
+                <div>
+                  <dt>Aktuell</dt>
+                  <dd>
+                    Authentifizierung, geschützte Routen und
+                    Bewerbungsverwaltung
+                  </dd>
+                </div>
+                <div>
+                  <dt>Ausblick</dt>
+                  <dd>Qualitätssicherung, Dashboard und KI-Funktionen</dd>
+                </div>
+              </dl>
+              <div
+                class="project-card__tags"
+                role="group"
+                aria-label="Technologien"
+              >
+                <span class="tag">TypeScript</span>
+                <span class="tag">React</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">Express</span>
+                <span class="tag">MongoDB</span>
+                <span class="tag">TanStack Query</span>
+              </div>
+              <div class="project-card__actions">
+                <span class="project-card__status">
+                  <span aria-hidden="true"></span>Aktive Entwicklung
+                </span>
+                <button
+                  class="case-study-trigger"
+                  type="button"
+                  data-case-study="case-study-rolenaviq"
+                  aria-haspopup="dialog"
+                >
+                  Engineering-Einblick
+                  <span aria-hidden="true">→</span>
+                </button>
+              </div>
+            </article>
+
             <article class="project-card project-card--featured" data-reveal>
               <div class="project-card__topline">
                 <span class="project-card__type"
                   >Masterarbeit · Architekturvergleich</span
                 >
-                <span class="project-card__number" aria-hidden="true">01</span>
+                <span class="project-card__number" aria-hidden="true">02</span>
               </div>
               <h3 class="project-card__title">
                 Drei Rendering-Strategien, ein gemeinsames Testszenario
@@ -847,12 +911,23 @@
                   <span class="repo-link__desc">Statisch vorgerendert ↗</span>
                 </a>
               </div>
+              <div class="project-card__actions">
+                <button
+                  class="case-study-trigger"
+                  type="button"
+                  data-case-study="case-study-rendering"
+                  aria-haspopup="dialog"
+                >
+                  Engineering-Einblick
+                  <span aria-hidden="true">→</span>
+                </button>
+              </div>
             </article>
 
             <article class="project-card" data-reveal>
               <div class="project-card__topline">
                 <span class="project-card__type">Full Stack · Tour World</span>
-                <span class="project-card__number" aria-hidden="true">02</span>
+                <span class="project-card__number" aria-hidden="true">03</span>
               </div>
               <h3 class="project-card__title">
                 Tourismusplattform mit Buchungsablauf
@@ -885,20 +960,30 @@
                 <span class="tag">JWT</span>
                 <span class="tag">Stripe</span>
               </div>
-              <div class="project-card__links">
+              <div class="project-card__actions">
                 <a
+                  class="project-card__repo-link"
                   href="https://github.com/fhjoy/tour-world"
                   target="_blank"
                   rel="noopener noreferrer"
                   >Code und Dokumentation ansehen ↗</a
                 >
+                <button
+                  class="case-study-trigger"
+                  type="button"
+                  data-case-study="case-study-tour-world"
+                  aria-haspopup="dialog"
+                >
+                  Engineering-Einblick
+                  <span aria-hidden="true">→</span>
+                </button>
               </div>
             </article>
 
             <article class="project-card" data-reveal>
               <div class="project-card__topline">
                 <span class="project-card__type">Frontend · Recipe App</span>
-                <span class="project-card__number" aria-hidden="true">03</span>
+                <span class="project-card__number" aria-hidden="true">04</span>
               </div>
               <h3 class="project-card__title">
                 Modulare Rezeptsuche als Single-Page-Anwendung
@@ -928,16 +1013,403 @@
                 <span class="tag">REST-API</span>
                 <span class="tag">Parcel</span>
               </div>
-              <div class="project-card__links">
+              <div class="project-card__actions">
                 <a
+                  class="project-card__repo-link"
                   href="https://github.com/fhjoy/Recipe--App"
                   target="_blank"
                   rel="noopener noreferrer"
                   >Code und Dokumentation ansehen ↗</a
                 >
+                <button
+                  class="case-study-trigger"
+                  type="button"
+                  data-case-study="case-study-recipe-app"
+                  aria-haspopup="dialog"
+                >
+                  Engineering-Einblick
+                  <span aria-hidden="true">→</span>
+                </button>
               </div>
             </article>
           </div>
+
+          <dialog
+            class="case-study-dialog"
+            id="case-study-rolenaviq"
+            aria-labelledby="case-study-rolenaviq-title"
+          >
+            <div class="case-study-dialog__inner">
+              <header class="case-study-dialog__header">
+                <div>
+                  <span class="case-study-dialog__eyebrow"
+                    >Engineering Case Study · In Entwicklung</span
+                  >
+                  <h2 id="case-study-rolenaviq-title">
+                    roleNaviq: Zuständigkeiten bewusst trennen
+                  </h2>
+                </div>
+                <button
+                  class="case-study-dialog__close"
+                  type="button"
+                  data-dialog-close
+                  aria-label="Engineering-Einblick zu roleNaviq schließen"
+                >
+                  <span aria-hidden="true">×</span>
+                </button>
+              </header>
+
+              <p class="case-study-dialog__lead">
+                Im Mittelpunkt stehen nicht möglichst viele Funktionen, sondern
+                klare Grenzen zwischen Oberfläche, Serverzustand und
+                Sicherheitslogik.
+              </p>
+
+              <div class="case-study-dialog__grid">
+                <section class="case-study-insight">
+                  <span class="case-study-insight__label">Entscheidung 01</span>
+                  <h3>Serverzustand ist kein lokaler UI-Zustand</h3>
+                  <p>
+                    TanStack Query verwaltet Laden, Caching und Aktualisieren
+                    der API-Daten. React Hook Form und Zod bleiben für
+                    Formulareingaben und Validierung zuständig. Dadurch entsteht
+                    keine zweite, manuell synchronisierte Datenquelle im Client.
+                  </p>
+                </section>
+
+                <section class="case-study-insight">
+                  <span class="case-study-insight__label">Entscheidung 02</span>
+                  <h3>Die API bildet die Sicherheitsgrenze</h3>
+                  <p>
+                    JWTs werden in HttpOnly-Cookies gehalten. Geschützte
+                    Frontend-Routen verbessern die Nutzerführung, ersetzen aber
+                    keine Autorisierung: Der Server prüft bei jeder Bewerbung
+                    zusätzlich die Eigentümerschaft.
+                  </p>
+                </section>
+
+                <section class="case-study-insight">
+                  <span class="case-study-insight__label">Trade-off</span>
+                  <h3>Flexibles Datenmodell, kontrollierte Struktur</h3>
+                  <p>
+                    MongoDB erleichtert die schrittweise Erweiterung des
+                    Bewerbungsmodells. Mongoose hält die Dokumentstruktur
+                    dennoch nachvollziehbar. Komplexere Auswertungen werden
+                    dafür bewusst erst mit klaren Produktanforderungen ergänzt.
+                  </p>
+                </section>
+
+                <section class="case-study-insight case-study-insight--next">
+                  <span class="case-study-insight__label"
+                    >Nächster Quality Gate</span
+                  >
+                  <h3>Erst absichern, dann intelligent erweitern</h3>
+                  <p>
+                    Vor einer öffentlichen Demo folgen API- und
+                    Komponententests, kritische Cypress-Flows,
+                    Accessibility-Prüfungen mit axe-core sowie CI. Geplante
+                    KI-Funktionen kommen anschließend als klar abgegrenzte
+                    Erweiterung hinzu.
+                  </p>
+                </section>
+              </div>
+
+              <footer class="case-study-dialog__footer">
+                <span>Stand: aktive Entwicklung</span>
+                <button type="button" data-dialog-close>Schließen</button>
+              </footer>
+            </div>
+          </dialog>
+
+          <dialog
+            class="case-study-dialog"
+            id="case-study-rendering"
+            aria-labelledby="case-study-rendering-title"
+          >
+            <div class="case-study-dialog__inner">
+              <header class="case-study-dialog__header">
+                <div>
+                  <span class="case-study-dialog__eyebrow"
+                    >Engineering Case Study · Masterarbeit</span
+                  >
+                  <h2 id="case-study-rendering-title">
+                    SPA, SSR und SSG fair vergleichbar machen
+                  </h2>
+                </div>
+                <button
+                  class="case-study-dialog__close"
+                  type="button"
+                  data-dialog-close
+                  aria-label="Engineering-Einblick zum Architekturvergleich schließen"
+                >
+                  <span aria-hidden="true">×</span>
+                </button>
+              </header>
+
+              <p class="case-study-dialog__lead">
+                Die eigentliche Herausforderung war nicht das Erstellen von drei
+                Shops, sondern das Begrenzen der Variablen, damit die
+                Rendering-Strategie der entscheidende Unterschied bleibt.
+              </p>
+
+              <div class="case-study-dialog__grid">
+                <section class="case-study-insight">
+                  <span class="case-study-insight__label">Versuchsaufbau</span>
+                  <h3>Gleiche Aufgabe, unterschiedliche Auslieferung</h3>
+                  <p>
+                    Datenmodell, Kernfunktionen und fachlicher Umfang wurden so
+                    vergleichbar wie möglich gehalten. So ließen sich
+                    Unterschiede eher der Rendering-Strategie als abweichenden
+                    Produktfunktionen zuordnen.
+                  </p>
+                </section>
+
+                <section class="case-study-insight">
+                  <span class="case-study-insight__label">Abwägung</span>
+                  <h3>Rechenarbeit wandert, sie verschwindet nicht</h3>
+                  <p>
+                    Eine SPA verlagert mehr Arbeit in den Browser, SSR erzeugt
+                    Seiten zur Anfragezeit und SSG investiert beim Build. Die
+                    passende Lösung hängt deshalb von Aktualität, Infrastruktur
+                    und Nutzungsmuster ab.
+                  </p>
+                </section>
+
+                <section class="case-study-insight">
+                  <span class="case-study-insight__label">Messdisziplin</span>
+                  <h3>
+                    Start, Navigation und Aktualisierung getrennt betrachten
+                  </h3>
+                  <p>
+                    Ein einzelner Messwert wäre irreführend. Aussagekräftiger
+                    wird der Vergleich, wenn erster Seitenaufruf, weitere
+                    Navigation, SEO-Anforderungen und Aktualisierungsaufwand
+                    separat bewertet werden.
+                  </p>
+                </section>
+
+                <section class="case-study-insight case-study-insight--result">
+                  <span class="case-study-insight__label">Erkenntnis</span>
+                  <h3>Es gibt keinen universellen Gewinner</h3>
+                  <p>
+                    Rendering ist eine Architekturentscheidung mit
+                    Zielkonflikten. Der größte Lerneffekt war, diese
+                    Zielkonflikte für den jeweiligen Produktkontext begründet
+                    abzuwägen.
+                  </p>
+                </section>
+              </div>
+
+              <footer class="case-study-dialog__footer">
+                <div class="case-study-dialog__links">
+                  <a
+                    href="https://github.com/fhjoy/spa"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >SPA ↗</a
+                  >
+                  <a
+                    href="https://github.com/fhjoy/ssr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >SSR ↗</a
+                  >
+                  <a
+                    href="https://github.com/fhjoy/ssg"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >SSG ↗</a
+                  >
+                </div>
+                <button type="button" data-dialog-close>Schließen</button>
+              </footer>
+            </div>
+          </dialog>
+
+          <dialog
+            class="case-study-dialog"
+            id="case-study-tour-world"
+            aria-labelledby="case-study-tour-world-title"
+          >
+            <div class="case-study-dialog__inner">
+              <header class="case-study-dialog__header">
+                <div>
+                  <span class="case-study-dialog__eyebrow"
+                    >Engineering Case Study · Full Stack</span
+                  >
+                  <h2 id="case-study-tour-world-title">
+                    Tour World: Vertrauen endet am Browser
+                  </h2>
+                </div>
+                <button
+                  class="case-study-dialog__close"
+                  type="button"
+                  data-dialog-close
+                  aria-label="Engineering-Einblick zu Tour World schließen"
+                >
+                  <span aria-hidden="true">×</span>
+                </button>
+              </header>
+
+              <p class="case-study-dialog__lead">
+                Bei Konten und Buchungen muss die Oberfläche schnell reagieren,
+                während Berechtigungen und geschäftskritische Entscheidungen auf
+                dem Server bleiben.
+              </p>
+
+              <div class="case-study-dialog__grid">
+                <section class="case-study-insight">
+                  <span class="case-study-insight__label">Systemgrenze</span>
+                  <h3>Client-Aktionen sind Anfragen, keine Beweise</h3>
+                  <p>
+                    Der Browser startet Anmeldung, Bewertung oder Checkout. Ob
+                    eine Aktion zulässig ist, muss jedoch anhand der
+                    authentifizierten Identität und Rolle serverseitig
+                    entschieden werden.
+                  </p>
+                </section>
+
+                <section class="case-study-insight">
+                  <span class="case-study-insight__label">Architektur</span>
+                  <h3>Ein zusammenhängender Request-Flow</h3>
+                  <p>
+                    Die serverseitig gerenderte Anwendung machte den gesamten
+                    Weg von Route und Controller über Datenmodell und Template
+                    bis zur Antwort sichtbar. Das half, Abhängigkeiten zwischen
+                    Oberfläche und Backend bewusst zu gestalten.
+                  </p>
+                </section>
+
+                <section class="case-study-insight">
+                  <span class="case-study-insight__label">Fehlerstrategie</span>
+                  <h3>Fehler dort behandeln, wo Kontext vorhanden ist</h3>
+                  <p>
+                    Validierung, Autorisierung und externe Dienste benötigen
+                    unterschiedliche Reaktionen. Eine zentrale Fehlerbehandlung
+                    sorgt für konsistente Antworten, ohne fachliche Ursachen zu
+                    verstecken.
+                  </p>
+                </section>
+
+                <section class="case-study-insight case-study-insight--next">
+                  <span class="case-study-insight__label"
+                    >Heute verbessern</span
+                  >
+                  <h3>Modernisieren und kritische Grenzen testen</h3>
+                  <p>
+                    Als nächstes würde ich Abhängigkeiten aktualisieren,
+                    Umgebungsvariablen strikt validieren, Zahlungslogik hinter
+                    einem Service kapseln und Authentifizierungs- sowie
+                    Buchungsabläufe mit Integrationstests absichern.
+                  </p>
+                </section>
+              </div>
+
+              <footer class="case-study-dialog__footer">
+                <a
+                  href="https://github.com/fhjoy/tour-world"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Repository öffnen ↗</a
+                >
+                <button type="button" data-dialog-close>Schließen</button>
+              </footer>
+            </div>
+          </dialog>
+
+          <dialog
+            class="case-study-dialog"
+            id="case-study-recipe-app"
+            aria-labelledby="case-study-recipe-app-title"
+          >
+            <div class="case-study-dialog__inner">
+              <header class="case-study-dialog__header">
+                <div>
+                  <span class="case-study-dialog__eyebrow"
+                    >Engineering Case Study · Frontend</span
+                  >
+                  <h2 id="case-study-recipe-app-title">
+                    Recipe App: Änderungen lokal halten
+                  </h2>
+                </div>
+                <button
+                  class="case-study-dialog__close"
+                  type="button"
+                  data-dialog-close
+                  aria-label="Engineering-Einblick zur Recipe App schließen"
+                >
+                  <span aria-hidden="true">×</span>
+                </button>
+              </header>
+
+              <p class="case-study-dialog__lead">
+                Die zentrale Frage war, wie neue Ansichten und Interaktionen
+                ergänzt werden können, ohne Datenzugriff und DOM-Logik überall
+                miteinander zu vermischen.
+              </p>
+
+              <div class="case-study-dialog__grid">
+                <section class="case-study-insight">
+                  <span class="case-study-insight__label">Struktur</span>
+                  <h3>Eine Verantwortung pro Modul</h3>
+                  <p>
+                    Das Model hält Daten und Anwendungszustand, Views kümmern
+                    sich um Darstellung und UI-Ereignisse, der Controller
+                    koordiniert beide Seiten. Dadurch bleiben Änderungen näher
+                    an ihrer eigentlichen Ursache.
+                  </p>
+                </section>
+
+                <section class="case-study-insight">
+                  <span class="case-study-insight__label">Datenfluss</span>
+                  <h3>Eine nachvollziehbare Quelle für den UI-Zustand</h3>
+                  <p>
+                    Suchergebnisse, Portionen und Lesezeichen werden aus einem
+                    zentralen Zustand abgeleitet. Die Oberfläche rendert diesen
+                    Zustand, statt parallele Kopien an mehreren Stellen zu
+                    pflegen.
+                  </p>
+                </section>
+
+                <section class="case-study-insight">
+                  <span class="case-study-insight__label">Abwägung</span>
+                  <h3>Vanilla JavaScript macht Architektur sichtbar</h3>
+                  <p>
+                    Ohne Framework müssen Rendering, Ereignisse und
+                    Zustandsänderungen explizit organisiert werden. Das erhöht
+                    zunächst den Aufwand, vermittelt aber ein klares Verständnis
+                    der Mechanismen hinter komponentenbasierten Frameworks.
+                  </p>
+                </section>
+
+                <section class="case-study-insight case-study-insight--next">
+                  <span class="case-study-insight__label"
+                    >Heute verbessern</span
+                  >
+                  <h3>
+                    Abhängigkeiten und Qualität auf einen aktuellen Stand
+                    bringen
+                  </h3>
+                  <p>
+                    Ich würde die Build-Abhängigkeiten modernisieren, Tests für
+                    Zustandsänderungen ergänzen und Lade-, Fehler- sowie
+                    Tastaturzustände systematisch überprüfen. Das bestehende
+                    MVC-Konzept kann dabei erhalten bleiben.
+                  </p>
+                </section>
+              </div>
+
+              <footer class="case-study-dialog__footer">
+                <a
+                  href="https://github.com/fhjoy/Recipe--App"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Repository öffnen ↗</a
+                >
+                <button type="button" data-dialog-close>Schließen</button>
+              </footer>
+            </div>
+          </dialog>
         </div>
       </section>
 
@@ -1268,6 +1740,6 @@
       </div>
     </footer>
 
-    <script src="script.js?v=3"></script>
+    <script src="script.js?v=4"></script>
   </body>
 </html>

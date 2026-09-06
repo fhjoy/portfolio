@@ -148,6 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
+      if (document.querySelector(".case-study-dialog[open]")) return;
       setMenu(false);
       hamburger?.focus();
     }
@@ -267,8 +268,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.append(analyticsScript);
   }
 
-  // Reading the public aggregate does not track the current visitor, so the
-  // visible total remains available when Do Not Track is enabled.
   const visitorCounter = document.getElementById("visitorCounter");
   const visitorCount = document.getElementById("visitorCount");
 
@@ -292,4 +291,58 @@ document.addEventListener("DOMContentLoaded", () => {
         // Keep the optional counter hidden if the service is unavailable.
       });
   }
+
+  /* ─────────────────────────────────────────
+     10. ACCESSIBLE ENGINEERING CASE STUDIES
+  ───────────────────────────────────────── */
+  const caseStudyTriggers = document.querySelectorAll("[data-case-study]");
+  const caseStudyDialogs = document.querySelectorAll(".case-study-dialog");
+  let lastCaseStudyTrigger = null;
+
+  function closeCaseStudy(dialog) {
+    if (typeof dialog.close === "function") {
+      dialog.close();
+    } else {
+      dialog.removeAttribute("open");
+      document.body.classList.remove("dialog-open");
+      lastCaseStudyTrigger?.focus();
+      lastCaseStudyTrigger = null;
+    }
+  }
+
+  caseStudyTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      const dialogId = trigger.dataset.caseStudy;
+      const dialog = dialogId ? document.getElementById(dialogId) : null;
+      if (!(dialog instanceof HTMLElement)) return;
+
+      lastCaseStudyTrigger = trigger;
+      setMenu(false);
+
+      if (typeof dialog.showModal === "function") {
+        dialog.showModal();
+      } else {
+        dialog.setAttribute("open", "");
+      }
+
+      document.body.classList.add("dialog-open");
+      dialog.querySelector("[data-dialog-close]")?.focus();
+    });
+  });
+
+  caseStudyDialogs.forEach((dialog) => {
+    dialog.querySelectorAll("[data-dialog-close]").forEach((button) => {
+      button.addEventListener("click", () => closeCaseStudy(dialog));
+    });
+
+    dialog.addEventListener("click", (event) => {
+      if (event.target === dialog) closeCaseStudy(dialog);
+    });
+
+    dialog.addEventListener("close", () => {
+      document.body.classList.remove("dialog-open");
+      lastCaseStudyTrigger?.focus();
+      lastCaseStudyTrigger = null;
+    });
+  });
 });

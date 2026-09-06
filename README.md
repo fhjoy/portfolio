@@ -25,7 +25,7 @@ The portfolio is written in German and includes downloadable CVs in German and E
 | Partner websites                      |                     17+ |
 | Reusable UI components                |                     30+ |
 | Accessibility findings resolved       |                    300+ |
-| Natif.ai Reusable Froented components |                     20+ |
+| Natif.ai reusable frontend components |                     20+ |
 | Natif.ai E2E test coverage            | approximately 10% → 85% |
 | Natif.ai component test coverage      |  approximately 0% → 70% |
 
@@ -40,11 +40,17 @@ The website follows a clear professional journey:
 3. **Experience** — roles, responsibilities, technologies, and measurable outcomes
 4. **References** — concise summaries of employment and academic recommendations
 5. **Technologies** — frontend, backend, testing, DevOps, and supporting tools
-6. **Selected work** — professional, academic, and personal projects
+6. **Selected work** — current, academic, and personal projects with concise engineering insights
 7. **Education** — master's degree, bachelor's degree, certificates, awards, and languages
 8. **Contact** — direct links for recruiters and engineering teams
 
 ## Selected work represented
+
+### roleNaviq · in development
+
+A full-stack job-application platform built with TypeScript throughout. The current implementation combines a React and Vite frontend with a Node.js, Express, MongoDB, and Mongoose backend. Authentication uses JWTs in HttpOnly cookies, while protected API operations also enforce resource ownership on the server.
+
+The portfolio presents roleNaviq honestly as an active project. Its engineering panel focuses on state boundaries, security decisions, data-model trade-offs, and the testing work planned before a public demo.
 
 ### Enterprise frontend development
 
@@ -78,6 +84,7 @@ This portfolio deliberately uses a small, framework-free codebase. The goal is t
 - Visible `:focus-visible` states
 - Accessible mobile-navigation button with `aria-expanded` and `aria-controls`
 - Escape-key and outside-click handling for the mobile menu
+- Native, keyboard-accessible project case-study dialogs with focus restoration
 - Reduced-motion support through `prefers-reduced-motion`
 - Descriptive image alternatives and labels for interactive elements
 - Text-based language levels instead of ambiguous progress bars
@@ -87,6 +94,7 @@ This portfolio deliberately uses a small, framework-free codebase. The goal is t
 - Mobile navigation with synchronized accessibility state
 - Light and dark themes with system preference detection and a remembered manual selection
 - Active navigation state based on the current section
+- Responsive engineering panels for architecture decisions, trade-offs, and lessons learned
 - Intersection Observer reveal effects
 - Subtle pointer-based hero movement on compatible devices
 - Smooth scrolling with reduced-motion fallback
@@ -118,11 +126,12 @@ There is no framework, package manager, bundler, or runtime dependency required 
 
 ```text
 portfolio/
-docs── documents/
-│             ├── Faisal_Hossain_CV_EN.pdf
-│             └── Lebenslauf_Faisal_Hossain_DE.pdf
-├── images/
-│   └── faisal_hossain.avif
+├── docs/
+│   ├── documents/
+│   │   ├── Faisal_Hossain_CV_EN.pdf
+│   │   └── Lebenslauf_Faisal_Hossain_DE.pdf
+│   └── images/
+│       └── faisal_hossain.avif
 ├── index.html
 ├── script.js
 └── style.css
