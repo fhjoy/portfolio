@@ -2,12 +2,67 @@ document.addEventListener("DOMContentLoaded", () => {
   const prefersReducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)",
   ).matches;
+  const root = document.documentElement;
+  const language = root.lang === "en" ? "en" : "de";
+  const locale = language === "en" ? "en-GB" : "de-DE";
+  const uiCopy =
+    language === "en"
+      ? {
+          activateDarkTheme: "Use dark colour scheme",
+          activateLightTheme: "Use light colour scheme",
+          closeMenu: "Close menu",
+          openMenu: "Open menu",
+          qualityPassing: "Quality gate passed",
+          qualityAttention: "Review recommended",
+          qualityUnavailable: "Quality data unavailable",
+          lastAudited: "Last audited",
+          commit: "commit",
+          measurements: "measurements",
+          outOf: "out of",
+        }
+      : {
+          activateDarkTheme: "Dunkles Farbschema aktivieren",
+          activateLightTheme: "Helles Farbschema aktivieren",
+          closeMenu: "Menü schließen",
+          openMenu: "Menü öffnen",
+          qualityPassing: "Qualitätsziel erreicht",
+          qualityAttention: "Überprüfung empfohlen",
+          qualityUnavailable: "Qualitätsdaten nicht verfügbar",
+          lastAudited: "Zuletzt geprüft",
+          commit: "Commit",
+          measurements: "Messungen",
+          outOf: "von",
+        };
 
   /* ─────────────────────────────────────────
-     1. LIGHT / DARK THEME
+     1. LANGUAGE PREFERENCE
+  ───────────────────────────────────────── */
+  document.querySelectorAll("[data-language-switch]").forEach((link) => {
+    link.addEventListener("click", () => {
+      const nextLanguage = link.dataset.languageSwitch;
+      if (nextLanguage !== "de" && nextLanguage !== "en") return;
+
+      try {
+        localStorage.setItem("portfolio-language", nextLanguage);
+      } catch {
+        // The link still changes language when storage is unavailable.
+      }
+
+      const destination = new URL(
+        link.getAttribute("href"),
+        window.location.href,
+      );
+      destination.search = window.location.search;
+      destination.searchParams.delete("lang");
+      destination.hash = window.location.hash;
+      link.href = destination.href;
+    });
+  });
+
+  /* ─────────────────────────────────────────
+     2. LIGHT / DARK THEME
   ───────────────────────────────────────── */
   const themeStorageKey = "portfolio-theme";
-  const root = document.documentElement;
   const themeToggle = document.getElementById("themeToggle");
   const themeColor = document.getElementById("themeColor");
   const systemTheme = window.matchMedia("(prefers-color-scheme: light)");
@@ -26,8 +81,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function setTheme(theme, persist = false) {
     const isLight = theme === "light";
     const nextThemeLabel = isLight
-      ? "Dunkles Farbschema aktivieren"
-      : "Helles Farbschema aktivieren";
+      ? uiCopy.activateDarkTheme
+      : uiCopy.activateLightTheme;
 
     root.dataset.theme = theme;
     root.style.colorScheme = theme;
@@ -74,7 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ─────────────────────────────────────────
-     2. NAV: Scroll style + Active link
+     3. NAV: Scroll style + Active link
   ───────────────────────────────────────── */
   const nav = document.getElementById("nav");
   const navLinks = document.querySelectorAll('.nav__link[href^="#"]');
@@ -112,7 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
   updateNav();
 
   /* ─────────────────────────────────────────
-     3. ACCESSIBLE HAMBURGER MENU
+     4. ACCESSIBLE HAMBURGER MENU
   ───────────────────────────────────────── */
   const hamburger = document.getElementById("hamburger");
   const navLinksContainer = document.getElementById("navLinks");
@@ -124,7 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
     hamburger.setAttribute("aria-expanded", String(open));
     hamburger.setAttribute(
       "aria-label",
-      open ? "Menü schließen" : "Menü öffnen",
+      open ? uiCopy.closeMenu : uiCopy.openMenu,
     );
   }
 
@@ -159,7 +214,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ─────────────────────────────────────────
-     4. SCROLL REVEAL — IntersectionObserver
+     5. SCROLL REVEAL — IntersectionObserver
   ───────────────────────────────────────── */
   const revealElements = document.querySelectorAll("[data-reveal]");
 
@@ -194,7 +249,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ─────────────────────────────────────────
-     5. BACK TO TOP
+     6. BACK TO TOP
   ───────────────────────────────────────── */
   const backToTop = document.getElementById("backToTop");
 
@@ -206,7 +261,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ─────────────────────────────────────────
-     6. HERO BACKGROUND PARALLAX (subtle)
+     7. HERO BACKGROUND PARALLAX (subtle)
   ───────────────────────────────────────── */
   const heroGlow1 = document.querySelector(".hero__glow--1");
   const heroGlow2 = document.querySelector(".hero__glow--2");
@@ -224,7 +279,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ─────────────────────────────────────────
-     7. SMOOTH SCROLL for anchor links
+     8. SMOOTH SCROLL for anchor links
   ───────────────────────────────────────── */
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", (e) => {
@@ -245,13 +300,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ─────────────────────────────────────────
-     8. FOOTER YEAR
+     9. FOOTER YEAR
   ───────────────────────────────────────── */
   const currentYear = document.getElementById("currentYear");
   if (currentYear) currentYear.textContent = String(new Date().getFullYear());
 
   /* ─────────────────────────────────────────
-     9. PRIVACY-FRIENDLY VISITOR STATISTICS
+     10. PRIVACY-FRIENDLY VISITOR STATISTICS
   ───────────────────────────────────────── */
   const doNotTrackSignal = navigator.doNotTrack || window.doNotTrack;
   const privacySignalEnabled =
@@ -268,6 +323,8 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.append(analyticsScript);
   }
 
+  // Reading the public aggregate does not track the current visitor, so the
+  // visible total remains available when Do Not Track is enabled.
   const visitorCounter = document.getElementById("visitorCounter");
   const visitorCount = document.getElementById("visitorCount");
 
@@ -284,7 +341,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const count = Number(String(data.count).replace(/[^0-9]/g, ""));
         if (!Number.isFinite(count)) return;
 
-        visitorCount.textContent = new Intl.NumberFormat("de-DE").format(count);
+        visitorCount.textContent = new Intl.NumberFormat(locale).format(count);
         visitorCounter.hidden = false;
       })
       .catch(() => {
@@ -293,7 +350,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ─────────────────────────────────────────
-     10. ACCESSIBLE ENGINEERING CASE STUDIES
+     11. ACCESSIBLE ENGINEERING CASE STUDIES
   ───────────────────────────────────────── */
   const caseStudyTriggers = document.querySelectorAll("[data-case-study]");
   const caseStudyDialogs = document.querySelectorAll(".case-study-dialog");
@@ -335,6 +392,8 @@ document.addEventListener("DOMContentLoaded", () => {
       button.addEventListener("click", () => closeCaseStudy(dialog));
     });
 
+    // Clicking the shaded backdrop is an additional closing option. The
+    // visible close buttons remain available for keyboard and touch users.
     dialog.addEventListener("click", (event) => {
       if (event.target === dialog) closeCaseStudy(dialog);
     });
@@ -345,4 +404,106 @@ document.addEventListener("DOMContentLoaded", () => {
       lastCaseStudyTrigger = null;
     });
   });
+
+  /* ─────────────────────────────────────────
+     12. AUTOMATED LIGHTHOUSE QUALITY DASHBOARD
+  ───────────────────────────────────────── */
+  const qualityDashboard = document.querySelector("[data-quality-dashboard]");
+
+  function setQualityStatus(status, text) {
+    const statusElement = qualityDashboard?.querySelector(
+      "[data-quality-status]",
+    );
+    const statusText = qualityDashboard?.querySelector(
+      "[data-quality-status-text]",
+    );
+    if (!statusElement || !statusText) return;
+
+    statusElement.classList.remove(
+      "quality-dashboard__status--pending",
+      "quality-dashboard__status--passing",
+      "quality-dashboard__status--attention",
+    );
+    statusElement.classList.add(`quality-dashboard__status--${status}`);
+    statusText.textContent = text;
+  }
+
+  function renderQualitySummary(summary) {
+    if (!qualityDashboard || !summary?.scores) return;
+
+    const metricKeys = ["performance", "accessibility", "bestPractices", "seo"];
+
+    metricKeys.forEach((key) => {
+      const rawScore = Number(summary.scores[key]);
+      if (!Number.isFinite(rawScore)) return;
+
+      const score = Math.min(100, Math.max(0, Math.round(rawScore)));
+      const scoreElement = qualityDashboard.querySelector(
+        `[data-quality-score="${key}"]`,
+      );
+      const bar = qualityDashboard.querySelector(`[data-quality-bar="${key}"]`);
+      const metric = qualityDashboard.querySelector(
+        `[data-quality-metric="${key}"]`,
+      );
+      const label = metric?.querySelector(
+        ".quality-metric__label",
+      )?.textContent;
+
+      if (scoreElement) scoreElement.textContent = String(score);
+      if (bar) bar.style.width = `${score}%`;
+      if (metric && label) {
+        metric.setAttribute(
+          "aria-label",
+          `${label}: ${score} ${uiCopy.outOf} 100`,
+        );
+      }
+    });
+
+    const passed = summary.status === "passing";
+    setQualityStatus(
+      passed ? "passing" : "attention",
+      passed ? uiCopy.qualityPassing : uiCopy.qualityAttention,
+    );
+
+    const updatedElement = qualityDashboard.querySelector(
+      "[data-quality-updated]",
+    );
+    const updatedDate = summary.updatedAt ? new Date(summary.updatedAt) : null;
+
+    if (updatedElement && updatedDate && !Number.isNaN(updatedDate.getTime())) {
+      const parts = [
+        `${uiCopy.lastAudited} ${new Intl.DateTimeFormat(locale, {
+          dateStyle: "medium",
+        }).format(updatedDate)}`,
+      ];
+
+      if (typeof summary.commit === "string" && summary.commit) {
+        parts.push(`${uiCopy.commit} ${summary.commit.slice(0, 7)}`);
+      }
+      if (Number.isFinite(Number(summary.runs))) {
+        parts.push(`${Number(summary.runs)} ${uiCopy.measurements}`);
+      }
+
+      updatedElement.textContent = parts.join(" · ");
+    }
+  }
+
+  if (qualityDashboard && window.location.protocol !== "file:") {
+    const qualitySource = qualityDashboard.dataset.qualitySource;
+
+    if (qualitySource) {
+      fetch(qualitySource, { cache: "no-store", credentials: "same-origin" })
+        .then((response) => {
+          if (!response.ok) throw new Error("Quality summary unavailable");
+          return response.json();
+        })
+        .then((summary) => {
+          if (summary?.status === "pending") return;
+          renderQualitySummary(summary);
+        })
+        .catch(() => {
+          setQualityStatus("pending", uiCopy.qualityUnavailable);
+        });
+    }
+  }
 });

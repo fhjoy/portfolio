@@ -2,7 +2,7 @@
 
 # Faisal Hossain · Developer Portfolio
 
-**Frontend & Full-Stack Developer** focused on accessible, maintainable web applications with TypeScript, Vue.js, React, and Node.js.
+**Frontend & Full-Stack Developer** focused on accessible, maintainable web applications with TypeScript, Vue.js, React, Node.js, and MongoDB.
 
 [View the live portfolio](https://fhjoy.github.io/portfolio/) · [LinkedIn](https://www.linkedin.com/in/md-faisal-hossain-germany/) · [GitHub profile](https://github.com/fhjoy)
 
@@ -14,7 +14,7 @@
 
 This repository contains my professional portfolio for the German job market. It brings together my frontend and full-stack experience, selected projects, measurable results, work-reference summaries, education, and contact options in one responsive website.
 
-The portfolio is written in German and includes downloadable CVs in German and English.
+The portfolio provides carefully written German and English experiences and includes downloadable CVs in both languages. It detects the visitor's browser language on the first visit, offers a persistent manual language choice, and publishes independently measured Lighthouse results from GitHub Actions.
 
 ## Professional profile at a glance
 
@@ -41,16 +41,11 @@ The website follows a clear professional journey:
 4. **References** — concise summaries of employment and academic recommendations
 5. **Technologies** — frontend, backend, testing, DevOps, and supporting tools
 6. **Selected work** — current, academic, and personal projects with concise engineering insights
-7. **Education** — master's degree, bachelor's degree, certificates, awards, and languages
-8. **Contact** — direct links for recruiters and engineering teams
+7. **Quality evidence** — current CI-generated Lighthouse results for both language versions
+8. **Education** — master's degree, bachelor's degree, certificates, awards, and languages
+9. **Contact** — direct links for recruiters and engineering teams
 
 ## Selected work represented
-
-### roleNaviq · in development
-
-A full-stack job-application platform built with TypeScript throughout. The current implementation combines a React and Vite frontend with a Node.js, Express, MongoDB, and Mongoose backend. Authentication uses JWTs in HttpOnly cookies, while protected API operations also enforce resource ownership on the server.
-
-The portfolio presents roleNaviq honestly as an active project. Its engineering panel focuses on state boundaries, security decisions, data-model trade-offs, and the testing work planned before a public demo.
 
 ### Enterprise frontend development
 
@@ -62,16 +57,16 @@ Frontend development and test automation for an intelligent document-processing 
 
 ### Master's thesis: SPA, SSR, and SSG
 
-A controlled practical comparison of three web-rendering strategies using React, Next.js, Node.js, Express, MongoDB, and Material UI.
-
-- [Single-Page Application](https://github.com/fhjoy/spa)
-- [Server-Side Rendering](https://github.com/fhjoy/ssr)
-- [Static Site Generation](https://github.com/fhjoy/ssg)
+A controlled practical comparison by a similar looking E-Commerce Web shop of three web-rendering strategies using React, Next.js, Node.js, Express, MongoDB, and Material UI.
 
 ### Personal full-stack projects
 
-- [Tour World](https://github.com/fhjoy/tour-world) — server-rendered tourism and booking platform built with Node.js, Express, MongoDB, Mongoose, Pug, JWT, Stripe, and Mapbox
-- [Recipe App](https://github.com/fhjoy/Recipe--App) — modular JavaScript single-page application with recipe search, API integration, pagination, serving adjustment, bookmarks, and custom recipes
+- roleNaviq · in development — A full-stack job-application platform built with TypeScript throughout. The current implementation combines a React and Vite frontend with a Node.js, Express, MongoDB, and Mongoose backend. Authentication uses JWTs in HttpOnly cookies, while protected API operations also enforce resource ownership on the server.
+
+The portfolio presents roleNaviq honestly as an active project. Its engineering panel focuses on state boundaries, security decisions, data-model trade-offs, and the testing work planned before a public demo.
+
+- Tour World — server-rendered tourism and booking platform built with Node.js, Express, MongoDB, Mongoose, Pug, JWT, Stripe, and Mapbox
+- Recipe App — modular JavaScript single-page application with recipe search, API integration, pagination, serving adjustment, bookmarks, and custom recipes
 
 ## Frontend engineering decisions
 
@@ -100,6 +95,26 @@ This portfolio deliberately uses a small, framework-free codebase. The goal is t
 - Smooth scrolling with reduced-motion fallback
 - Responsive grids for projects, experience, references, education, and contact details
 
+### German and English experiences
+
+- German content at `/` and professionally written English content at `/en/`
+- First-visit selection from the browser's preferred language: German for `de`, English for all other languages
+- A visible `DE`/`EN` switch that remembers the visitor's explicit choice in local storage
+- Localised navigation, interaction labels, dates, metadata, structured data, privacy information, and project case studies
+- `hreflang`, canonical URLs, and localised Open Graph metadata for search engines and link previews
+
+### Automated quality dashboard
+
+The public dashboard is backed by Lighthouse CI rather than manually entered numbers. On every relevant push to `main`, GitHub Actions:
+
+1. audits the German and English pages three times each;
+2. calculates the median for performance, accessibility, best practices, and SEO per page;
+3. publishes the lower of the two page medians, so one strong language version cannot hide a weaker one;
+4. stores the full Lighthouse reports as a workflow artifact for 30 days; and
+5. fails the quality gate when a published score falls below its threshold.
+
+The thresholds are currently 80 for performance, 95 for accessibility, and 90 for both best practices and SEO. Before the first workflow run, the dashboard intentionally shows **Audit pending** instead of invented scores.
+
 ### Discoverability
 
 - Descriptive page title and meta description
@@ -119,6 +134,7 @@ This portfolio deliberately uses a small, framework-free codebase. The goal is t
 | Typography  | Space Grotesk, Inter, JetBrains Mono                                          |
 | Hosting     | GitHub Pages                                                                  |
 | Documents   | German and English CVs in PDF format                                          |
+| Quality     | Lighthouse CI and GitHub Actions                                              |
 
 There is no framework, package manager, bundler, or runtime dependency required to view the site.
 
@@ -126,13 +142,25 @@ There is no framework, package manager, bundler, or runtime dependency required 
 
 ```text
 portfolio/
+├── .github/
+│   └── workflows/
+│       └── portfolio-quality.yml
 ├── docs/
 │   ├── documents/
 │   │   ├── Faisal_Hossain_CV_EN.pdf
 │   │   └── Lebenslauf_Faisal_Hossain_DE.pdf
 │   └── images/
 │       └── faisal_hossain.avif
+├── en/
+│   └── index.html
+├── quality/
+│   └── latest.json
+├── scripts/
+│   ├── check-quality-thresholds.mjs
+│   └── create-quality-summary.mjs
+├── .gitignore
 ├── index.html
+├── lighthouserc.json
 ├── script.js
 └── style.css
 ```
@@ -146,7 +174,13 @@ git clone https://github.com/fhjoy/portfolio.git
 cd portfolio
 ```
 
-Opening `index.html` directly also works for most of the site, but a local server is recommended for testing document links and browser behavior consistently.
+Run a local server from the repository root so redirects, the English route, and the quality JSON use normal HTTP behaviour:
+
+```bash
+python -m http.server 8000
+```
+
+Then open `http://localhost:8000/`. Opening `index.html` directly still displays the portfolio, but the automated quality summary remains pending because browsers restrict local-file fetches.
 
 ## Deployment
 
@@ -154,7 +188,9 @@ The production site is hosted with GitHub Pages:
 
 **[fhjoy.github.io/portfolio](https://fhjoy.github.io/portfolio/)**
 
-Because this is a static website, deployment requires no server configuration or environment variables. Changes published to the configured GitHub Pages branch become part of the live portfolio.
+Because this is a static website, deployment requires no server configuration or environment variables. Preserve the repository structure when publishing so `/en/`, `/quality/`, the scripts, and the workflow remain available.
+
+A push to `main` starts the **Portfolio quality** workflow. It commits the generated `quality/latest.json` back to the repository with `[skip ci]`, which prevents a workflow loop. If repository policy blocks that commit, enable **Read and write permissions** under **Settings → Actions → General → Workflow permissions**, then run the workflow again from the Actions tab.
 
 ## References and confidentiality
 

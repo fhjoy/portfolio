@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "status": "pending",
+  "updatedAt": null,
+  "commit": null,
+  "runs": 0,
+  "pages": 0,
+  "scores": {
+    "performance": null,
+    "accessibility": null,
+    "bestPractices": null,
+    "seo": null
+  },
+  "thresholds": {
+    "performance": 80,
+    "accessibility": 95,
+    "bestPractices": 90,
+    "seo": 90
+  }
+}
