@@ -8,8 +8,8 @@
 
 </div>
 
-![Faisal Hossain's developer portfolio](docs/images/portfolio-hero_1.jpg)
-![Faisal Hossain's developer portfolio](docs/images/portfolio-hero_2.jpg)
+![Faisal Hossain's developer portfolio](docs/images/portfolio-hero_1.JPG)
+![Faisal Hossain's developer portfolio](docs/images/portfolio-hero_2.JPG)
 
 ## Purpose
 
