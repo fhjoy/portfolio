@@ -120,7 +120,7 @@
         document.documentElement.style.colorScheme = theme;
       })();
     </script>
-    <link rel="stylesheet" href="../style.css?v=5" />
+    <link rel="stylesheet" href="../style.css?v=6" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -362,18 +362,16 @@
                 <span class="stat-card__label">years of experience</span>
               </div>
               <div class="stat-card">
-                <span class="stat-card__num">30+</span>
-                <span class="stat-card__label">UI components</span>
-              </div>
-              <div class="stat-card">
-                <span class="stat-card__num">300+</span>
-                <span class="stat-card__label"
-                  >accessibility issues resolved</span
-                >
-              </div>
-              <div class="stat-card">
                 <span class="stat-card__num">Master's</span>
                 <span class="stat-card__label">Media Engineering</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-card__num">Bachelor's</span>
+                <span class="stat-card__label">Computer Science (CSE)</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-card__num">20+</span>
+                <span class="stat-card__label">Telekom projects</span>
               </div>
             </div>
           </div>
@@ -659,9 +657,10 @@
             <article class="reference-card" data-reveal>
               <div class="reference-card__mark" aria-hidden="true">✓</div>
               <p class="reference-card__text">
-                The reference confirms my frontend work with Vue, Cypress and
-                Jest, my analysis of Vue.js testability and my coordination of
-                development activities.
+                Very positive assessment of my work in frontend development.
+                Particular recognition was given to my work with Vue, Cypress
+                and Jest, my in-depth analysis of Vue.js testability, and my
+                coordination of development activities.
               </p>
               <div class="reference-card__source">
                 <strong>Natif.ai</strong>
@@ -700,9 +699,12 @@
             >
               <div class="reference-card__mark" aria-hidden="true">✓</div>
               <p class="reference-card__text">
-                Prof. Dr. Tom Rüdebusch highlights my master's thesis grade of
-                1.0, my course grade of 1.7, my determination and collaborative
-                approach, and recommends me strongly and without reservation.
+                Prof. Dr. Tom Rüdebusch recognises my exceptional performance in
+                my master’s thesis, which received the highest grade of 1.0, as
+                well as my engagement in the international CME programme and its
+                buddy programme. He describes me as a very good, determined and
+                cooperative student and recommends me strongly and without
+                reservation.
               </p>
               <div class="reference-card__source">
                 <strong>Prof. Dr. Tom Rüdebusch</strong>
@@ -971,6 +973,15 @@
               </div>
               <div class="project-card__actions">
                 <button
+                  class="case-study-trigger case-study-trigger--comparison"
+                  type="button"
+                  data-case-study="rendering-comparison"
+                  aria-haspopup="dialog"
+                >
+                  Compare SPA · SSR · SSG
+                  <span aria-hidden="true">→</span>
+                </button>
+                <button
                   class="case-study-trigger"
                   type="button"
                   data-case-study="case-study-rendering"
@@ -1174,6 +1185,116 @@
 
               <footer class="case-study-dialog__footer">
                 <span>Status: active development</span>
+                <button type="button" data-dialog-close>Close</button>
+              </footer>
+            </div>
+          </dialog>
+
+          <dialog
+            class="case-study-dialog case-study-dialog--comparison"
+            id="rendering-comparison"
+            aria-labelledby="rendering-comparison-title"
+          >
+            <div class="case-study-dialog__inner">
+              <header class="case-study-dialog__header">
+                <div>
+                  <span class="case-study-dialog__eyebrow"
+                    >Decision guide · Rendering</span
+                  >
+                  <h2 id="rendering-comparison-title">
+                    SPA, SSR and SSG compared directly
+                  </h2>
+                </div>
+                <button
+                  class="case-study-dialog__close"
+                  type="button"
+                  data-dialog-close
+                  aria-label="Close the SPA, SSR and SSG comparison"
+                >
+                  <span aria-hidden="true">×</span>
+                </button>
+              </header>
+
+              <p class="case-study-dialog__lead">
+                The three thesis applications implement a comparable shop with
+                different rendering strategies. This table shows which kinds of
+                requirements each approach is particularly well suited to.
+              </p>
+
+              <div
+                class="rendering-comparison"
+                tabindex="0"
+                role="region"
+                aria-label="Comparison table for SPA, SSR and SSG"
+              >
+                <table>
+                  <caption>
+                    Practical differences between the three rendering strategies
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Criterion</th>
+                      <th scope="col">SPA</th>
+                      <th scope="col">SSR</th>
+                      <th scope="col">SSG</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">HTML generation</th>
+                      <td>In the browser after JavaScript loads</td>
+                      <td>On the server for every request</td>
+                      <td>During the build process</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Initial delivery</th>
+                      <td>App shell; JavaScript initialises the view</td>
+                      <td>Fully rendered HTML from the server</td>
+                      <td>Pre-rendered HTML from static files</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Data freshness</th>
+                      <td>Current data through API requests</td>
+                      <td>Current data at request time</td>
+                      <td>Data from the latest build</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Infrastructure</th>
+                      <td>Static hosting plus an API</td>
+                      <td>A continuously running server</td>
+                      <td>Static hosting or a CDN</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Strong fit</th>
+                      <td>Highly interactive web applications</td>
+                      <td>Dynamic or personalised pages</td>
+                      <td>Stable, content-led pages</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <footer class="case-study-dialog__footer">
+                <div class="case-study-dialog__links">
+                  <a
+                    href="https://github.com/fhjoy/spa"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Tiny Shop · SPA ↗</a
+                  >
+                  <a
+                    href="https://github.com/fhjoy/ssr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Small Shop · SSR ↗</a
+                  >
+                  <a
+                    href="https://github.com/fhjoy/ssg"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Little Shop · SSG ↗</a
+                  >
+                </div>
                 <button type="button" data-dialog-close>Close</button>
               </footer>
             </div>
@@ -1463,118 +1584,6 @@
               </footer>
             </div>
           </dialog>
-
-          <div
-            class="quality-dashboard"
-            data-quality-dashboard
-            data-quality-source="../quality/latest.json"
-            aria-labelledby="quality-dashboard-title"
-            data-reveal
-          >
-            <div class="quality-dashboard__header">
-              <div>
-                <span class="quality-dashboard__eyebrow"
-                  >Automated quality assurance</span
-                >
-                <h3 id="quality-dashboard-title">Latest Lighthouse results</h3>
-                <p>
-                  After every relevant push, CI audits both language versions.
-                  Each category shows the lower median score across the pages
-                  tested.
-                </p>
-              </div>
-              <span
-                class="quality-dashboard__status quality-dashboard__status--pending"
-                data-quality-status
-                aria-live="polite"
-              >
-                <span
-                  class="quality-dashboard__status-dot"
-                  aria-hidden="true"
-                ></span>
-                <span data-quality-status-text>Audit pending</span>
-              </span>
-            </div>
-
-            <div
-              class="quality-dashboard__metrics"
-              role="list"
-              aria-label="Automatically measured Lighthouse results"
-              aria-live="polite"
-            >
-              <div
-                class="quality-metric"
-                role="listitem"
-                data-quality-metric="performance"
-              >
-                <span class="quality-metric__label">Performance</span>
-                <div class="quality-metric__value">
-                  <strong data-quality-score="performance">–</strong
-                  ><span>/100</span>
-                </div>
-                <div class="quality-metric__track" aria-hidden="true">
-                  <span data-quality-bar="performance"></span>
-                </div>
-              </div>
-
-              <div
-                class="quality-metric"
-                role="listitem"
-                data-quality-metric="accessibility"
-              >
-                <span class="quality-metric__label">Accessibility</span>
-                <div class="quality-metric__value">
-                  <strong data-quality-score="accessibility">–</strong
-                  ><span>/100</span>
-                </div>
-                <div class="quality-metric__track" aria-hidden="true">
-                  <span data-quality-bar="accessibility"></span>
-                </div>
-              </div>
-
-              <div
-                class="quality-metric"
-                role="listitem"
-                data-quality-metric="bestPractices"
-              >
-                <span class="quality-metric__label">Best Practices</span>
-                <div class="quality-metric__value">
-                  <strong data-quality-score="bestPractices">–</strong
-                  ><span>/100</span>
-                </div>
-                <div class="quality-metric__track" aria-hidden="true">
-                  <span data-quality-bar="bestPractices"></span>
-                </div>
-              </div>
-
-              <div
-                class="quality-metric"
-                role="listitem"
-                data-quality-metric="seo"
-              >
-                <span class="quality-metric__label">SEO</span>
-                <div class="quality-metric__value">
-                  <strong data-quality-score="seo">–</strong><span>/100</span>
-                </div>
-                <div class="quality-metric__track" aria-hidden="true">
-                  <span data-quality-bar="seo"></span>
-                </div>
-              </div>
-            </div>
-
-            <div class="quality-dashboard__footer">
-              <p data-quality-updated>
-                Verified scores will appear after the next successful workflow
-                run.
-              </p>
-              <a
-                href="https://github.com/fhjoy/portfolio/actions/workflows/portfolio-quality.yml"
-                target="_blank"
-                rel="noopener noreferrer"
-                >View workflow ↗</a
-              >
-            </div>
-          </div>
         </div>
       </section>
 
@@ -1712,6 +1721,134 @@
         </div>
       </section>
 
+      <!-- QUALITY -->
+      <section
+        class="section quality-section"
+        id="quality"
+        aria-labelledby="quality-section-title"
+      >
+        <div class="container">
+          <div class="section__header">
+            <span class="section__tag">// 08</span>
+            <h2 class="section__title" id="quality-section-title">
+              Automated quality assurance
+            </h2>
+          </div>
+
+          <div
+            class="quality-dashboard"
+            data-quality-dashboard
+            data-quality-source="../quality/latest.json"
+            aria-labelledby="quality-dashboard-title"
+            data-reveal
+          >
+            <div class="quality-dashboard__header">
+              <div>
+                <span class="quality-dashboard__eyebrow"
+                  >Lighthouse CI · DE and EN</span
+                >
+                <h3 id="quality-dashboard-title">Latest Lighthouse results</h3>
+                <p>
+                  After every relevant push, CI audits both language versions.
+                  Each category shows the lower median score across the pages
+                  tested.
+                </p>
+              </div>
+              <span
+                class="quality-dashboard__status quality-dashboard__status--pending"
+                data-quality-status
+                aria-live="polite"
+              >
+                <span
+                  class="quality-dashboard__status-dot"
+                  aria-hidden="true"
+                ></span>
+                <span data-quality-status-text>Audit pending</span>
+              </span>
+            </div>
+
+            <div
+              class="quality-dashboard__metrics"
+              role="list"
+              aria-label="Automatically measured Lighthouse results"
+              aria-live="polite"
+            >
+              <div
+                class="quality-metric"
+                role="listitem"
+                data-quality-metric="performance"
+              >
+                <span class="quality-metric__label">Performance</span>
+                <div class="quality-metric__value">
+                  <strong data-quality-score="performance">–</strong
+                  ><span>/100</span>
+                </div>
+                <div class="quality-metric__track" aria-hidden="true">
+                  <span data-quality-bar="performance"></span>
+                </div>
+              </div>
+
+              <div
+                class="quality-metric"
+                role="listitem"
+                data-quality-metric="accessibility"
+              >
+                <span class="quality-metric__label">Accessibility</span>
+                <div class="quality-metric__value">
+                  <strong data-quality-score="accessibility">–</strong
+                  ><span>/100</span>
+                </div>
+                <div class="quality-metric__track" aria-hidden="true">
+                  <span data-quality-bar="accessibility"></span>
+                </div>
+              </div>
+
+              <div
+                class="quality-metric"
+                role="listitem"
+                data-quality-metric="bestPractices"
+              >
+                <span class="quality-metric__label">Best Practices</span>
+                <div class="quality-metric__value">
+                  <strong data-quality-score="bestPractices">–</strong
+                  ><span>/100</span>
+                </div>
+                <div class="quality-metric__track" aria-hidden="true">
+                  <span data-quality-bar="bestPractices"></span>
+                </div>
+              </div>
+
+              <div
+                class="quality-metric"
+                role="listitem"
+                data-quality-metric="seo"
+              >
+                <span class="quality-metric__label">SEO</span>
+                <div class="quality-metric__value">
+                  <strong data-quality-score="seo">–</strong><span>/100</span>
+                </div>
+                <div class="quality-metric__track" aria-hidden="true">
+                  <span data-quality-bar="seo"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="quality-dashboard__footer">
+              <p data-quality-updated>
+                Verified scores will appear after the next successful workflow
+                run.
+              </p>
+              <a
+                href="https://github.com/fhjoy/portfolio/actions/workflows/portfolio-quality.yml"
+                target="_blank"
+                rel="noopener noreferrer"
+                >View workflow ↗</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- CONTACT -->
       <section
         class="section contact"
@@ -1720,7 +1857,7 @@
       >
         <div class="container">
           <div class="section__header">
-            <span class="section__tag">// 08</span>
+            <span class="section__tag">// 09</span>
             <h2 class="section__title" id="contact-title">Contact</h2>
           </div>
           <p class="contact__intro">

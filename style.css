@@ -1029,6 +1029,8 @@ button {
   border-radius: 50%;
   background: var(--accent);
   box-shadow: 0 0 0 4px var(--accent-dim);
+  animation: pulse 2s ease-in-out infinite;
+  transform-origin: center;
 }
 .case-study-trigger {
   display: inline-flex;
@@ -1061,6 +1063,15 @@ button {
 }
 .case-study-trigger:hover span {
   transform: translateX(3px);
+}
+.case-study-trigger--comparison {
+  border-color: var(--purple-border-soft);
+  background: var(--purple-soft);
+  color: var(--purple-text);
+}
+.case-study-trigger--comparison:hover {
+  border-color: var(--purple-text);
+  background: var(--purple-soft-hover);
 }
 .project-repositories {
   display: grid;
@@ -1262,6 +1273,65 @@ body.dialog-open {
   flex-wrap: wrap;
   gap: 1rem;
 }
+.case-study-dialog--comparison {
+  width: min(1050px, calc(100% - 2rem));
+}
+.rendering-comparison {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-card-2);
+}
+.rendering-comparison:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+.rendering-comparison table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  text-align: left;
+}
+.rendering-comparison caption {
+  padding: 1rem 1.1rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-align: left;
+}
+.rendering-comparison th,
+.rendering-comparison td {
+  padding: 0.9rem 1rem;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  font-size: 0.82rem;
+  line-height: 1.55;
+  vertical-align: top;
+}
+.rendering-comparison th:last-child,
+.rendering-comparison td:last-child {
+  border-right: 0;
+}
+.rendering-comparison tbody tr:last-child th,
+.rendering-comparison tbody tr:last-child td {
+  border-bottom: 0;
+}
+.rendering-comparison thead th {
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+.rendering-comparison tbody th {
+  width: 18%;
+  color: var(--white);
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+.rendering-comparison td {
+  color: var(--text-muted);
+}
 
 @keyframes case-study-enter {
   from {
@@ -1422,6 +1492,12 @@ body.dialog-open {
 .quality-dashboard__footer a:hover {
   color: var(--white);
 }
+.quality-section {
+  background: var(--bg-deep);
+}
+.quality-section .quality-dashboard {
+  margin-top: 0;
+}
 
 /* ============================================================
    EXPERIENCE
@@ -1460,9 +1536,14 @@ body.dialog-open {
   flex-shrink: 0;
   z-index: 1;
 }
+.timeline__dot:not(.timeline__dot--dim) {
+  animation: pulse 2s ease-in-out infinite;
+  transform-origin: center;
+}
 .timeline__dot--dim {
   background: var(--border);
   box-shadow: none;
+  animation: none;
 }
 .timeline__line {
   width: 1px;
@@ -1769,7 +1850,7 @@ body.dialog-open {
    CONTACT
    ============================================================ */
 .contact {
-  background: var(--bg-deep);
+  background: var(--bg-card);
 }
 .contact__intro {
   color: var(--text-muted);

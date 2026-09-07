@@ -8,7 +8,8 @@
 
 </div>
 
-![Faisal Hossain's developer portfolio](docs/images/portfolio-hero.jpg)
+![Faisal Hossain's developer portfolio](docs/images/portfolio-hero_1.jpg)
+![Faisal Hossain's developer portfolio](docs/images/portfolio-hero_2.jpg)
 
 ## Purpose
 
@@ -41,9 +42,10 @@ The website follows a clear professional journey:
 4. **References** — concise summaries of employment and academic recommendations
 5. **Technologies** — frontend, backend, testing, DevOps, and supporting tools
 6. **Selected work** — current, academic, and personal projects with concise engineering insights
-7. **Quality evidence** — current CI-generated Lighthouse results for both language versions
-8. **Education** — master's degree, bachelor's degree, certificates, awards, and languages
-9. **Contact** — direct links for recruiters and engineering teams
+7. **Education** — master's degree, bachelor's degree, certificates, and awards
+8. **Languages** — language skills with clear proficiency levels
+9. **Quality evidence** — current CI-generated Lighthouse results for both language versions
+10. **Contact** — direct links for recruiters and engineering teams
 
 ## Selected work represented
 
@@ -57,7 +59,7 @@ Frontend development and test automation for an intelligent document-processing 
 
 ### Master's thesis: SPA, SSR, and SSG
 
-A controlled practical comparison by a similar looking E-Commerce Web shop of three web-rendering strategies using React, Next.js, Node.js, Express, MongoDB, and Material UI.
+A controlled comparison of three similarly scoped e-commerce applications using React, Next.js, Node.js, Express, MongoDB, and Material UI. A dedicated comparison dialog provides a concise decision reference, while the separate engineering insight explains the experimental method, trade-offs, and conclusions.
 
 ### Personal full-stack projects
 
@@ -80,6 +82,7 @@ This portfolio deliberately uses a small, framework-free codebase. The goal is t
 - Accessible mobile-navigation button with `aria-expanded` and `aria-controls`
 - Escape-key and outside-click handling for the mobile menu
 - Native, keyboard-accessible project case-study dialogs with focus restoration
+- An accessible, horizontally scrollable SPA/SSR/SSG comparison table with semantic row and column headers
 - Reduced-motion support through `prefers-reduced-motion`
 - Descriptive image alternatives and labels for interactive elements
 - Text-based language levels instead of ambiguous progress bars
@@ -105,7 +108,7 @@ This portfolio deliberately uses a small, framework-free codebase. The goal is t
 
 ### Automated quality dashboard
 
-The public dashboard is backed by Lighthouse CI rather than manually entered numbers. On every relevant push to `main`, GitHub Actions:
+The quality dashboard has its own numbered section after Languages and is backed by Lighthouse CI rather than manually entered numbers. On every relevant push to `master`, GitHub Actions:
 
 1. audits the German and English pages three times each;
 2. calculates the median for performance, accessibility, best practices, and SEO per page;
@@ -190,7 +193,7 @@ The production site is hosted with GitHub Pages:
 
 Because this is a static website, deployment requires no server configuration or environment variables. Preserve the repository structure when publishing so `/en/`, `/quality/`, the scripts, and the workflow remain available.
 
-A push to `main` starts the **Portfolio quality** workflow. It commits the generated `quality/latest.json` back to the repository with `[skip ci]`, which prevents a workflow loop. If repository policy blocks that commit, enable **Read and write permissions** under **Settings → Actions → General → Workflow permissions**, then run the workflow again from the Actions tab.
+A push to `master` starts the **Portfolio quality** workflow. It commits the generated `quality/latest.json` back to the repository with `[skip ci]`, which prevents a workflow loop. If repository policy blocks that commit, enable **Read and write permissions** under **Settings → Actions → General → Workflow permissions**, then run the workflow again from the Actions tab.
 
 ## References and confidentiality
 
