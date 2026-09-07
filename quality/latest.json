@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
-  "status": "pending",
-  "updatedAt": null,
-  "commit": null,
-  "runs": 0,
-  "pages": 0,
+  "status": "passing",
+  "updatedAt": "2026-09-06T21:10:04.644Z",
+  "commit": "1531416",
+  "runs": 6,
+  "pages": 2,
   "scores": {
-    "performance": null,
-    "accessibility": null,
-    "bestPractices": null,
-    "seo": null
+    "performance": 98,
+    "accessibility": 100,
+    "bestPractices": 100,
+    "seo": 100
   },
   "thresholds": {
     "performance": 80,
