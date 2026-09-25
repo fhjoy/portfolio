@@ -37,10 +37,120 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ─────────────────────────────────────────
      1. LANGUAGE PREFERENCE
   ───────────────────────────────────────── */
+  const languagePositionStorageKey = "portfolio-language-position";
+
+  function getReadingPosition(nextLanguage) {
+    const focusLine = Math.min(window.innerHeight * 0.3, 240);
+    const sections = Array.from(
+      document.querySelectorAll("main section[id]"),
+    );
+    const currentSection = sections.find((section) => {
+      const bounds = section.getBoundingClientRect();
+      return bounds.top <= focusLine && bounds.bottom > focusLine;
+    });
+
+    if (!currentSection) return null;
+
+    const sectionTop =
+      window.scrollY + currentSection.getBoundingClientRect().top;
+    const readingPoint = window.scrollY + focusLine;
+    const progress = Math.max(
+      0,
+      Math.min(
+        (readingPoint - sectionTop) / Math.max(currentSection.offsetHeight, 1),
+        1,
+      ),
+    );
+
+    return {
+      language: nextLanguage,
+      sectionId: currentSection.id,
+      progress,
+      savedAt: Date.now(),
+    };
+  }
+
+  function storeReadingPosition(position) {
+    if (!position) return;
+
+    try {
+      sessionStorage.setItem(
+        languagePositionStorageKey,
+        JSON.stringify(position),
+      );
+    } catch {
+      // The section hash still provides a useful fallback.
+    }
+  }
+
+  function takeReadingPosition() {
+    try {
+      const storedPosition = sessionStorage.getItem(
+        languagePositionStorageKey,
+      );
+      sessionStorage.removeItem(languagePositionStorageKey);
+
+      if (!storedPosition) return null;
+
+      const position = JSON.parse(storedPosition);
+      const isRecent = Date.now() - position.savedAt < 60_000;
+      const isValidLanguage = position.language === language;
+      const isValidProgress =
+        Number.isFinite(position.progress) &&
+        position.progress >= 0 &&
+        position.progress <= 1;
+
+      return isRecent &&
+        isValidLanguage &&
+        isValidProgress &&
+        typeof position.sectionId === "string"
+        ? position
+        : null;
+    } catch {
+      return null;
+    }
+  }
+
+  function restoreReadingPosition(position) {
+    if (!position) return;
+
+    const section = document.getElementById(position.sectionId);
+    if (!section) return;
+    const originalScrollBehavior = root.style.scrollBehavior;
+
+    const restore = () => {
+      const focusLine = Math.min(window.innerHeight * 0.3, 240);
+      const sectionTop = window.scrollY + section.getBoundingClientRect().top;
+      const targetPosition =
+        sectionTop + position.progress * section.offsetHeight - focusLine;
+
+      root.style.scrollBehavior = "auto";
+      window.scrollTo({
+        top: Math.max(0, targetPosition),
+        left: 0,
+        behavior: "auto",
+      });
+      requestAnimationFrame(() => {
+        root.style.scrollBehavior = originalScrollBehavior;
+      });
+    };
+
+    requestAnimationFrame(() => requestAnimationFrame(restore));
+    window.addEventListener("load", restore, { once: true });
+    if (document.fonts?.ready) {
+      document.fonts.ready.then(restore).catch(() => {});
+    }
+  }
+
+  restoreReadingPosition(takeReadingPosition());
+
   document.querySelectorAll("[data-language-switch]").forEach((link) => {
     link.addEventListener("click", () => {
       const nextLanguage = link.dataset.languageSwitch;
       if (nextLanguage !== "de" && nextLanguage !== "en") return;
+
+      const readingPosition = getReadingPosition(nextLanguage);
+      storeReadingPosition(readingPosition);
 
       try {
         localStorage.setItem("portfolio-language", nextLanguage);
@@ -54,7 +164,9 @@ document.addEventListener("DOMContentLoaded", () => {
       );
       destination.search = window.location.search;
       destination.searchParams.delete("lang");
-      destination.hash = window.location.hash;
+      destination.hash = readingPosition?.sectionId
+        ? `#${readingPosition.sectionId}`
+        : window.location.hash;
       link.href = destination.href;
     });
   });

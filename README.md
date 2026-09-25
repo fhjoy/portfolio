@@ -102,7 +102,7 @@ This portfolio deliberately uses a small, framework-free codebase. The goal is t
 
 - German content at `/` and professionally written English content at `/en/`
 - First-visit selection from the browser's preferred language: German for `de`, English for all other languages
-- A visible `DE`/`EN` switch that remembers the visitor's explicit choice in local storage
+- A visible `DE`/`EN` switch that remembers the visitor's explicit choice in local storage and restores the equivalent reading position through short-lived session storage
 - Localised navigation, interaction labels, dates, metadata, structured data, privacy information, and project case studies
 - `hreflang`, canonical URLs, and localised Open Graph metadata for search engines and link previews
 
