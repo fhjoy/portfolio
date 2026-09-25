@@ -2,7 +2,7 @@
 
 # Faisal Hossain · Developer Portfolio
 
-**Frontend & Full-Stack Developer** focused on accessible, maintainable web applications with TypeScript, Vue.js, React, Node.js, and MongoDB.
+**Full-Stack Developer** focused on accessible, maintainable web applications with React, Vue.js, TypeScript, Angular, Node.js, and MongoDB.
 
 [View the live portfolio](https://fhjoy.github.io/portfolio/) · [LinkedIn](https://www.linkedin.com/in/md-faisal-hossain-germany/) · [GitHub profile](https://github.com/fhjoy)
 
@@ -30,7 +30,7 @@ The portfolio provides carefully written German and English experiences and incl
 | Natif.ai E2E test coverage            | approximately 10% → 85% |
 | Natif.ai component test coverage      |  approximately 0% → 70% |
 
-My main areas of work are component-based frontend architecture, accessibility according to WCAG, REST and GraphQL API development and integration, test automation, legacy modernization, and collaboration in Scrum and Kanban teams.
+My main areas of work are component-based frontend architecture, accessibility according to WCAG, REST and GraphQL API development and integration, test automation, full-stack delivery, legacy modernization, and collaboration in Scrum and Kanban teams.
 
 ## What visitors can explore
 
@@ -51,7 +51,7 @@ The website follows a clear professional journey:
 
 ### Enterprise frontend development
 
-Work for Deutsche Telekom and partner platforms, including reusable Vue and React components, accessibility improvements, API work, migrations, and legacy-code modernization. Customer source code and project details remain confidential.
+Work for Deutsche Telekom e-commerce, customer-portal, trade-in, streaming/TV, B2B, and partner platforms, including reusable Vue and React components, accessibility improvements, API work, migrations, and legacy-code modernization. Customer source code and project details remain confidential.
 
 ### AI-powered document processing
 
@@ -63,9 +63,9 @@ A controlled comparison of three similarly scoped e-commerce applications using 
 
 ### Personal full-stack projects
 
-- roleNaviq · in development — A full-stack job-application platform built with TypeScript throughout. The current implementation combines a React and Vite frontend with a Node.js, Express, MongoDB, and Mongoose backend. Authentication uses JWTs in HttpOnly cookies, while protected API operations also enforce resource ownership on the server.
+- [RoleNaviq](https://rolenaviq.vercel.app) · active development — A modular multi-service job-application platform with a React frontend, an Angular interview-preparation module, and a Node.js/Express API backed by MongoDB. A separate Python/FastAPI service for LLM and RAG-based document analysis is in development.
 
-The portfolio presents roleNaviq honestly as an active project. Its engineering panel focuses on state boundaries, security decisions, data-model trade-offs, and the testing work planned before a public demo.
+The platform uses JWT authentication in HttpOnly cookies, per-user authorisation, route-level lazy loading, Vitest and Cypress tests, Docker Compose, and GitHub Actions CI. React and Angular are deployed to Vercel, while the Node.js API runs on Render with MongoDB Atlas.
 
 - Tour World — server-rendered tourism and booking platform built with Node.js, Express, MongoDB, Mongoose, Pug, JWT, Stripe, and Mapbox
 - Recipe App — modular JavaScript single-page application with recipe search, API integration, pagination, serving adjustment, bookmarks, and custom recipes
