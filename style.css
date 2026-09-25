@@ -968,21 +968,6 @@ button {
 .project-card__number {
   color: var(--text-muted);
 }
-.project-card__code {
-  display: block;
-  width: fit-content;
-  max-width: 100%;
-  margin: -0.35rem 0 1rem;
-  padding: 0.35rem 0.6rem;
-  overflow-wrap: anywhere;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  background: var(--bg-deep);
-  color: var(--purple-text);
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  white-space: normal;
-}
 .project-card__title {
   margin-bottom: 0.75rem;
   color: var(--white);
@@ -994,6 +979,186 @@ button {
   margin-bottom: 1.4rem;
   color: var(--text-muted);
   line-height: 1.7;
+}
+.architecture-map {
+  margin: 0 0 1.5rem;
+  padding: 1.25rem;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(135deg, var(--featured-gradient), transparent 55%),
+    var(--bg-deep);
+}
+.architecture-map__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.8rem 1.5rem;
+  margin-bottom: 1.2rem;
+}
+.architecture-map__header strong {
+  display: block;
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 1rem;
+}
+.architecture-map__eyebrow {
+  display: block;
+  margin-bottom: 0.15rem;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.architecture-map__legend {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.55rem 1rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+}
+.architecture-map__legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+}
+.architecture-map__key {
+  width: 0.62rem;
+  height: 0.62rem;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent-shadow);
+}
+.architecture-map__key--progress {
+  border: 1px dashed var(--purple-text);
+  background: transparent;
+  box-shadow: none;
+}
+.architecture-map__clients,
+.architecture-map__services {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+.architecture-node {
+  position: relative;
+  min-width: 0;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--accent-border-soft);
+  border-radius: var(--radius);
+  background: var(--bg-card-2);
+  box-shadow: 0 8px 24px var(--accent-shadow-subtle);
+  text-align: center;
+}
+.architecture-node strong,
+.architecture-node small,
+.architecture-node__type {
+  display: block;
+}
+.architecture-node strong {
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+.architecture-node small {
+  margin-top: 0.2rem;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  line-height: 1.45;
+}
+.architecture-node__type {
+  margin-bottom: 0.22rem;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.architecture-node--core {
+  width: min(560px, 100%);
+  margin: 0 auto;
+  border-color: var(--accent);
+  box-shadow: 0 0 24px var(--accent-shadow-soft);
+}
+.architecture-node--data {
+  border-color: var(--purple-border-soft);
+}
+.architecture-node--progress {
+  padding-top: 1.55rem;
+  border-color: var(--purple-text);
+  border-style: dashed;
+  background: var(--purple-soft);
+  box-shadow: none;
+}
+.architecture-node--progress .architecture-node__type {
+  color: var(--purple-text);
+}
+.architecture-node__status {
+  position: absolute;
+  top: 0.45rem;
+  right: 0.55rem;
+  padding: 0.12rem 0.4rem;
+  border: 1px dashed var(--purple-text);
+  border-radius: 999px;
+  color: var(--purple-text);
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+.architecture-map__arrow {
+  position: relative;
+  width: 1px;
+  height: 1.8rem;
+  margin: 0 auto;
+  background: var(--accent);
+}
+.architecture-map__arrow::after {
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-right: 1px solid var(--accent);
+  border-bottom: 1px solid var(--accent);
+  content: "";
+  transform: translateX(-50%) rotate(45deg);
+}
+.architecture-map__branch {
+  position: relative;
+  width: min(560px, 72%);
+  height: 2rem;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--border);
+}
+.architecture-map__branch::before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 100%;
+  background: var(--accent);
+  content: "";
+}
+.architecture-map__services .architecture-node::before {
+  position: absolute;
+  top: -1rem;
+  left: 50%;
+  width: 1px;
+  height: 1rem;
+  background: var(--border);
+  content: "";
 }
 .project-card__facts {
   display: grid;
@@ -1218,21 +1383,6 @@ body.dialog-open {
   color: var(--text-muted);
   font-size: 1rem;
   line-height: 1.75;
-}
-.case-study-dialog__code {
-  margin: 0 0 1.4rem;
-  padding: 1rem 1.1rem;
-  overflow-x: auto;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--bg-deep);
-  color: var(--accent);
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  line-height: 1.65;
-}
-.case-study-dialog__code code {
-  font: inherit;
 }
 .case-study-dialog__grid {
   display: grid;
@@ -2233,6 +2383,35 @@ body.dialog-open {
     grid-template-columns: 1fr;
     gap: 0.25rem;
   }
+  .architecture-map {
+    padding: 1rem;
+  }
+  .architecture-map__header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .architecture-map__clients,
+  .architecture-map__services {
+    grid-template-columns: 1fr;
+  }
+  .architecture-map__branch {
+    width: 1px;
+    height: 1.8rem;
+    border-bottom: 0;
+    background: var(--accent);
+  }
+  .architecture-map__branch::before,
+  .architecture-map__services .architecture-node::before {
+    display: none;
+  }
+  .architecture-node--progress {
+    padding-top: 0.9rem;
+  }
+  .architecture-node__status {
+    position: static;
+    display: inline-flex;
+    margin: 0 auto 0.45rem;
+  }
   .quality-dashboard {
     padding: 1.25rem;
   }
@@ -2271,10 +2450,6 @@ body.dialog-open {
   .case-study-dialog__inner {
     max-height: calc(100dvh - 1rem);
     padding: 1.25rem;
-  }
-  .case-study-dialog__code code {
-    overflow-wrap: anywhere;
-    white-space: pre-wrap;
   }
   .case-study-dialog__header {
     gap: 0.75rem;
@@ -2350,6 +2525,12 @@ body.dialog-open {
   .skill-group,
   .edu-card {
     padding: 1.1rem;
+  }
+  .architecture-map {
+    padding: 0.85rem;
+  }
+  .architecture-node {
+    padding-inline: 0.75rem;
   }
 }
 

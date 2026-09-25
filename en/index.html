@@ -117,7 +117,7 @@
         document.documentElement.style.colorScheme = theme;
       })();
     </script>
-    <link rel="stylesheet" href="../style.css?v=7" />
+    <link rel="stylesheet" href="../style.css?v=8" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -810,7 +810,7 @@
                 <span class="chip chip--secondary">Express</span>
                 <span class="chip chip--secondary" >REST APIs</span>
                 <span class="chip chip--secondary">MongoDB</span>
-                <span class="chip chip--secondary"">Mongoose</span>
+                <span class="chip chip--secondary">Mongoose</span>
                 <span class="chip">JWT</span>
                 <span class="chip">GraphQL</span>
                 
@@ -951,17 +951,96 @@
                 RoleNaviq – Navigate every application with clarity
               </h3>
               <p class="project-card__summary">
-               Architected a modular multi-service platform comprising a React frontend, an Angular interview preparation module,
-               a Node.js/Express API with MongoDB, and a Python/FastAPI job-analysis microservice in development for LLM and
-               RAG-based document analysis, enabling independent testing, deployment and scaling.
+                A modular application platform combining a React client, an
+                Angular interview-preparation module and a Node.js/Express API
+                backed by MongoDB. A separate Python/FastAPI analysis service
+                for LLM/RAG workflows is in development.
               </p>
+              <figure
+                class="architecture-map"
+                aria-labelledby="rolenaviq-architecture-title"
+              >
+                <figcaption class="architecture-map__header">
+                  <div>
+                    <span class="architecture-map__eyebrow"
+                      >Engineering · Portfolio case study</span
+                    >
+                    <strong id="rolenaviq-architecture-title"
+                      >System architecture</strong
+                    >
+                  </div>
+                  <div class="architecture-map__legend" aria-label="Status">
+                    <span
+                      ><i class="architecture-map__key" aria-hidden="true"></i
+                      >Implemented</span
+                    >
+                    <span
+                      ><i
+                        class="architecture-map__key architecture-map__key--progress"
+                        aria-hidden="true"
+                      ></i
+                      >In progress</span
+                    >
+                  </div>
+                </figcaption>
+
+                <div
+                  class="architecture-map__clients"
+                  role="group"
+                  aria-label="Client applications"
+                >
+                  <div class="architecture-node">
+                    <span class="architecture-node__type">Client</span>
+                    <strong>React application</strong>
+                    <small>Applications · Dashboard</small>
+                  </div>
+                  <div class="architecture-node">
+                    <span class="architecture-node__type">Client</span>
+                    <strong>Angular module</strong>
+                    <small>Interview preparation</small>
+                  </div>
+                </div>
+
+                <div class="architecture-map__arrow" aria-hidden="true"></div>
+
+                <div class="architecture-node architecture-node--core">
+                  <span class="architecture-node__type">REST API</span>
+                  <strong>Node.js · Express</strong>
+                  <small>Authentication · Validation · Business logic</small>
+                </div>
+
+                <div
+                  class="architecture-map__branch"
+                  aria-hidden="true"
+                ></div>
+
+                <div
+                  class="architecture-map__services"
+                  role="group"
+                  aria-label="Data and analysis services"
+                >
+                  <div class="architecture-node architecture-node--data">
+                    <span class="architecture-node__type">Data</span>
+                    <strong>MongoDB Atlas</strong>
+                    <small>Application and user data</small>
+                  </div>
+                  <div
+                    class="architecture-node architecture-node--progress"
+                  >
+                    <span class="architecture-node__status">In progress</span>
+                    <span class="architecture-node__type">Analysis</span>
+                    <strong>Python · FastAPI</strong>
+                    <small>Job analysis · LLM/RAG · Matching</small>
+                  </div>
+                </div>
+              </figure>
               <dl class="project-card__facts">
                 <div>
-                  <dt>System</dt>
+                  <dt>Delivery</dt>
                   <dd>
-                    React and Angular frontends share a Node.js/Express API and
-                    MongoDB; clear application boundaries support independent
-                    testing and deployment.
+                    Vitest and Cypress protect key flows; Docker Compose
+                    standardises local orchestration and GitHub Actions
+                    validates changes before deployment.
                   </dd>
                 </div>
                 <div>
@@ -1258,15 +1337,6 @@
                 Python/FastAPI analysis service in development. Each boundary
                 can be tested, deployed and scaled independently.
               </p>
-
-              <pre
-                class="case-study-dialog__code"
-                aria-label="RoleNaviq architecture snapshot"
-              ><code>const roleNaviq = {
-  clients: ["React", "Angular"],
-  api: "Node.js + Express + MongoDB",
-  analysis: "Python + FastAPI // in progress",
-};</code></pre>
 
               <div class="case-study-dialog__grid">
                 <section class="case-study-insight">

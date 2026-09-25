@@ -120,7 +120,7 @@
         document.documentElement.style.colorScheme = theme;
       })();
     </script>
-    <link rel="stylesheet" href="style.css?v=7" />
+    <link rel="stylesheet" href="style.css?v=8" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -815,7 +815,7 @@
                 <span class="chip chip--secondary">Express</span>
                 <span class="chip chip--secondary" >REST APIs</span>
                 <span class="chip chip--secondary">MongoDB</span>
-                <span class="chip chip--secondary"">Mongoose</span>
+                <span class="chip chip--secondary">Mongoose</span>
                 <span class="chip">JWT</span>
                 <span class="chip">GraphQL</span>
               </div>
@@ -955,16 +955,99 @@
                 RoleNaviq – Bewerbungen strukturiert steuern
               </h3>
               <p class="project-card__summary">
-                Modulare Multi-Service-Plattform mit React-Frontend, Angular-Modul zur Interviewvorbereitung, Node.js/ExpressAPI mit MongoDB sowie einem in Entwicklung befindlichen Python/FastAPI-Microservice für LLM- und RAG-basierte
-                Dokumentenanalyse konzipiert und damit unabhängige Tests, Deployments und Skalierung ermöglicht.
+                Eine modulare Bewerbungsplattform mit React-Anwendung,
+                Angular-Modul zur Interviewvorbereitung sowie
+                Node.js/Express-API und MongoDB. Ein separater
+                Python/FastAPI-Analyseservice für LLM/RAG-Workflows befindet
+                sich in Entwicklung.
               </p>
+              <figure
+                class="architecture-map"
+                aria-labelledby="rolenaviq-architecture-title"
+              >
+                <figcaption class="architecture-map__header">
+                  <div>
+                    <span class="architecture-map__eyebrow"
+                      >Engineering · Portfolio-Fallstudie</span
+                    >
+                    <strong id="rolenaviq-architecture-title"
+                      >Systemarchitektur</strong
+                    >
+                  </div>
+                  <div class="architecture-map__legend" aria-label="Status">
+                    <span
+                      ><i class="architecture-map__key" aria-hidden="true"></i
+                      >Implementiert</span
+                    >
+                    <span
+                      ><i
+                        class="architecture-map__key architecture-map__key--progress"
+                        aria-hidden="true"
+                      ></i
+                      >In Entwicklung</span
+                    >
+                  </div>
+                </figcaption>
+
+                <div
+                  class="architecture-map__clients"
+                  role="group"
+                  aria-label="Client-Anwendungen"
+                >
+                  <div class="architecture-node">
+                    <span class="architecture-node__type">Client</span>
+                    <strong>React-Anwendung</strong>
+                    <small>Bewerbungen · Dashboard</small>
+                  </div>
+                  <div class="architecture-node">
+                    <span class="architecture-node__type">Client</span>
+                    <strong>Angular-Modul</strong>
+                    <small>Interviewvorbereitung</small>
+                  </div>
+                </div>
+
+                <div class="architecture-map__arrow" aria-hidden="true"></div>
+
+                <div class="architecture-node architecture-node--core">
+                  <span class="architecture-node__type">REST API</span>
+                  <strong>Node.js · Express</strong>
+                  <small>Authentifizierung · Validierung · Geschäftslogik</small>
+                </div>
+
+                <div
+                  class="architecture-map__branch"
+                  aria-hidden="true"
+                ></div>
+
+                <div
+                  class="architecture-map__services"
+                  role="group"
+                  aria-label="Daten- und Analysedienste"
+                >
+                  <div class="architecture-node architecture-node--data">
+                    <span class="architecture-node__type">Daten</span>
+                    <strong>MongoDB Atlas</strong>
+                    <small>Bewerbungs- und Nutzerdaten</small>
+                  </div>
+                  <div
+                    class="architecture-node architecture-node--progress"
+                  >
+                    <span class="architecture-node__status"
+                      >In Entwicklung</span
+                    >
+                    <span class="architecture-node__type">Analyse</span>
+                    <strong>Python · FastAPI</strong>
+                    <small>Jobanalyse · LLM/RAG · Matching</small>
+                  </div>
+                </div>
+              </figure>
               <dl class="project-card__facts">
                 <div>
-                  <dt>System</dt>
+                  <dt>Betrieb</dt>
                   <dd>
-                    React- und Angular-Frontends nutzen eine gemeinsame
-                    Node.js/Express-API und MongoDB; klare Anwendungsgrenzen
-                    ermöglichen unabhängiges Testen und Bereitstellen.
+                    Vitest und Cypress sichern zentrale Abläufe; Docker Compose
+                    standardisiert die lokale Orchestrierung und GitHub Actions
+                    prüft Änderungen vor dem Deployment.
                   </dd>
                 </div>
                 <div>
@@ -1260,15 +1343,6 @@
                 Grenze kann unabhängig getestet, bereitgestellt und skaliert
                 werden.
               </p>
-
-              <pre
-                class="case-study-dialog__code"
-                aria-label="RoleNaviq-Architekturübersicht"
-              ><code>const roleNaviq = {
-  clients: ["React", "Angular"],
-  api: "Node.js + Express + MongoDB",
-  analysis: "Python + FastAPI // in Entwicklung",
-};</code></pre>
 
               <div class="case-study-dialog__grid">
                 <section class="case-study-insight">
