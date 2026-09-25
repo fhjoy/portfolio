@@ -117,7 +117,7 @@
         document.documentElement.style.colorScheme = theme;
       })();
     </script>
-    <link rel="stylesheet" href="../style.css?v=6" />
+    <link rel="stylesheet" href="../style.css?v=7" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -348,25 +348,34 @@
           <div class="about__grid">
             <div class="about__text">
               <p>
-                I build modern, accessible and high-performing web applications,
-                from e-commerce and customer portals to AI-powered document
-                processing and a multi-service job application platform.
+                <span class="about__label">Experience</span>
+                Professionally, I have developed and modernised 20+ Deutsche
+                Telekom projects across e-commerce, customer portals, trade-in,
+                streaming/TV and B2B, as well as 17+ partner websites. I built
+                reusable Vue and React components, integrated REST and GraphQL
+                APIs, improved accessibility and performance, and strengthened
+                automated testing for an AI-powered document-processing product.
               </p>
               <p>
-                My focus includes component architecture, API integration,
-                automated testing, accessibility, performance and clean code. My
-                current project combines React and Angular frontends with a
-                Node.js/Express/MongoDB backend and a separate Python/FastAPI
-                analysis service in development.
+                <span class="about__label">Collaboration</span>
+                In Scrum and Kanban teams, I worked closely with developers,
+                designers and project managers, took technical ownership,
+                contributed to code reviews, translated complex requirements
+                into maintainable solutions and coordinated testing activities.
               </p>
               <p>
-                I work effectively in agile teams, take ownership of technical
-                tasks and turn complex requirements into maintainable solutions.
+                <span class="about__label">Current</span>
+                I am currently building RoleNaviq, a modular multi-service job
+                application platform with React, Angular, Node.js/Express and
+                MongoDB. Vitest and Cypress, Docker Compose, GitHub Actions,
+                Vercel and Render support quality and delivery; a Python/FastAPI
+                service for LLM/RAG document analysis remains in development.
               </p>
               <p>
-                I am currently looking for a full-time frontend or full-stack
-                role and am open to relocating within Germany for the right
-                opportunity.
+                <span class="about__label">Goal</span>
+                I am currently looking for a full-time Frontend or Full-Stack
+                Developer position in Germany and am open to relocating
+                nationwide.
               </p>
             </div>
             <div class="about__stats">
@@ -932,10 +941,13 @@
             >
               <div class="project-card__topline">
                 <span class="project-card__type"
-                  >Independent Full-Stack Project · 06.2026–Present</span
+                  >Engineering · Portfolio case study</span
                 >
                 <span class="project-card__number" aria-hidden="true">01</span>
               </div>
+              <code class="project-card__code"
+                >caseStudy("RoleNaviq", { since: "06.2026" })</code
+              >
               <h3 class="project-card__title">
                 RoleNaviq – Navigate every application with clarity
               </h3>
@@ -947,24 +959,25 @@
               </p>
               <dl class="project-card__facts">
                 <div>
-                  <dt>Architecture</dt>
+                  <dt>System</dt>
                   <dd>
-                    React and Angular frontends plus a Node.js API with
-                    independently testable and deployable boundaries
+                    React and Angular frontends share a Node.js/Express API and
+                    MongoDB; clear application boundaries support independent
+                    testing and deployment.
                   </dd>
                 </div>
                 <div>
-                  <dt>Security &amp; performance</dt>
+                  <dt>Access</dt>
                   <dd>
-                    JWT authentication with HttpOnly cookies, per-user
-                    authorisation and route-level lazy loading
+                    JWT authentication in HttpOnly cookies, protected React
+                    Router routes and server-side per-user authorisation.
                   </dd>
                 </div>
                 <div>
-                  <dt>Quality &amp; delivery</dt>
+                  <dt>Progress</dt>
                   <dd>
-                    Vitest, Cypress, Docker Compose, GitHub Actions CI, Vercel,
-                    Render and MongoDB Atlas
+                    Python/FastAPI job analysis, LLM/RAG document analysis and
+                    AI-assisted matching are in progress.
                   </dd>
                 </div>
               </dl>
@@ -1225,7 +1238,7 @@
               <header class="case-study-dialog__header">
                 <div>
                   <span class="case-study-dialog__eyebrow"
-                    >Engineering insight · Active development</span
+                    >Engineering · Portfolio case study</span
                   >
                   <h2 id="case-study-rolenaviq-title">
                     RoleNaviq: Designing independent service boundaries
@@ -1247,6 +1260,15 @@
                 Python/FastAPI analysis service in development. Each boundary
                 can be tested, deployed and scaled independently.
               </p>
+
+              <pre
+                class="case-study-dialog__code"
+                aria-label="RoleNaviq architecture snapshot"
+              ><code>const roleNaviq = {
+  clients: ["React", "Angular"],
+  api: "Node.js + Express + MongoDB",
+  analysis: "Python + FastAPI // in progress",
+};</code></pre>
 
               <div class="case-study-dialog__grid">
                 <section class="case-study-insight">

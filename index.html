@@ -120,7 +120,7 @@
         document.documentElement.style.colorScheme = theme;
       })();
     </script>
-    <link rel="stylesheet" href="style.css?v=6" />
+    <link rel="stylesheet" href="style.css?v=7" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -351,26 +351,37 @@
           <div class="about__grid">
             <div class="about__text">
               <p>
-                Ich entwickle moderne, barrierefreie und performante
-                Webanwendungen – von E-Commerce und Kundenportalen bis zur
-                KI-basierten Dokumentenverarbeitung und einer modularen
-                Multi-Service-Plattform für Bewerbungsmanagement.
+                <span class="about__label">Erfahrung</span>
+                Beruflich habe ich mehr als 20 Projekte für die Deutsche
+                Telekom in den Bereichen E-Commerce, Kundenportale, Trade-in,
+                Streaming/TV und B2B sowie 17+ Partner-Websites entwickelt und
+                modernisiert. Dabei entstanden wiederverwendbare Vue- und
+                React-Komponenten, REST- und GraphQL-Integrationen sowie
+                Verbesserungen bei Barrierefreiheit, Performance und
+                automatisierten Tests für ein KI-basiertes Dokumentenprodukt.
               </p>
               <p>
-                Meine Schwerpunkte sind Komponentenarchitektur, API-Integration,
-                Testautomatisierung, Barrierefreiheit, Performance und Clean
-                Code. Mein aktuelles Projekt verbindet React- und
-                Angular-Frontends mit einem Node.js/Express/MongoDB-Backend und
-                einem separaten Python/FastAPI-Analyseservice in Entwicklung.
+                <span class="about__label">Zusammenarbeit</span>
+                In Scrum- und Kanban-Teams arbeitete ich eng mit Entwicklern,
+                Designern und Projektmanagern zusammen, übernahm technische
+                Verantwortung, beteiligte mich an Code-Reviews, überführte
+                komplexe Anforderungen in wartbare Lösungen und koordinierte
+                Testaktivitäten.
               </p>
               <p>
-                In agilen Teams übernehme ich technische Verantwortung und
-                überführe komplexe Anforderungen in wartbare Lösungen.
+                <span class="about__label">Aktuell</span>
+                Aktuell entwickle ich RoleNaviq, eine modulare
+                Multi-Service-Plattform für Bewerbungsmanagement mit React,
+                Angular, Node.js/Express und MongoDB. Vitest und Cypress, Docker
+                Compose, GitHub Actions, Vercel und Render unterstützen Qualität
+                und Bereitstellung; ein Python/FastAPI-Service für LLM/RAG-basierte
+                Dokumentenanalyse befindet sich noch in Entwicklung.
               </p>
               <p>
-                Aktuell suche ich eine Vollzeitstelle als Frontend- oder
-                Full-Stack-Entwickler. Für eine passende Stelle bin ich auch
-                bereit, innerhalb Deutschlands umzuziehen.
+                <span class="about__label">Ziel</span>
+                Ich suche derzeit eine Vollzeitstelle als Frontend- oder
+                Full-Stack-Entwickler in Deutschland und bin deutschlandweit
+                umzugsbereit.
               </p>
             </div>
             <div class="about__stats">
@@ -934,10 +945,13 @@
             >
               <div class="project-card__topline">
                 <span class="project-card__type"
-                  >Eigenständiges Full-Stack-Projekt · Seit 06.2026</span
+                  >Engineering · Portfolio case study</span
                 >
                 <span class="project-card__number" aria-hidden="true">01</span>
               </div>
+              <code class="project-card__code"
+                >caseStudy("RoleNaviq", { since: "06.2026" })</code
+              >
               <h3 class="project-card__title">
                 RoleNaviq – Bewerbungen strukturiert steuern
               </h3>
@@ -949,24 +963,26 @@
               </p>
               <dl class="project-card__facts">
                 <div>
-                  <dt>Architektur</dt>
+                  <dt>System</dt>
                   <dd>
-                    React- und Angular-Frontends sowie eine Node.js-API mit
-                    unabhängig test- und bereitstellbaren Grenzen
+                    React- und Angular-Frontends nutzen eine gemeinsame
+                    Node.js/Express-API und MongoDB; klare Anwendungsgrenzen
+                    ermöglichen unabhängiges Testen und Bereitstellen.
                   </dd>
                 </div>
                 <div>
-                  <dt>Sicherheit &amp; Performance</dt>
+                  <dt>Zugriff</dt>
                   <dd>
-                    JWT-Authentifizierung mit HttpOnly-Cookies, benutzerbezogene
-                    Autorisierung und routenbasiertes Lazy Loading
+                    JWT-Authentifizierung in HttpOnly-Cookies, geschützte
+                    React-Router-Routen und serverseitige, nutzerbezogene
+                    Autorisierung.
                   </dd>
                 </div>
                 <div>
-                  <dt>Qualität &amp; Bereitstellung</dt>
+                  <dt>Ausbau</dt>
                   <dd>
-                    Vitest, Cypress, Docker Compose, GitHub Actions CI, Vercel,
-                    Render und MongoDB Atlas
+                    Python/FastAPI-Jobanalyse, LLM/RAG-Dokumentenanalyse und
+                    KI-gestütztes Matching befinden sich in Entwicklung.
                   </dd>
                 </div>
               </dl>
@@ -1224,7 +1240,7 @@
               <header class="case-study-dialog__header">
                 <div>
                   <span class="case-study-dialog__eyebrow"
-                    >Engineering-Einblick · Aktive Entwicklung</span
+                    >Engineering · Portfolio case study</span
                   >
                   <h2 id="case-study-rolenaviq-title">
                     RoleNaviq: Unabhängige Service-Grenzen gestalten
@@ -1247,6 +1263,15 @@
                 Grenze kann unabhängig getestet, bereitgestellt und skaliert
                 werden.
               </p>
+
+              <pre
+                class="case-study-dialog__code"
+                aria-label="RoleNaviq-Architekturübersicht"
+              ><code>const roleNaviq = {
+  clients: ["React", "Angular"],
+  api: "Node.js + Express + MongoDB",
+  analysis: "Python + FastAPI // in Entwicklung",
+};</code></pre>
 
               <div class="case-study-dialog__grid">
                 <section class="case-study-insight">

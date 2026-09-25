@@ -772,6 +772,17 @@ button {
 .about__text strong {
   color: var(--text);
 }
+.about__label {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
 
 .about__stats {
   display: grid;
@@ -941,6 +952,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 1rem;
   margin-bottom: 1.15rem;
 }
@@ -955,6 +967,21 @@ button {
 }
 .project-card__number {
   color: var(--text-muted);
+}
+.project-card__code {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin: -0.35rem 0 1rem;
+  padding: 0.35rem 0.6rem;
+  overflow-wrap: anywhere;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg-deep);
+  color: var(--purple-text);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  white-space: normal;
 }
 .project-card__title {
   margin-bottom: 0.75rem;
@@ -1191,6 +1218,21 @@ body.dialog-open {
   color: var(--text-muted);
   font-size: 1rem;
   line-height: 1.75;
+}
+.case-study-dialog__code {
+  margin: 0 0 1.4rem;
+  padding: 1rem 1.1rem;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-deep);
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  line-height: 1.65;
+}
+.case-study-dialog__code code {
+  font: inherit;
 }
 .case-study-dialog__grid {
   display: grid;
@@ -1556,6 +1598,7 @@ body.dialog-open {
 
 .timeline__card {
   flex: 1;
+  min-width: 0;
   background: var(--bg-card-2);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
@@ -1748,6 +1791,9 @@ body.dialog-open {
   font-size: 1.6rem;
   flex-shrink: 0;
   margin-top: 2px;
+}
+.edu-card__body {
+  min-width: 0;
 }
 .edu-card__period {
   font-family: var(--font-mono);
@@ -2078,12 +2124,19 @@ body.dialog-open {
 }
 
 @media (max-width: 640px) {
+  .nav {
+    padding: 1rem 1.1rem;
+  }
+  .nav__actions {
+    gap: 0.45rem;
+    margin-left: 0.5rem;
+  }
   .nav__links {
     position: fixed;
     top: 0;
     right: 0;
-    height: 100vh;
-    width: 260px;
+    height: 100dvh;
+    width: min(280px, 86vw);
     background: var(--bg-card);
     border-left: 1px solid var(--border);
     flex-direction: column;
@@ -2129,15 +2182,25 @@ body.dialog-open {
   .section {
     padding: 4rem 0;
   }
+  .section__header {
+    margin-bottom: 2.5rem;
+  }
   .hero {
+    width: 100%;
+    min-height: auto;
     padding: 6rem 1.25rem 3rem;
+  }
+  .hero__content,
+  .hero__desc {
+    width: 100%;
+    max-width: 100%;
   }
   .hero__actions .btn {
     width: 100%;
     justify-content: center;
   }
   .container {
-    padding: 0 1.25rem;
+    padding: 0 1rem;
   }
   .contact__grid {
     grid-template-columns: 1fr;
@@ -2148,6 +2211,23 @@ body.dialog-open {
   .project-card,
   .reference-card {
     padding: 1.35rem;
+  }
+  .timeline__item {
+    gap: 0.75rem;
+  }
+  .timeline__marker {
+    padding-top: 1.5rem;
+  }
+  .timeline__card {
+    padding: 1.25rem;
+  }
+  .timeline__meta {
+    width: 100%;
+    text-align: left;
+  }
+  .chip {
+    overflow-wrap: anywhere;
+    white-space: normal;
   }
   .project-card__facts div {
     grid-template-columns: 1fr;
@@ -2170,17 +2250,31 @@ body.dialog-open {
     align-items: stretch;
     flex-direction: column;
   }
+  .project-card__repo-link {
+    display: inline-flex;
+    width: 100%;
+    min-height: 2.75rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0.65rem 0.8rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
   .case-study-trigger {
     width: 100%;
   }
   .case-study-dialog {
     width: calc(100% - 1rem);
-    max-height: calc(100vh - 1rem);
+    max-height: calc(100dvh - 1rem);
     border-radius: var(--radius);
   }
   .case-study-dialog__inner {
-    max-height: calc(100vh - 1rem);
+    max-height: calc(100dvh - 1rem);
     padding: 1.25rem;
+  }
+  .case-study-dialog__code code {
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
   }
   .case-study-dialog__header {
     gap: 0.75rem;
@@ -2203,10 +2297,59 @@ body.dialog-open {
   .language-item__level {
     text-align: left;
   }
+  .edu-card {
+    gap: 0.8rem;
+    padding: 1.25rem;
+  }
+  .quality-dashboard__footer a {
+    overflow-wrap: anywhere;
+    white-space: normal;
+  }
+  .privacy-notice__content {
+    padding: 1.1rem;
+  }
   .footer__inner {
     flex-direction: column;
     gap: 0.75rem;
     text-align: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .nav {
+    padding-inline: 0.85rem;
+  }
+  .nav__logo {
+    font-size: 0.95rem;
+  }
+  .language-switch,
+  .theme-toggle {
+    width: 36px;
+    min-width: 36px;
+    height: 36px;
+  }
+  .about__stats {
+    grid-template-columns: 1fr;
+  }
+  .hero__photo,
+  .hero__photo-wrap {
+    width: 180px;
+    height: 180px;
+  }
+  .hero__photo-ring {
+    inset: -22px;
+  }
+  .timeline__marker {
+    display: none;
+  }
+  .timeline__item {
+    display: block;
+  }
+  .project-card,
+  .reference-card,
+  .skill-group,
+  .edu-card {
+    padding: 1.1rem;
   }
 }
 
