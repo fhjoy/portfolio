@@ -117,7 +117,7 @@
         document.documentElement.style.colorScheme = theme;
       })();
     </script>
-    <link rel="stylesheet" href="../style.css?v=8" />
+    <link rel="stylesheet" href="../style.css?v=9" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -999,7 +999,11 @@
                   </div>
                 </div>
 
-                <div class="architecture-map__arrow" aria-hidden="true"></div>
+                <div class="architecture-map__arrow" aria-hidden="true">
+                  <span
+                    class="architecture-flow architecture-flow--to-api"
+                  ></span>
+                </div>
 
                 <div class="architecture-node architecture-node--core">
                   <span class="architecture-node__type">REST API</span>
@@ -1007,7 +1011,14 @@
                   <small>Authentication · Validation · Business logic</small>
                 </div>
 
-                <div class="architecture-map__branch" aria-hidden="true"></div>
+                <div class="architecture-map__branch" aria-hidden="true">
+                  <span
+                    class="architecture-flow architecture-flow--to-data"
+                  ></span>
+                  <span
+                    class="architecture-flow architecture-flow--to-analysis"
+                  ></span>
+                </div>
 
                 <div
                   class="architecture-map__services"

@@ -1124,6 +1124,21 @@ button {
   margin: 0 auto;
   background: var(--accent);
 }
+.architecture-flow {
+  position: absolute;
+  z-index: 2;
+  width: 0.48rem;
+  height: 0.48rem;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent), 0 0 18px var(--accent-shadow);
+  pointer-events: none;
+}
+.architecture-flow--to-api {
+  top: 0;
+  left: 50%;
+  animation: architecture-flow-to-api 3.8s ease-in-out infinite;
+}
 .architecture-map__arrow::after {
   position: absolute;
   bottom: -1px;
@@ -1151,6 +1166,22 @@ button {
   background: var(--accent);
   content: "";
 }
+.architecture-flow--to-data,
+.architecture-flow--to-analysis {
+  top: 0;
+  left: 50%;
+  animation-duration: 3.8s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+.architecture-flow--to-data {
+  animation-name: architecture-flow-to-data;
+}
+.architecture-flow--to-analysis {
+  background: var(--purple-text);
+  box-shadow: 0 0 10px var(--purple-text), 0 0 18px var(--purple-glow);
+  animation-name: architecture-flow-to-analysis;
+}
 .architecture-map__services .architecture-node::before {
   position: absolute;
   top: -1rem;
@@ -1159,6 +1190,86 @@ button {
   height: 1rem;
   background: var(--border);
   content: "";
+}
+@keyframes architecture-flow-to-api {
+  0%,
+  8% {
+    opacity: 0;
+    transform: translate(-50%, -0.15rem) scale(0.7);
+  }
+  14% {
+    opacity: 1;
+  }
+  38% {
+    opacity: 1;
+    transform: translate(-50%, 1.55rem) scale(1);
+  }
+  46%,
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 1.55rem) scale(0.75);
+  }
+}
+@keyframes architecture-flow-to-data {
+  0%,
+  40% {
+    top: 0;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.7);
+  }
+  47% {
+    opacity: 1;
+  }
+  66% {
+    top: 100%;
+    left: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  88% {
+    top: 100%;
+    left: 25%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  96%,
+  100% {
+    top: 100%;
+    left: 25%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.75);
+  }
+}
+@keyframes architecture-flow-to-analysis {
+  0%,
+  44% {
+    top: 0;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.7);
+  }
+  51% {
+    opacity: 1;
+  }
+  70% {
+    top: 100%;
+    left: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  92% {
+    top: 100%;
+    left: 75%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    top: 100%;
+    left: 75%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.75);
+  }
 }
 .project-card__facts {
   display: grid;
@@ -2390,19 +2501,11 @@ body.dialog-open {
     align-items: flex-start;
     flex-direction: column;
   }
-  .architecture-map__clients,
-  .architecture-map__services {
+  .architecture-map__clients {
     grid-template-columns: 1fr;
   }
-  .architecture-map__branch {
-    width: 1px;
-    height: 1.8rem;
-    border-bottom: 0;
-    background: var(--accent);
-  }
-  .architecture-map__branch::before,
-  .architecture-map__services .architecture-node::before {
-    display: none;
+  .architecture-map__services {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .architecture-node--progress {
     padding-top: 0.9rem;
@@ -2532,6 +2635,18 @@ body.dialog-open {
   .architecture-node {
     padding-inline: 0.75rem;
   }
+  .architecture-map__services {
+    gap: 0.55rem;
+  }
+  .architecture-map__services .architecture-node {
+    padding-inline: 0.5rem;
+  }
+  .architecture-map__services .architecture-node strong {
+    font-size: 0.8rem;
+  }
+  .architecture-map__services .architecture-node small {
+    font-size: 0.64rem;
+  }
 }
 
 /* ── Reduced motion ── */
@@ -2546,5 +2661,9 @@ body.dialog-open {
 
   .hero__photo {
     animation: none;
+  }
+  .architecture-flow {
+    display: none;
+    animation: none !important;
   }
 }
