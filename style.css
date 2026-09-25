@@ -1119,10 +1119,11 @@ button {
 }
 .architecture-map__arrow {
   position: relative;
-  width: 1px;
-  height: 1.8rem;
+  width: 2px;
+  height: 2rem;
   margin: 0 auto;
   background: var(--accent);
+  box-shadow: 0 0 8px var(--accent-shadow-soft);
 }
 .architecture-flow {
   position: absolute;
@@ -1141,12 +1142,12 @@ button {
 }
 .architecture-map__arrow::after {
   position: absolute;
-  bottom: -1px;
+  bottom: 0;
   left: 50%;
-  width: 0.42rem;
-  height: 0.42rem;
-  border-right: 1px solid var(--accent);
-  border-bottom: 1px solid var(--accent);
+  width: 0.5rem;
+  height: 0.5rem;
+  border-right: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
   content: "";
   transform: translateX(-50%) rotate(45deg);
 }
@@ -1155,15 +1156,29 @@ button {
   width: min(560px, 72%);
   height: 2rem;
   margin: 0 auto;
-  border-bottom: 1px solid var(--border);
 }
 .architecture-map__branch::before {
   position: absolute;
   top: 0;
   left: 50%;
-  width: 1px;
+  width: 2px;
   height: 100%;
   background: var(--accent);
+  box-shadow: 0 0 8px var(--accent-shadow-soft);
+  content: "";
+}
+.architecture-map__branch::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--accent) 0 50%,
+    var(--purple-text) 50% 100%
+  );
+  box-shadow: 0 0 8px var(--accent-shadow-soft);
   content: "";
 }
 .architecture-flow--to-data,
@@ -1186,10 +1201,29 @@ button {
   position: absolute;
   top: -1rem;
   left: 50%;
-  width: 1px;
+  width: 2px;
   height: 1rem;
-  background: var(--border);
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent-shadow-soft);
   content: "";
+}
+.architecture-map__services .architecture-node::after {
+  position: absolute;
+  top: -0.55rem;
+  left: 50%;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-right: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  content: "";
+  transform: translateX(-50%) rotate(45deg);
+}
+.architecture-map__services .architecture-node--progress::before {
+  background: var(--purple-text);
+  box-shadow: 0 0 8px var(--purple-glow);
+}
+.architecture-map__services .architecture-node--progress::after {
+  border-color: var(--purple-text);
 }
 @keyframes architecture-flow-to-api {
   0%,
@@ -1317,23 +1351,6 @@ button {
 }
 .project-card__repo-link:hover {
   color: var(--white);
-}
-.project-card__status {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--text-muted);
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-}
-.project-card__status span {
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 0 4px var(--accent-dim);
-  animation: pulse 2s ease-in-out infinite;
-  transform-origin: center;
 }
 .case-study-trigger {
   display: inline-flex;
