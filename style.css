@@ -1184,19 +1184,22 @@ button {
 }
 .architecture-flow--to-data,
 .architecture-flow--to-analysis {
+  --flow-target: 25%;
   top: 0;
   left: 50%;
-  animation-duration: 3.8s;
-  animation-timing-function: ease-in-out;
+  animation-name: architecture-flow-to-service;
+  animation-duration: 5.4s;
+  animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
 .architecture-flow--to-data {
-  animation-name: architecture-flow-to-data;
+  --flow-target: 25%;
 }
 .architecture-flow--to-analysis {
+  --flow-target: 75%;
   background: var(--purple-text);
   box-shadow: 0 0 10px var(--purple-text), 0 0 18px var(--purple-glow);
-  animation-name: architecture-flow-to-analysis;
+  animation-delay: 0.45s;
 }
 .architecture-map__services .architecture-node::before {
   position: absolute;
@@ -1245,76 +1248,39 @@ button {
     transform: translate(-50%, 1.55rem) scale(0.75);
   }
 }
-@keyframes architecture-flow-to-data {
+@keyframes architecture-flow-to-service {
   0%,
-  40% {
+  12% {
     top: 0;
     left: 50%;
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.7);
   }
-  47% {
+  18% {
     opacity: 1;
+  }
+  38% {
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
   }
   62% {
     top: 50%;
-    left: 50%;
+    left: var(--flow-target);
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
-  78% {
-    top: 50%;
-    left: 25%;
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-  90%,
-  99% {
+  88%,
+  96% {
     top: 100%;
-    left: 25%;
+    left: var(--flow-target);
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
   100% {
     top: 100%;
-    left: 25%;
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.75);
-  }
-}
-@keyframes architecture-flow-to-analysis {
-  0%,
-  44% {
-    top: 0;
-    left: 50%;
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.7);
-  }
-  51% {
-    opacity: 1;
-  }
-  66% {
-    top: 50%;
-    left: 50%;
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-  82% {
-    top: 50%;
-    left: 75%;
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-  92%,
-  99% {
-    top: 100%;
-    left: 75%;
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-  100% {
-    top: 100%;
-    left: 75%;
+    left: var(--flow-target);
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.75);
   }
