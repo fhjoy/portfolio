@@ -1265,18 +1265,18 @@ button {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
-  62% {
+  55% {
     top: 50%;
     left: var(--flow-target);
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
-  88%,
+  78%,
   96% {
     top: 100%;
     left: var(--flow-target);
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(1.15);
   }
   100% {
     top: 100%;
