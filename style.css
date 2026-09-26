@@ -1154,7 +1154,7 @@ button {
 .architecture-map__branch {
   position: relative;
   width: min(560px, 72%);
-  height: 2rem;
+  height: 3rem;
   margin: 0 auto;
 }
 .architecture-map__branch::before {
@@ -1203,10 +1203,10 @@ button {
 }
 .architecture-map__services .architecture-node::before {
   position: absolute;
-  top: -1rem;
+  top: -1.5rem;
   left: 50%;
   width: 2px;
-  height: 1rem;
+  height: 1.5rem;
   background: var(--accent);
   box-shadow: 0 0 8px var(--accent-shadow-soft);
   content: "";
@@ -1230,14 +1230,17 @@ button {
   border-color: var(--purple-text);
 }
 .architecture-flow--service {
-  top: -1rem;
+  top: -1.5rem;
   left: 50%;
   z-index: 3;
+  width: 0.56rem;
+  height: 0.56rem;
+  background: radial-gradient(circle, #fff 0 24%, var(--accent) 32% 100%);
   opacity: 0;
   animation: architecture-flow-down-service 5.4s linear infinite;
 }
 .architecture-node--progress .architecture-flow--service {
-  background: var(--purple-text);
+  background: radial-gradient(circle, #fff 0 24%, var(--purple-text) 32% 100%);
   box-shadow: 0 0 10px var(--purple-text), 0 0 18px var(--purple-glow);
   animation-delay: 0.45s;
 }
@@ -1294,12 +1297,12 @@ button {
 @keyframes architecture-flow-down-service {
   0%,
   54% {
-    top: -1rem;
+    top: -1.5rem;
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.85);
   }
   55% {
-    top: -1rem;
+    top: -1.5rem;
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
