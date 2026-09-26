@@ -117,7 +117,7 @@
         document.documentElement.style.colorScheme = theme;
       })();
     </script>
-    <link rel="stylesheet" href="../style.css?v=16" />
+    <link rel="stylesheet" href="../style.css?v=17" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -1026,11 +1026,19 @@
                   aria-label="Data and analysis services"
                 >
                   <div class="architecture-node architecture-node--data">
+                    <span
+                      class="architecture-flow architecture-flow--service"
+                      aria-hidden="true"
+                    ></span>
                     <span class="architecture-node__type">Data</span>
                     <strong>MongoDB Atlas</strong>
                     <small>Application and user data</small>
                   </div>
                   <div class="architecture-node architecture-node--progress">
+                    <span
+                      class="architecture-flow architecture-flow--service"
+                      aria-hidden="true"
+                    ></span>
                     <span class="architecture-node__status">In progress</span>
                     <span class="architecture-node__type">Analysis</span>
                     <strong>Python · FastAPI</strong>

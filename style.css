@@ -1187,7 +1187,7 @@ button {
   --flow-target: 25%;
   top: 0;
   left: 50%;
-  animation-name: architecture-flow-to-service;
+  animation-name: architecture-flow-across-branch;
   animation-duration: 5.4s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
@@ -1229,6 +1229,18 @@ button {
 .architecture-map__services .architecture-node--progress::after {
   border-color: var(--purple-text);
 }
+.architecture-flow--service {
+  top: -1rem;
+  left: 50%;
+  z-index: 3;
+  opacity: 0;
+  animation: architecture-flow-down-service 5.4s linear infinite;
+}
+.architecture-node--progress .architecture-flow--service {
+  background: var(--purple-text);
+  box-shadow: 0 0 10px var(--purple-text), 0 0 18px var(--purple-glow);
+  animation-delay: 0.45s;
+}
 @keyframes architecture-flow-to-api {
   0%,
   8% {
@@ -1248,7 +1260,7 @@ button {
     transform: translate(-50%, 1.55rem) scale(0.75);
   }
 }
-@keyframes architecture-flow-to-service {
+@keyframes architecture-flow-across-branch {
   0%,
   12% {
     top: 0;
@@ -1271,16 +1283,29 @@ button {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
-  78%,
-  96% {
-    top: 100%;
-    left: var(--flow-target);
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1.15);
-  }
+  56%,
   100% {
-    top: 100%;
+    top: 50%;
     left: var(--flow-target);
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.85);
+  }
+}
+@keyframes architecture-flow-down-service {
+  0%,
+  54% {
+    top: -1rem;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.85);
+  }
+  55% {
+    top: -1rem;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  78%,
+  100% {
+    top: 0;
     opacity: 1;
     transform: translate(-50%, -50%) scale(1.15);
   }
