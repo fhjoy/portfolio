@@ -1269,14 +1269,14 @@ button {
     transform: translate(-50%, -50%) scale(1);
   }
   90%,
-  97% {
-    top: calc(100% - 0.3rem);
+  99% {
+    top: 100%;
     left: 25%;
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
   100% {
-    top: calc(100% - 0.3rem);
+    top: 100%;
     left: 25%;
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.75);
@@ -1306,14 +1306,14 @@ button {
     transform: translate(-50%, -50%) scale(1);
   }
   92%,
-  98% {
-    top: calc(100% - 0.3rem);
+  99% {
+    top: 100%;
     left: 75%;
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
   100% {
-    top: calc(100% - 0.3rem);
+    top: 100%;
     left: 75%;
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.75);
