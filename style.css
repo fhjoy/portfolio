@@ -1281,8 +1281,8 @@ button {
   100% {
     top: 100%;
     left: var(--flow-target);
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.75);
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.15);
   }
 }
 .project-card__facts {
