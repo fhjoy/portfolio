@@ -1262,20 +1262,21 @@ button {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
-  82% {
+  78% {
     top: 50%;
     left: 25%;
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
-  94% {
-    top: 100%;
+  90%,
+  97% {
+    top: calc(100% - 0.3rem);
     left: 25%;
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
   100% {
-    top: 100%;
+    top: calc(100% - 0.3rem);
     left: 25%;
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.75);
@@ -1298,20 +1299,21 @@ button {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
-  86% {
+  82% {
     top: 50%;
     left: 75%;
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
-  96% {
-    top: 100%;
+  92%,
+  98% {
+    top: calc(100% - 0.3rem);
     left: 75%;
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
   100% {
-    top: 100%;
+    top: calc(100% - 0.3rem);
     left: 75%;
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.75);
