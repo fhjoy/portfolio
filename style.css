@@ -1117,43 +1117,50 @@ button {
   line-height: 1.35;
   text-transform: uppercase;
 }
+/* Share the grid gap so branches end exactly above the service centers. */
+.architecture-map {
+  --service-gap: 1rem;
+}
+.architecture-map__services {
+  gap: var(--service-gap);
+}
 .architecture-map__arrow {
   position: relative;
-  width: 2px;
+  width: 1px;
   height: 2rem;
   margin: 0 auto;
   background: var(--accent);
-  box-shadow: 0 0 8px var(--accent-shadow-soft);
 }
 .architecture-flow {
   position: absolute;
   z-index: 2;
-  width: 0.48rem;
-  height: 0.48rem;
+  width: 0.3rem;
+  height: 0.3rem;
   border-radius: 50%;
   background: var(--accent);
-  box-shadow: 0 0 10px var(--accent), 0 0 18px var(--accent-shadow);
+  box-shadow: 0 0 5px var(--accent-shadow);
   pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0;
 }
 .architecture-flow--to-api {
-  top: 0;
   left: 50%;
-  animation: architecture-flow-to-api 3.8s ease-in-out infinite;
+  animation: architecture-flow-to-api 5.4s linear infinite;
 }
 .architecture-map__arrow::after {
   position: absolute;
   bottom: 0;
   left: 50%;
-  width: 0.5rem;
-  height: 0.5rem;
-  border-right: 2px solid var(--accent);
-  border-bottom: 2px solid var(--accent);
+  width: 7px;
+  height: 5px;
+  background: var(--accent);
+  clip-path: polygon(0 0, 50% 65%, 100% 0, 100% 35%, 50% 100%, 0 35%);
   content: "";
-  transform: translateX(-50%) rotate(45deg);
+  transform: translateX(-50%);
 }
 .architecture-map__branch {
   position: relative;
-  width: min(560px, 72%);
+  width: 100%;
   height: 3rem;
   margin: 0 auto;
 }
@@ -1161,157 +1168,73 @@ button {
   position: absolute;
   top: 0;
   left: 50%;
-  width: 2px;
+  width: 1px;
   height: 50%;
   background: var(--accent);
-  box-shadow: 0 0 8px var(--accent-shadow-soft);
   content: "";
+  transform: translateX(-50%);
 }
 .architecture-map__branch::after {
   position: absolute;
   top: 50%;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    var(--accent) 0 50%,
-    var(--purple-text) 50% 100%
-  );
-  box-shadow: 0 0 8px var(--accent-shadow-soft);
+  left: calc(25% - var(--service-gap) / 4);
+  width: calc(50% + var(--service-gap) / 2);
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent) 0 50%, var(--purple-text) 50% 100%);
   content: "";
   transform: translateY(-50%);
 }
 .architecture-flow--to-data,
 .architecture-flow--to-analysis {
-  --flow-target: 25%;
-  top: 0;
-  left: 50%;
-  animation-name: architecture-flow-across-branch;
-  animation-duration: 5.4s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  animation: architecture-flow-to-service 5.4s linear infinite;
 }
 .architecture-flow--to-data {
-  --flow-target: 25%;
+  --flow-target: calc(25% - var(--service-gap) / 4);
 }
 .architecture-flow--to-analysis {
-  --flow-target: 75%;
+  --flow-target: calc(75% + var(--service-gap) / 4);
   background: var(--purple-text);
-  box-shadow: 0 0 10px var(--purple-text), 0 0 18px var(--purple-glow);
-  animation-delay: 0.45s;
+  box-shadow: 0 0 5px var(--purple-glow);
 }
 .architecture-map__services .architecture-node::before {
   position: absolute;
-  top: -1.5rem;
+  top: calc(-1.5rem - 1px);
   left: 50%;
-  width: 2px;
-  height: 1.5rem;
+  width: 1px;
+  height: calc(1.5rem - 2px);
   background: var(--accent);
-  box-shadow: 0 0 8px var(--accent-shadow-soft);
   content: "";
+  transform: translateX(-50%);
 }
 .architecture-map__services .architecture-node::after {
   position: absolute;
-  top: -0.55rem;
+  top: -8px;
   left: 50%;
-  width: 0.45rem;
-  height: 0.45rem;
-  border-right: 2px solid var(--accent);
-  border-bottom: 2px solid var(--accent);
+  width: 7px;
+  height: 5px;
+  background: var(--accent);
+  clip-path: polygon(0 0, 50% 65%, 100% 0, 100% 35%, 50% 100%, 0 35%);
   content: "";
-  transform: translateX(-50%) rotate(45deg);
+  transform: translateX(-50%);
 }
-.architecture-map__services .architecture-node--progress::before {
-  background: var(--purple-text);
-  box-shadow: 0 0 8px var(--purple-glow);
-}
+.architecture-map__services .architecture-node--progress::before,
 .architecture-map__services .architecture-node--progress::after {
-  border-color: var(--purple-text);
-}
-.architecture-flow--service {
-  top: -1.5rem;
-  left: 50%;
-  z-index: 3;
-  width: 0.56rem;
-  height: 0.56rem;
-  background: radial-gradient(circle, #fff 0 24%, var(--accent) 32% 100%);
-  opacity: 0;
-  animation: architecture-flow-down-service 5.4s linear infinite;
-}
-.architecture-node--progress .architecture-flow--service {
-  background: radial-gradient(circle, #fff 0 24%, var(--purple-text) 32% 100%);
-  box-shadow: 0 0 10px var(--purple-text), 0 0 18px var(--purple-glow);
-  animation-delay: 0.45s;
+  background: var(--purple-text);
 }
 @keyframes architecture-flow-to-api {
-  0%,
-  8% {
-    opacity: 0;
-    transform: translate(-50%, -0.15rem) scale(0.7);
-  }
-  14% {
-    opacity: 1;
-  }
-  38% {
-    opacity: 1;
-    transform: translate(-50%, 1.55rem) scale(1);
-  }
-  46%,
-  100% {
-    opacity: 0;
-    transform: translate(-50%, 1.55rem) scale(0.75);
-  }
+  0% { top: 0; opacity: 0; }
+  3% { opacity: 1; }
+  20% { top: calc(100% - 2px); opacity: 1; }
+  24%, 100% { top: calc(100% - 2px); opacity: 0; }
 }
-@keyframes architecture-flow-across-branch {
-  0%,
-  12% {
-    top: 0;
-    left: 50%;
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.7);
-  }
-  18% {
-    opacity: 1;
-  }
-  38% {
-    top: 50%;
-    left: 50%;
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-  55% {
-    top: 50%;
-    left: var(--flow-target);
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-  56%,
-  100% {
-    top: 50%;
-    left: var(--flow-target);
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.85);
-  }
-}
-@keyframes architecture-flow-down-service {
-  0%,
-  54% {
-    top: -1.5rem;
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.85);
-  }
-  55% {
-    top: -1.5rem;
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-  78%,
-  100% {
-    top: 0;
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1.15);
-  }
+/* One particle follows the entire branch, with no handoff or mid-route fade. */
+@keyframes architecture-flow-to-service {
+  0%, 26% { top: 0; left: 50%; opacity: 0; }
+  29% { opacity: 1; }
+  40% { top: 50%; left: 50%; opacity: 1; }
+  72% { top: 50%; left: var(--flow-target); opacity: 1; }
+  86% { top: calc(100% - 4px); left: var(--flow-target); opacity: 1; }
+  92%, 100% { top: calc(100% - 4px); left: var(--flow-target); opacity: 0; }
 }
 .project-card__facts {
   display: grid;
@@ -2660,8 +2583,8 @@ body.dialog-open {
   .architecture-node {
     padding-inline: 0.75rem;
   }
-  .architecture-map__services {
-    gap: 0.55rem;
+  .architecture-map {
+    --service-gap: 0.55rem;
   }
   .architecture-map__services .architecture-node {
     padding-inline: 0.5rem;
