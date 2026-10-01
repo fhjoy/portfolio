@@ -1,10 +1,10 @@
 <div align="center">
 
-# Faisal Hossain · Developer Portfolio
+# Faisal Hossain · Software Engineering Portfolio
 
-**Full-Stack Developer** focused on accessible, maintainable web applications with React, Vue.js, TypeScript, Angular, Node.js, and MongoDB.
+**Frontend-Focused Full-Stack Software Engineer** building modular, accessible web applications and reusable frontend systems with React, Vue.js, Angular, TypeScript, and Node.js.
 
-[View the live portfolio](https://fhjoy.github.io/portfolio/) · [LinkedIn](https://www.linkedin.com/in/md-faisal-hossain-germany/) · [GitHub profile](https://github.com/fhjoy)
+[View the live portfolio](https://fhjoy.github.io/portfolio/) · [LinkedIn](https://www.linkedin.com/in/faisal-hossain-de/) · [GitHub profile](https://github.com/fhjoy)
 
 </div>
 
@@ -30,7 +30,7 @@ The portfolio provides carefully written German and English experiences and incl
 | Natif.ai E2E test coverage            | approximately 10% → 85% |
 | Natif.ai component test coverage      |  approximately 0% → 70% |
 
-My main areas of work are component-based frontend architecture, accessibility according to WCAG, REST and GraphQL API development and integration, test automation, full-stack delivery, legacy modernization, and collaboration in Scrum and Kanban teams.
+My main areas of work are frontend architecture, micro-frontends, design systems, accessibility according to WCAG 2.1 AA, REST API development, GraphQL integration with Apollo Client, test automation, full-stack delivery, legacy modernisation, and collaboration in Scrum and Kanban teams.
 
 ## What visitors can explore
 
@@ -63,7 +63,7 @@ A controlled comparison of three similarly scoped e-commerce applications using 
 
 ### Personal full-stack projects
 
-- [RoleNaviq](https://rolenaviq.vercel.app) · active development — A modular multi-service job-application platform with a React frontend, an Angular interview-preparation module, and a Node.js/Express API backed by MongoDB. A separate Python/FastAPI service for LLM and RAG-based document analysis is in development.
+- [RoleNaviq](https://rolenaviq.vercel.app) · active development — An end-to-end job-application platform with tracking, dashboards, Kanban workflows, an interview calendar, a React frontend, a separately deployable Angular interview-preparation micro-frontend, and a Node.js/Express API backed by MongoDB. A Python/FastAPI service for AI document analysis is planned.
 
 The platform uses JWT authentication in HttpOnly cookies, per-user authorisation, route-level lazy loading, Vitest and Cypress tests, Docker Compose, and GitHub Actions CI. React and Angular are deployed to Vercel, while the Node.js API runs on Render with MongoDB Atlas.
 
@@ -203,12 +203,12 @@ Some commercial project details and source code are intentionally omitted becaus
 
 ## Current status
 
-I am based in Offenburg and currently open to full-time frontend or full-stack positions. I have unrestricted work authorization in Germany and am willing to relocate within Germany for the right opportunity.
+I am based in Offenburg, available immediately, and open to full-time frontend or full-stack software engineering positions. I have unrestricted work authorization in Germany and am willing to relocate within Germany for the right opportunity.
 
 ## Contact
 
 - [Live portfolio](https://fhjoy.github.io/portfolio/)
-- [LinkedIn](https://www.linkedin.com/in/md-faisal-hossain-germany/)
+- [LinkedIn](https://www.linkedin.com/in/faisal-hossain-de/)
 - [GitHub](https://github.com/fhjoy)
 
 ## License
