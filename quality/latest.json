@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "status": "passing",
-  "updatedAt": "2026-10-01T19:58:53.783Z",
-  "commit": "cea9ffb",
+  "updatedAt": "2026-10-01T21:03:09.985Z",
+  "commit": "c887fef",
   "runs": 6,
   "pages": 2,
   "scores": {
-    "performance": 99,
+    "performance": 98,
     "accessibility": 100,
     "bestPractices": 100,
     "seo": 100
